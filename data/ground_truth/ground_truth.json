@@ -1,0 +1,3102 @@
+[
+  {
+    "anomaly_id": "ANO-000001",
+    "entity_name": "return_lines",
+    "entity_id": "RMAL-RMA-2026-000001-01",
+    "parent_entity_id": "ORDL-ORD-2026-028578-01",
+    "issue_type": "QTY_EXCEEDS_PURCHASED",
+    "expected_decision": "REJECT_QUANTITY_OVERFLOW",
+    "actual_injected_behavior": "Requested 6 units on line with purchase qty 1",
+    "created_at": "2026-04-11T14:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000002",
+    "entity_name": "inventory_dispositions",
+    "entity_id": "DISP-2026-000001",
+    "parent_entity_id": "INS-2026-000001",
+    "issue_type": "RESTOCK_BEFORE_INSPECTION",
+    "expected_decision": "BLOCK_PREMATURE_RESTOCK",
+    "actual_injected_behavior": "Restocked at 2026-04-14T16:00:00+00:00, before inspection 2026-04-16T04:00:00+00:00",
+    "created_at": "2026-04-14T16:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000003",
+    "entity_name": "inventory_dispositions",
+    "entity_id": "DISP-2026-000003",
+    "parent_entity_id": "INS-2026-000003",
+    "issue_type": "RESTOCK_BEFORE_INSPECTION",
+    "expected_decision": "BLOCK_PREMATURE_RESTOCK",
+    "actual_injected_behavior": "Restocked at 2026-06-15T09:00:00+00:00, before inspection 2026-06-16T10:00:00+00:00",
+    "created_at": "2026-06-15T09:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000004",
+    "entity_name": "return_requests",
+    "entity_id": "REQ-2026-000005",
+    "parent_entity_id": "ORD-2026-008555",
+    "issue_type": "RETURN_PAST_POLICY_WINDOW",
+    "expected_decision": "REJECTED_OR_OVERRIDE_REQUIRED",
+    "actual_injected_behavior": "Submitted at day 78 without override",
+    "created_at": "2026-07-28T04:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000005",
+    "entity_name": "return_requests",
+    "entity_id": "REQ-2026-000006",
+    "parent_entity_id": "ORD-2026-016775",
+    "issue_type": "RETURN_PAST_POLICY_WINDOW",
+    "expected_decision": "REJECTED_OR_OVERRIDE_REQUIRED",
+    "actual_injected_behavior": "Submitted at day 68 without override",
+    "created_at": "2026-09-09T20:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000006",
+    "entity_name": "return_lines",
+    "entity_id": "RMAL-RMA-2026-000006-01",
+    "parent_entity_id": "ORDL-ORD-2026-016775-01",
+    "issue_type": "QTY_EXCEEDS_PURCHASED",
+    "expected_decision": "REJECT_QUANTITY_OVERFLOW",
+    "actual_injected_behavior": "Requested 5 units on line with purchase qty 1",
+    "created_at": "2026-09-09T20:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000007",
+    "entity_name": "refunds",
+    "entity_id": "REF-2026-000005",
+    "parent_entity_id": "RMA-2026-000008",
+    "issue_type": "REFUND_EXCEEDS_PAID",
+    "expected_decision": "BLOCK_EXCESS_PAYOUT",
+    "actual_injected_behavior": "Refund calculated to exceed order total paid (218.69)",
+    "created_at": "2026-02-14T17:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000008",
+    "entity_name": "return_requests",
+    "entity_id": "REQ-2026-000009",
+    "parent_entity_id": "ORD-2026-016224",
+    "issue_type": "RETURN_PAST_POLICY_WINDOW",
+    "expected_decision": "REJECTED_OR_OVERRIDE_REQUIRED",
+    "actual_injected_behavior": "Submitted at day 65 without override",
+    "created_at": "2026-07-07T08:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000009",
+    "entity_name": "return_lines",
+    "entity_id": "RMAL-RMA-2026-000010-01",
+    "parent_entity_id": "ORDL-ORD-2026-012008-03",
+    "issue_type": "QTY_EXCEEDS_PURCHASED",
+    "expected_decision": "REJECT_QUANTITY_OVERFLOW",
+    "actual_injected_behavior": "Requested 3 units on line with purchase qty 1",
+    "created_at": "2026-04-21T22:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000010",
+    "entity_name": "inventory_dispositions",
+    "entity_id": "DISP-2026-000008",
+    "parent_entity_id": "INS-2026-000008",
+    "issue_type": "RESTOCK_BEFORE_INSPECTION",
+    "expected_decision": "BLOCK_PREMATURE_RESTOCK",
+    "actual_injected_behavior": "Restocked at 2026-04-26T08:00:00+00:00, before inspection 2026-04-27T18:00:00+00:00",
+    "created_at": "2026-04-26T08:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000011",
+    "entity_name": "refunds",
+    "entity_id": "REF-2026-000008",
+    "parent_entity_id": "RMA-2026-000011",
+    "issue_type": "DUPLICATE_REFUND_ATTEMPT",
+    "expected_decision": "BLOCK_DUPLICATE_REFUND",
+    "actual_injected_behavior": "Duplicate payout attempted for RMA RMA-2026-000011",
+    "created_at": "2026-05-27T22:05:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000012",
+    "entity_name": "return_requests",
+    "entity_id": "REQ-2026-000012",
+    "parent_entity_id": "ORD-2026-028718",
+    "issue_type": "RETURN_PAST_POLICY_WINDOW",
+    "expected_decision": "REJECTED_OR_OVERRIDE_REQUIRED",
+    "actual_injected_behavior": "Submitted at day 71 without override",
+    "created_at": "2026-06-05T08:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000013",
+    "entity_name": "return_lines",
+    "entity_id": "RMAL-RMA-2026-000013-01",
+    "parent_entity_id": "ORDL-ORD-2026-009777-02",
+    "issue_type": "QTY_EXCEEDS_PURCHASED",
+    "expected_decision": "REJECT_QUANTITY_OVERFLOW",
+    "actual_injected_behavior": "Requested 6 units on line with purchase qty 1",
+    "created_at": "2026-05-22T00:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000014",
+    "entity_name": "refunds",
+    "entity_id": "REF-2026-000012",
+    "parent_entity_id": "RMA-2026-000015",
+    "issue_type": "DUPLICATE_REFUND_ATTEMPT",
+    "expected_decision": "BLOCK_DUPLICATE_REFUND",
+    "actual_injected_behavior": "Duplicate payout attempted for RMA RMA-2026-000015",
+    "created_at": "2026-02-12T09:05:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000015",
+    "entity_name": "refunds",
+    "entity_id": "REF-2026-000014",
+    "parent_entity_id": "RMA-2026-000016",
+    "issue_type": "DUPLICATE_REFUND_ATTEMPT",
+    "expected_decision": "BLOCK_DUPLICATE_REFUND",
+    "actual_injected_behavior": "Duplicate payout attempted for RMA RMA-2026-000016",
+    "created_at": "2026-04-03T19:05:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000016",
+    "entity_name": "return_requests",
+    "entity_id": "REQ-2026-000017",
+    "parent_entity_id": "ORD-2026-032246",
+    "issue_type": "RETURN_PAST_POLICY_WINDOW",
+    "expected_decision": "REJECTED_OR_OVERRIDE_REQUIRED",
+    "actual_injected_behavior": "Submitted at day 86 without override",
+    "created_at": "2026-05-14T11:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000017",
+    "entity_name": "refunds",
+    "entity_id": "REF-2026-000016",
+    "parent_entity_id": "RMA-2026-000019",
+    "issue_type": "REFUND_EXCEEDS_PAID",
+    "expected_decision": "BLOCK_EXCESS_PAYOUT",
+    "actual_injected_behavior": "Refund calculated to exceed order total paid (151.19)",
+    "created_at": "2026-03-11T03:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000018",
+    "entity_name": "return_lines",
+    "entity_id": "RMAL-RMA-2026-000022-02",
+    "parent_entity_id": "ORDL-ORD-2026-017132-01",
+    "issue_type": "QTY_EXCEEDS_PURCHASED",
+    "expected_decision": "REJECT_QUANTITY_OVERFLOW",
+    "actual_injected_behavior": "Requested 5 units on line with purchase qty 1",
+    "created_at": "2026-03-20T23:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000019",
+    "entity_name": "inventory_dispositions",
+    "entity_id": "DISP-2026-000019",
+    "parent_entity_id": "INS-2026-000019",
+    "issue_type": "RESTOCK_BEFORE_INSPECTION",
+    "expected_decision": "BLOCK_PREMATURE_RESTOCK",
+    "actual_injected_behavior": "Restocked at 2026-03-15T14:00:00+00:00, before inspection 2026-03-16T21:00:00+00:00",
+    "created_at": "2026-03-15T14:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000020",
+    "entity_name": "return_requests",
+    "entity_id": "REQ-2026-000026",
+    "parent_entity_id": "ORD-2026-011796",
+    "issue_type": "RETURN_PAST_POLICY_WINDOW",
+    "expected_decision": "REJECTED_OR_OVERRIDE_REQUIRED",
+    "actual_injected_behavior": "Submitted at day 89 without override",
+    "created_at": "2026-07-30T12:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000021",
+    "entity_name": "refunds",
+    "entity_id": "REF-2026-000021",
+    "parent_entity_id": "RMA-2026-000028",
+    "issue_type": "DUPLICATE_REFUND_ATTEMPT",
+    "expected_decision": "BLOCK_DUPLICATE_REFUND",
+    "actual_injected_behavior": "Duplicate payout attempted for RMA RMA-2026-000028",
+    "created_at": "2026-04-25T17:05:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000022",
+    "entity_name": "return_lines",
+    "entity_id": "RMAL-RMA-2026-000033-01",
+    "parent_entity_id": "ORDL-ORD-2026-010869-02",
+    "issue_type": "QTY_EXCEEDS_PURCHASED",
+    "expected_decision": "REJECT_QUANTITY_OVERFLOW",
+    "actual_injected_behavior": "Requested 5 units on line with purchase qty 1",
+    "created_at": "2026-03-01T12:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000023",
+    "entity_name": "inventory_dispositions",
+    "entity_id": "DISP-2026-000029",
+    "parent_entity_id": "INS-2026-000029",
+    "issue_type": "RESTOCK_BEFORE_INSPECTION",
+    "expected_decision": "BLOCK_PREMATURE_RESTOCK",
+    "actual_injected_behavior": "Restocked at 2026-03-25T11:00:00+00:00, before inspection 2026-03-26T16:00:00+00:00",
+    "created_at": "2026-03-25T11:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000024",
+    "entity_name": "refunds",
+    "entity_id": "REF-2026-000027",
+    "parent_entity_id": "RMA-2026-000039",
+    "issue_type": "REFUND_EXCEEDS_PAID",
+    "expected_decision": "BLOCK_EXCESS_PAYOUT",
+    "actual_injected_behavior": "Refund calculated to exceed order total paid (261.62)",
+    "created_at": "2026-03-26T20:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000025",
+    "entity_name": "refunds",
+    "entity_id": "REF-2026-000029",
+    "parent_entity_id": "RMA-2026-000041",
+    "issue_type": "REFUND_EXCEEDS_PAID",
+    "expected_decision": "BLOCK_EXCESS_PAYOUT",
+    "actual_injected_behavior": "Refund calculated to exceed order total paid (350.02)",
+    "created_at": "2026-06-29T02:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000026",
+    "entity_name": "inventory_dispositions",
+    "entity_id": "DISP-2026-000033",
+    "parent_entity_id": "INS-2026-000033",
+    "issue_type": "RESTOCK_BEFORE_INSPECTION",
+    "expected_decision": "BLOCK_PREMATURE_RESTOCK",
+    "actual_injected_behavior": "Restocked at 2026-05-03T19:00:00+00:00, before inspection 2026-05-04T11:00:00+00:00",
+    "created_at": "2026-05-03T19:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000027",
+    "entity_name": "return_lines",
+    "entity_id": "RMAL-RMA-2026-000043-02",
+    "parent_entity_id": "ORDL-ORD-2026-022876-02",
+    "issue_type": "QTY_EXCEEDS_PURCHASED",
+    "expected_decision": "REJECT_QUANTITY_OVERFLOW",
+    "actual_injected_behavior": "Requested 5 units on line with purchase qty 2",
+    "created_at": "2026-03-05T09:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000028",
+    "entity_name": "return_lines",
+    "entity_id": "RMAL-RMA-2026-000044-01",
+    "parent_entity_id": "ORDL-ORD-2026-036490-01",
+    "issue_type": "QTY_EXCEEDS_PURCHASED",
+    "expected_decision": "REJECT_QUANTITY_OVERFLOW",
+    "actual_injected_behavior": "Requested 6 units on line with purchase qty 1",
+    "created_at": "2026-05-12T13:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000029",
+    "entity_name": "return_lines",
+    "entity_id": "RMAL-RMA-2026-000045-01",
+    "parent_entity_id": "ORDL-ORD-2026-034607-01",
+    "issue_type": "QTY_EXCEEDS_PURCHASED",
+    "expected_decision": "REJECT_QUANTITY_OVERFLOW",
+    "actual_injected_behavior": "Requested 6 units on line with purchase qty 1",
+    "created_at": "2026-03-20T22:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000030",
+    "entity_name": "return_requests",
+    "entity_id": "REQ-2026-000046",
+    "parent_entity_id": "ORD-2026-007571",
+    "issue_type": "RETURN_PAST_POLICY_WINDOW",
+    "expected_decision": "REJECTED_OR_OVERRIDE_REQUIRED",
+    "actual_injected_behavior": "Submitted at day 73 without override",
+    "created_at": "2026-06-01T04:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000031",
+    "entity_name": "return_lines",
+    "entity_id": "RMAL-RMA-2026-000047-02",
+    "parent_entity_id": "ORDL-ORD-2026-017956-01",
+    "issue_type": "QTY_EXCEEDS_PURCHASED",
+    "expected_decision": "REJECT_QUANTITY_OVERFLOW",
+    "actual_injected_behavior": "Requested 7 units on line with purchase qty 3",
+    "created_at": "2026-05-21T14:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000032",
+    "entity_name": "inventory_dispositions",
+    "entity_id": "DISP-2026-000035",
+    "parent_entity_id": "INS-2026-000035",
+    "issue_type": "RESTOCK_BEFORE_INSPECTION",
+    "expected_decision": "BLOCK_PREMATURE_RESTOCK",
+    "actual_injected_behavior": "Restocked at 2026-05-28T15:00:00+00:00, before inspection 2026-05-29T20:00:00+00:00",
+    "created_at": "2026-05-28T15:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000033",
+    "entity_name": "refunds",
+    "entity_id": "REF-2026-000032",
+    "parent_entity_id": "RMA-2026-000047",
+    "issue_type": "REFUND_EXCEEDS_PAID",
+    "expected_decision": "BLOCK_EXCESS_PAYOUT",
+    "actual_injected_behavior": "Refund calculated to exceed order total paid (560.52)",
+    "created_at": "2026-05-30T02:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000034",
+    "entity_name": "inventory_dispositions",
+    "entity_id": "DISP-2026-000038",
+    "parent_entity_id": "INS-2026-000038",
+    "issue_type": "RESTOCK_BEFORE_INSPECTION",
+    "expected_decision": "BLOCK_PREMATURE_RESTOCK",
+    "actual_injected_behavior": "Restocked at 2026-05-18T17:00:00+00:00, before inspection 2026-05-20T02:00:00+00:00",
+    "created_at": "2026-05-18T17:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000035",
+    "entity_name": "return_requests",
+    "entity_id": "REQ-2026-000050",
+    "parent_entity_id": "ORD-2026-034605",
+    "issue_type": "RETURN_PAST_POLICY_WINDOW",
+    "expected_decision": "REJECTED_OR_OVERRIDE_REQUIRED",
+    "actual_injected_behavior": "Submitted at day 91 without override",
+    "created_at": "2026-06-04T13:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000036",
+    "entity_name": "refunds",
+    "entity_id": "REF-2026-000035",
+    "parent_entity_id": "RMA-2026-000051",
+    "issue_type": "REFUND_EXCEEDS_PAID",
+    "expected_decision": "BLOCK_EXCESS_PAYOUT",
+    "actual_injected_behavior": "Refund calculated to exceed order total paid (288.36)",
+    "created_at": "2026-03-02T00:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000037",
+    "entity_name": "inventory_dispositions",
+    "entity_id": "DISP-2026-000042",
+    "parent_entity_id": "INS-2026-000042",
+    "issue_type": "RESTOCK_BEFORE_INSPECTION",
+    "expected_decision": "BLOCK_PREMATURE_RESTOCK",
+    "actual_injected_behavior": "Restocked at 2026-04-09T01:00:00+00:00, before inspection 2026-04-10T06:00:00+00:00",
+    "created_at": "2026-04-09T01:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000038",
+    "entity_name": "inventory_dispositions",
+    "entity_id": "DISP-2026-000043",
+    "parent_entity_id": "INS-2026-000043",
+    "issue_type": "RESTOCK_BEFORE_INSPECTION",
+    "expected_decision": "BLOCK_PREMATURE_RESTOCK",
+    "actual_injected_behavior": "Restocked at 2026-04-10T09:00:00+00:00, before inspection 2026-04-11T05:00:00+00:00",
+    "created_at": "2026-04-10T09:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000039",
+    "entity_name": "return_lines",
+    "entity_id": "RMAL-RMA-2026-000055-01",
+    "parent_entity_id": "ORDL-ORD-2026-018980-01",
+    "issue_type": "QTY_EXCEEDS_PURCHASED",
+    "expected_decision": "REJECT_QUANTITY_OVERFLOW",
+    "actual_injected_behavior": "Requested 5 units on line with purchase qty 1",
+    "created_at": "2026-04-25T22:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000040",
+    "entity_name": "refunds",
+    "entity_id": "REF-2026-000038",
+    "parent_entity_id": "RMA-2026-000055",
+    "issue_type": "REFUND_EXCEEDS_PAID",
+    "expected_decision": "BLOCK_EXCESS_PAYOUT",
+    "actual_injected_behavior": "Refund calculated to exceed order total paid (307.80)",
+    "created_at": "2026-05-03T17:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000041",
+    "entity_name": "return_lines",
+    "entity_id": "RMAL-RMA-2026-000059-01",
+    "parent_entity_id": "ORDL-ORD-2026-028381-01",
+    "issue_type": "QTY_EXCEEDS_PURCHASED",
+    "expected_decision": "REJECT_QUANTITY_OVERFLOW",
+    "actual_injected_behavior": "Requested 6 units on line with purchase qty 1",
+    "created_at": "2026-05-22T05:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000042",
+    "entity_name": "return_lines",
+    "entity_id": "RMAL-RMA-2026-000060-02",
+    "parent_entity_id": "ORDL-ORD-2026-025422-02",
+    "issue_type": "QTY_EXCEEDS_PURCHASED",
+    "expected_decision": "REJECT_QUANTITY_OVERFLOW",
+    "actual_injected_behavior": "Requested 4 units on line with purchase qty 1",
+    "created_at": "2026-02-03T18:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000043",
+    "entity_name": "return_lines",
+    "entity_id": "RMAL-RMA-2026-000061-02",
+    "parent_entity_id": "ORDL-ORD-2026-010819-01",
+    "issue_type": "QTY_EXCEEDS_PURCHASED",
+    "expected_decision": "REJECT_QUANTITY_OVERFLOW",
+    "actual_injected_behavior": "Requested 6 units on line with purchase qty 2",
+    "created_at": "2026-03-26T14:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000044",
+    "entity_name": "refunds",
+    "entity_id": "REF-2026-000045",
+    "parent_entity_id": "RMA-2026-000062",
+    "issue_type": "DUPLICATE_REFUND_ATTEMPT",
+    "expected_decision": "BLOCK_DUPLICATE_REFUND",
+    "actual_injected_behavior": "Duplicate payout attempted for RMA RMA-2026-000062",
+    "created_at": "2026-03-28T08:05:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000045",
+    "entity_name": "return_requests",
+    "entity_id": "REQ-2026-000063",
+    "parent_entity_id": "ORD-2026-021918",
+    "issue_type": "RETURN_PAST_POLICY_WINDOW",
+    "expected_decision": "REJECTED_OR_OVERRIDE_REQUIRED",
+    "actual_injected_behavior": "Submitted at day 74 without override",
+    "created_at": "2026-07-08T03:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000046",
+    "entity_name": "return_requests",
+    "entity_id": "REQ-2026-000065",
+    "parent_entity_id": "ORD-2026-031190",
+    "issue_type": "RETURN_PAST_POLICY_WINDOW",
+    "expected_decision": "REJECTED_OR_OVERRIDE_REQUIRED",
+    "actual_injected_behavior": "Submitted at day 73 without override",
+    "created_at": "2026-04-09T03:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000047",
+    "entity_name": "refunds",
+    "entity_id": "REF-2026-000047",
+    "parent_entity_id": "RMA-2026-000066",
+    "issue_type": "REFUND_EXCEEDS_PAID",
+    "expected_decision": "BLOCK_EXCESS_PAYOUT",
+    "actual_injected_behavior": "Refund calculated to exceed order total paid (110.15)",
+    "created_at": "2026-05-26T10:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000048",
+    "entity_name": "return_lines",
+    "entity_id": "RMAL-RMA-2026-000067-01",
+    "parent_entity_id": "ORDL-ORD-2026-016534-03",
+    "issue_type": "QTY_EXCEEDS_PURCHASED",
+    "expected_decision": "REJECT_QUANTITY_OVERFLOW",
+    "actual_injected_behavior": "Requested 6 units on line with purchase qty 1",
+    "created_at": "2026-03-28T21:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000049",
+    "entity_name": "refunds",
+    "entity_id": "REF-2026-000048",
+    "parent_entity_id": "RMA-2026-000067",
+    "issue_type": "REFUND_EXCEEDS_PAID",
+    "expected_decision": "BLOCK_EXCESS_PAYOUT",
+    "actual_injected_behavior": "Refund calculated to exceed order total paid (533.50)",
+    "created_at": "2026-04-06T16:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000050",
+    "entity_name": "refunds",
+    "entity_id": "REF-2026-000049",
+    "parent_entity_id": "RMA-2026-000069",
+    "issue_type": "REFUND_EXCEEDS_PAID",
+    "expected_decision": "BLOCK_EXCESS_PAYOUT",
+    "actual_injected_behavior": "Refund calculated to exceed order total paid (498.88)",
+    "created_at": "2026-03-02T14:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000051",
+    "entity_name": "inventory_dispositions",
+    "entity_id": "DISP-2026-000059",
+    "parent_entity_id": "INS-2026-000059",
+    "issue_type": "RESTOCK_BEFORE_INSPECTION",
+    "expected_decision": "BLOCK_PREMATURE_RESTOCK",
+    "actual_injected_behavior": "Restocked at 2026-04-13T10:00:00+00:00, before inspection 2026-04-14T02:00:00+00:00",
+    "created_at": "2026-04-13T10:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000052",
+    "entity_name": "inventory_dispositions",
+    "entity_id": "DISP-2026-000063",
+    "parent_entity_id": "INS-2026-000063",
+    "issue_type": "RESTOCK_BEFORE_INSPECTION",
+    "expected_decision": "BLOCK_PREMATURE_RESTOCK",
+    "actual_injected_behavior": "Restocked at 2026-07-09T22:00:00+00:00, before inspection 2026-07-11T09:00:00+00:00",
+    "created_at": "2026-07-09T22:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000053",
+    "entity_name": "return_requests",
+    "entity_id": "REQ-2026-000074",
+    "parent_entity_id": "ORD-2026-034210",
+    "issue_type": "RETURN_PAST_POLICY_WINDOW",
+    "expected_decision": "REJECTED_OR_OVERRIDE_REQUIRED",
+    "actual_injected_behavior": "Submitted at day 68 without override",
+    "created_at": "2026-06-02T13:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000054",
+    "entity_name": "inventory_dispositions",
+    "entity_id": "DISP-2026-000064",
+    "parent_entity_id": "INS-2026-000064",
+    "issue_type": "RESTOCK_BEFORE_INSPECTION",
+    "expected_decision": "BLOCK_PREMATURE_RESTOCK",
+    "actual_injected_behavior": "Restocked at 2026-03-11T06:00:00+00:00, before inspection 2026-03-12T13:00:00+00:00",
+    "created_at": "2026-03-11T06:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000055",
+    "entity_name": "refunds",
+    "entity_id": "REF-2026-000053",
+    "parent_entity_id": "RMA-2026-000075",
+    "issue_type": "REFUND_EXCEEDS_PAID",
+    "expected_decision": "BLOCK_EXCESS_PAYOUT",
+    "actual_injected_behavior": "Refund calculated to exceed order total paid (88.02)",
+    "created_at": "2026-03-12T15:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000056",
+    "entity_name": "refunds",
+    "entity_id": "REF-2026-000055",
+    "parent_entity_id": "RMA-2026-000076",
+    "issue_type": "DUPLICATE_REFUND_ATTEMPT",
+    "expected_decision": "BLOCK_DUPLICATE_REFUND",
+    "actual_injected_behavior": "Duplicate payout attempted for RMA RMA-2026-000076",
+    "created_at": "2026-03-24T05:05:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000057",
+    "entity_name": "refunds",
+    "entity_id": "REF-2026-000056",
+    "parent_entity_id": "RMA-2026-000077",
+    "issue_type": "REFUND_EXCEEDS_PAID",
+    "expected_decision": "BLOCK_EXCESS_PAYOUT",
+    "actual_injected_behavior": "Refund calculated to exceed order total paid (83.43)",
+    "created_at": "2026-05-08T18:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000058",
+    "entity_name": "return_lines",
+    "entity_id": "RMAL-RMA-2026-000078-02",
+    "parent_entity_id": "ORDL-ORD-2026-024668-02",
+    "issue_type": "QTY_EXCEEDS_PURCHASED",
+    "expected_decision": "REJECT_QUANTITY_OVERFLOW",
+    "actual_injected_behavior": "Requested 6 units on line with purchase qty 1",
+    "created_at": "2026-05-15T07:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000059",
+    "entity_name": "return_lines",
+    "entity_id": "RMAL-RMA-2026-000079-01",
+    "parent_entity_id": "ORDL-ORD-2026-024666-03",
+    "issue_type": "QTY_EXCEEDS_PURCHASED",
+    "expected_decision": "REJECT_QUANTITY_OVERFLOW",
+    "actual_injected_behavior": "Requested 3 units on line with purchase qty 1",
+    "created_at": "2026-02-22T11:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000060",
+    "entity_name": "return_lines",
+    "entity_id": "RMAL-RMA-2026-000081-01",
+    "parent_entity_id": "ORDL-ORD-2026-019978-01",
+    "issue_type": "QTY_EXCEEDS_PURCHASED",
+    "expected_decision": "REJECT_QUANTITY_OVERFLOW",
+    "actual_injected_behavior": "Requested 6 units on line with purchase qty 2",
+    "created_at": "2026-03-15T08:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000061",
+    "entity_name": "return_lines",
+    "entity_id": "RMAL-RMA-2026-000083-02",
+    "parent_entity_id": "ORDL-ORD-2026-009448-01",
+    "issue_type": "QTY_EXCEEDS_PURCHASED",
+    "expected_decision": "REJECT_QUANTITY_OVERFLOW",
+    "actual_injected_behavior": "Requested 4 units on line with purchase qty 2",
+    "created_at": "2026-03-09T17:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000062",
+    "entity_name": "return_requests",
+    "entity_id": "REQ-2026-000084",
+    "parent_entity_id": "ORD-2026-002458",
+    "issue_type": "RETURN_PAST_POLICY_WINDOW",
+    "expected_decision": "REJECTED_OR_OVERRIDE_REQUIRED",
+    "actual_injected_behavior": "Submitted at day 81 without override",
+    "created_at": "2026-06-21T13:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000063",
+    "entity_name": "inventory_dispositions",
+    "entity_id": "DISP-2026-000071",
+    "parent_entity_id": "INS-2026-000071",
+    "issue_type": "RESTOCK_BEFORE_INSPECTION",
+    "expected_decision": "BLOCK_PREMATURE_RESTOCK",
+    "actual_injected_behavior": "Restocked at 2026-06-11T16:00:00+00:00, before inspection 2026-06-12T05:00:00+00:00",
+    "created_at": "2026-06-11T16:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000064",
+    "entity_name": "inventory_dispositions",
+    "entity_id": "DISP-2026-000073",
+    "parent_entity_id": "INS-2026-000073",
+    "issue_type": "RESTOCK_BEFORE_INSPECTION",
+    "expected_decision": "BLOCK_PREMATURE_RESTOCK",
+    "actual_injected_behavior": "Restocked at 2026-06-05T19:00:00+00:00, before inspection 2026-06-06T17:00:00+00:00",
+    "created_at": "2026-06-05T19:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000065",
+    "entity_name": "refunds",
+    "entity_id": "REF-2026-000060",
+    "parent_entity_id": "RMA-2026-000086",
+    "issue_type": "REFUND_EXCEEDS_PAID",
+    "expected_decision": "BLOCK_EXCESS_PAYOUT",
+    "actual_injected_behavior": "Refund calculated to exceed order total paid (343.43)",
+    "created_at": "2026-06-06T19:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000066",
+    "entity_name": "return_lines",
+    "entity_id": "RMAL-RMA-2026-000087-02",
+    "parent_entity_id": "ORDL-ORD-2026-019426-01",
+    "issue_type": "QTY_EXCEEDS_PURCHASED",
+    "expected_decision": "REJECT_QUANTITY_OVERFLOW",
+    "actual_injected_behavior": "Requested 3 units on line with purchase qty 1",
+    "created_at": "2026-05-07T07:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000067",
+    "entity_name": "return_lines",
+    "entity_id": "RMAL-RMA-2026-000090-01",
+    "parent_entity_id": "ORDL-ORD-2026-034168-03",
+    "issue_type": "QTY_EXCEEDS_PURCHASED",
+    "expected_decision": "REJECT_QUANTITY_OVERFLOW",
+    "actual_injected_behavior": "Requested 5 units on line with purchase qty 1",
+    "created_at": "2026-05-08T04:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000068",
+    "entity_name": "refunds",
+    "entity_id": "REF-2026-000063",
+    "parent_entity_id": "RMA-2026-000090",
+    "issue_type": "REFUND_EXCEEDS_PAID",
+    "expected_decision": "BLOCK_EXCESS_PAYOUT",
+    "actual_injected_behavior": "Refund calculated to exceed order total paid (351.52)",
+    "created_at": "2026-05-15T08:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000069",
+    "entity_name": "refunds",
+    "entity_id": "REF-2026-000064",
+    "parent_entity_id": "RMA-2026-000090",
+    "issue_type": "DUPLICATE_REFUND_ATTEMPT",
+    "expected_decision": "BLOCK_DUPLICATE_REFUND",
+    "actual_injected_behavior": "Duplicate payout attempted for RMA RMA-2026-000090",
+    "created_at": "2026-05-15T08:05:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000070",
+    "entity_name": "return_requests",
+    "entity_id": "REQ-2026-000091",
+    "parent_entity_id": "ORD-2026-009662",
+    "issue_type": "RETURN_PAST_POLICY_WINDOW",
+    "expected_decision": "REJECTED_OR_OVERRIDE_REQUIRED",
+    "actual_injected_behavior": "Submitted at day 68 without override",
+    "created_at": "2026-07-16T18:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000071",
+    "entity_name": "return_requests",
+    "entity_id": "REQ-2026-000095",
+    "parent_entity_id": "ORD-2026-024310",
+    "issue_type": "RETURN_PAST_POLICY_WINDOW",
+    "expected_decision": "REJECTED_OR_OVERRIDE_REQUIRED",
+    "actual_injected_behavior": "Submitted at day 72 without override",
+    "created_at": "2026-07-03T21:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000072",
+    "entity_name": "inventory_dispositions",
+    "entity_id": "DISP-2026-000083",
+    "parent_entity_id": "INS-2026-000083",
+    "issue_type": "RESTOCK_BEFORE_INSPECTION",
+    "expected_decision": "BLOCK_PREMATURE_RESTOCK",
+    "actual_injected_behavior": "Restocked at 2026-01-31T10:00:00+00:00, before inspection 2026-01-31T23:00:00+00:00",
+    "created_at": "2026-01-31T10:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000073",
+    "entity_name": "refunds",
+    "entity_id": "REF-2026-000069",
+    "parent_entity_id": "RMA-2026-000097",
+    "issue_type": "REFUND_EXCEEDS_PAID",
+    "expected_decision": "BLOCK_EXCESS_PAYOUT",
+    "actual_injected_behavior": "Refund calculated to exceed order total paid (63.98)",
+    "created_at": "2026-02-01T03:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000074",
+    "entity_name": "refunds",
+    "entity_id": "REF-2026-000070",
+    "parent_entity_id": "RMA-2026-000097",
+    "issue_type": "DUPLICATE_REFUND_ATTEMPT",
+    "expected_decision": "BLOCK_DUPLICATE_REFUND",
+    "actual_injected_behavior": "Duplicate payout attempted for RMA RMA-2026-000097",
+    "created_at": "2026-02-01T03:05:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000075",
+    "entity_name": "return_lines",
+    "entity_id": "RMAL-RMA-2026-000099-01",
+    "parent_entity_id": "ORDL-ORD-2026-026818-04",
+    "issue_type": "QTY_EXCEEDS_PURCHASED",
+    "expected_decision": "REJECT_QUANTITY_OVERFLOW",
+    "actual_injected_behavior": "Requested 6 units on line with purchase qty 2",
+    "created_at": "2026-05-23T23:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000076",
+    "entity_name": "refunds",
+    "entity_id": "REF-2026-000073",
+    "parent_entity_id": "RMA-2026-000099",
+    "issue_type": "DUPLICATE_REFUND_ATTEMPT",
+    "expected_decision": "BLOCK_DUPLICATE_REFUND",
+    "actual_injected_behavior": "Duplicate payout attempted for RMA RMA-2026-000099",
+    "created_at": "2026-05-30T18:05:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000077",
+    "entity_name": "inventory_dispositions",
+    "entity_id": "DISP-2026-000087",
+    "parent_entity_id": "INS-2026-000087",
+    "issue_type": "RESTOCK_BEFORE_INSPECTION",
+    "expected_decision": "BLOCK_PREMATURE_RESTOCK",
+    "actual_injected_behavior": "Restocked at 2026-07-06T12:00:00+00:00, before inspection 2026-07-07T11:00:00+00:00",
+    "created_at": "2026-07-06T12:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000078",
+    "entity_name": "inventory_dispositions",
+    "entity_id": "DISP-2026-000089",
+    "parent_entity_id": "INS-2026-000089",
+    "issue_type": "RESTOCK_BEFORE_INSPECTION",
+    "expected_decision": "BLOCK_PREMATURE_RESTOCK",
+    "actual_injected_behavior": "Restocked at 2026-04-30T22:00:00+00:00, before inspection 2026-05-01T21:00:00+00:00",
+    "created_at": "2026-04-30T22:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000079",
+    "entity_name": "inventory_dispositions",
+    "entity_id": "DISP-2026-000090",
+    "parent_entity_id": "INS-2026-000090",
+    "issue_type": "RESTOCK_BEFORE_INSPECTION",
+    "expected_decision": "BLOCK_PREMATURE_RESTOCK",
+    "actual_injected_behavior": "Restocked at 2026-05-01T00:00:00+00:00, before inspection 2026-05-01T21:00:00+00:00",
+    "created_at": "2026-05-01T00:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000080",
+    "entity_name": "refunds",
+    "entity_id": "REF-2026-000075",
+    "parent_entity_id": "RMA-2026-000101",
+    "issue_type": "REFUND_EXCEEDS_PAID",
+    "expected_decision": "BLOCK_EXCESS_PAYOUT",
+    "actual_injected_behavior": "Refund calculated to exceed order total paid (667.75)",
+    "created_at": "2026-05-02T02:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000081",
+    "entity_name": "refunds",
+    "entity_id": "REF-2026-000076",
+    "parent_entity_id": "RMA-2026-000101",
+    "issue_type": "DUPLICATE_REFUND_ATTEMPT",
+    "expected_decision": "BLOCK_DUPLICATE_REFUND",
+    "actual_injected_behavior": "Duplicate payout attempted for RMA RMA-2026-000101",
+    "created_at": "2026-05-02T02:05:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000082",
+    "entity_name": "refunds",
+    "entity_id": "REF-2026-000078",
+    "parent_entity_id": "RMA-2026-000102",
+    "issue_type": "DUPLICATE_REFUND_ATTEMPT",
+    "expected_decision": "BLOCK_DUPLICATE_REFUND",
+    "actual_injected_behavior": "Duplicate payout attempted for RMA RMA-2026-000102",
+    "created_at": "2026-05-13T15:05:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000083",
+    "entity_name": "return_requests",
+    "entity_id": "REQ-2026-000103",
+    "parent_entity_id": "ORD-2026-033002",
+    "issue_type": "RETURN_PAST_POLICY_WINDOW",
+    "expected_decision": "REJECTED_OR_OVERRIDE_REQUIRED",
+    "actual_injected_behavior": "Submitted at day 73 without override",
+    "created_at": "2026-06-08T03:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000084",
+    "entity_name": "inventory_dispositions",
+    "entity_id": "DISP-2026-000093",
+    "parent_entity_id": "INS-2026-000093",
+    "issue_type": "RESTOCK_BEFORE_INSPECTION",
+    "expected_decision": "BLOCK_PREMATURE_RESTOCK",
+    "actual_injected_behavior": "Restocked at 2026-06-21T22:00:00+00:00, before inspection 2026-06-22T15:00:00+00:00",
+    "created_at": "2026-06-21T22:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000085",
+    "entity_name": "return_lines",
+    "entity_id": "RMAL-RMA-2026-000105-02",
+    "parent_entity_id": "ORDL-ORD-2026-034412-01",
+    "issue_type": "QTY_EXCEEDS_PURCHASED",
+    "expected_decision": "REJECT_QUANTITY_OVERFLOW",
+    "actual_injected_behavior": "Requested 6 units on line with purchase qty 2",
+    "created_at": "2026-02-26T13:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000086",
+    "entity_name": "return_requests",
+    "entity_id": "REQ-2026-000106",
+    "parent_entity_id": "ORD-2026-028304",
+    "issue_type": "RETURN_PAST_POLICY_WINDOW",
+    "expected_decision": "REJECTED_OR_OVERRIDE_REQUIRED",
+    "actual_injected_behavior": "Submitted at day 67 without override",
+    "created_at": "2026-06-19T08:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000087",
+    "entity_name": "refunds",
+    "entity_id": "REF-2026-000080",
+    "parent_entity_id": "RMA-2026-000107",
+    "issue_type": "REFUND_EXCEEDS_PAID",
+    "expected_decision": "BLOCK_EXCESS_PAYOUT",
+    "actual_injected_behavior": "Refund calculated to exceed order total paid (66.42)",
+    "created_at": "2026-03-17T13:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000088",
+    "entity_name": "refunds",
+    "entity_id": "REF-2026-000081",
+    "parent_entity_id": "RMA-2026-000110",
+    "issue_type": "REFUND_EXCEEDS_PAID",
+    "expected_decision": "BLOCK_EXCESS_PAYOUT",
+    "actual_injected_behavior": "Refund calculated to exceed order total paid (192.24)",
+    "created_at": "2026-03-17T07:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000089",
+    "entity_name": "refunds",
+    "entity_id": "REF-2026-000082",
+    "parent_entity_id": "RMA-2026-000110",
+    "issue_type": "DUPLICATE_REFUND_ATTEMPT",
+    "expected_decision": "BLOCK_DUPLICATE_REFUND",
+    "actual_injected_behavior": "Duplicate payout attempted for RMA RMA-2026-000110",
+    "created_at": "2026-03-17T07:05:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000090",
+    "entity_name": "refunds",
+    "entity_id": "REF-2026-000083",
+    "parent_entity_id": "RMA-2026-000111",
+    "issue_type": "REFUND_EXCEEDS_PAID",
+    "expected_decision": "BLOCK_EXCESS_PAYOUT",
+    "actual_injected_behavior": "Refund calculated to exceed order total paid (145.31)",
+    "created_at": "2026-06-24T13:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000091",
+    "entity_name": "return_requests",
+    "entity_id": "REQ-2026-000112",
+    "parent_entity_id": "ORD-2026-012641",
+    "issue_type": "RETURN_PAST_POLICY_WINDOW",
+    "expected_decision": "REJECTED_OR_OVERRIDE_REQUIRED",
+    "actual_injected_behavior": "Submitted at day 86 without override",
+    "created_at": "2026-06-09T02:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000092",
+    "entity_name": "return_lines",
+    "entity_id": "RMAL-RMA-2026-000112-01",
+    "parent_entity_id": "ORDL-ORD-2026-012641-02",
+    "issue_type": "QTY_EXCEEDS_PURCHASED",
+    "expected_decision": "REJECT_QUANTITY_OVERFLOW",
+    "actual_injected_behavior": "Requested 3 units on line with purchase qty 1",
+    "created_at": "2026-06-09T02:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000093",
+    "entity_name": "return_lines",
+    "entity_id": "RMAL-RMA-2026-000112-02",
+    "parent_entity_id": "ORDL-ORD-2026-012641-01",
+    "issue_type": "QTY_EXCEEDS_PURCHASED",
+    "expected_decision": "REJECT_QUANTITY_OVERFLOW",
+    "actual_injected_behavior": "Requested 6 units on line with purchase qty 2",
+    "created_at": "2026-06-09T02:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000094",
+    "entity_name": "inventory_dispositions",
+    "entity_id": "DISP-2026-000097",
+    "parent_entity_id": "INS-2026-000097",
+    "issue_type": "RESTOCK_BEFORE_INSPECTION",
+    "expected_decision": "BLOCK_PREMATURE_RESTOCK",
+    "actual_injected_behavior": "Restocked at 2026-07-02T00:00:00+00:00, before inspection 2026-07-03T06:00:00+00:00",
+    "created_at": "2026-07-02T00:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000095",
+    "entity_name": "refunds",
+    "entity_id": "REF-2026-000086",
+    "parent_entity_id": "RMA-2026-000114",
+    "issue_type": "DUPLICATE_REFUND_ATTEMPT",
+    "expected_decision": "BLOCK_DUPLICATE_REFUND",
+    "actual_injected_behavior": "Duplicate payout attempted for RMA RMA-2026-000114",
+    "created_at": "2026-03-10T06:05:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000096",
+    "entity_name": "refunds",
+    "entity_id": "REF-2026-000089",
+    "parent_entity_id": "RMA-2026-000116",
+    "issue_type": "DUPLICATE_REFUND_ATTEMPT",
+    "expected_decision": "BLOCK_DUPLICATE_REFUND",
+    "actual_injected_behavior": "Duplicate payout attempted for RMA RMA-2026-000116",
+    "created_at": "2026-05-28T00:05:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000097",
+    "entity_name": "refunds",
+    "entity_id": "REF-2026-000090",
+    "parent_entity_id": "RMA-2026-000117",
+    "issue_type": "REFUND_EXCEEDS_PAID",
+    "expected_decision": "BLOCK_EXCESS_PAYOUT",
+    "actual_injected_behavior": "Refund calculated to exceed order total paid (329.39)",
+    "created_at": "2026-04-11T07:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000098",
+    "entity_name": "return_lines",
+    "entity_id": "RMAL-RMA-2026-000120-02",
+    "parent_entity_id": "ORDL-ORD-2026-010789-01",
+    "issue_type": "QTY_EXCEEDS_PURCHASED",
+    "expected_decision": "REJECT_QUANTITY_OVERFLOW",
+    "actual_injected_behavior": "Requested 6 units on line with purchase qty 2",
+    "created_at": "2026-06-20T15:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000099",
+    "entity_name": "return_lines",
+    "entity_id": "RMAL-RMA-2026-000121-01",
+    "parent_entity_id": "ORDL-ORD-2026-012547-01",
+    "issue_type": "QTY_EXCEEDS_PURCHASED",
+    "expected_decision": "REJECT_QUANTITY_OVERFLOW",
+    "actual_injected_behavior": "Requested 6 units on line with purchase qty 1",
+    "created_at": "2026-03-24T01:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000100",
+    "entity_name": "inventory_dispositions",
+    "entity_id": "DISP-2026-000110",
+    "parent_entity_id": "INS-2026-000110",
+    "issue_type": "RESTOCK_BEFORE_INSPECTION",
+    "expected_decision": "BLOCK_PREMATURE_RESTOCK",
+    "actual_injected_behavior": "Restocked at 2026-03-30T06:00:00+00:00, before inspection 2026-03-31T05:00:00+00:00",
+    "created_at": "2026-03-30T06:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000101",
+    "entity_name": "inventory_dispositions",
+    "entity_id": "DISP-2026-000112",
+    "parent_entity_id": "INS-2026-000112",
+    "issue_type": "RESTOCK_BEFORE_INSPECTION",
+    "expected_decision": "BLOCK_PREMATURE_RESTOCK",
+    "actual_injected_behavior": "Restocked at 2026-02-19T11:00:00+00:00, before inspection 2026-02-20T19:00:00+00:00",
+    "created_at": "2026-02-19T11:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000102",
+    "entity_name": "return_requests",
+    "entity_id": "REQ-2026-000123",
+    "parent_entity_id": "ORD-2026-025550",
+    "issue_type": "RETURN_PAST_POLICY_WINDOW",
+    "expected_decision": "REJECTED_OR_OVERRIDE_REQUIRED",
+    "actual_injected_behavior": "Submitted at day 74 without override",
+    "created_at": "2026-05-19T18:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000103",
+    "entity_name": "refunds",
+    "entity_id": "REF-2026-000097",
+    "parent_entity_id": "RMA-2026-000124",
+    "issue_type": "DUPLICATE_REFUND_ATTEMPT",
+    "expected_decision": "BLOCK_DUPLICATE_REFUND",
+    "actual_injected_behavior": "Duplicate payout attempted for RMA RMA-2026-000124",
+    "created_at": "2026-03-27T09:05:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000104",
+    "entity_name": "return_requests",
+    "entity_id": "REQ-2026-000125",
+    "parent_entity_id": "ORD-2026-020029",
+    "issue_type": "RETURN_PAST_POLICY_WINDOW",
+    "expected_decision": "REJECTED_OR_OVERRIDE_REQUIRED",
+    "actual_injected_behavior": "Submitted at day 90 without override",
+    "created_at": "2026-07-15T12:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000105",
+    "entity_name": "return_lines",
+    "entity_id": "RMAL-RMA-2026-000127-01",
+    "parent_entity_id": "ORDL-ORD-2026-014977-02",
+    "issue_type": "QTY_EXCEEDS_PURCHASED",
+    "expected_decision": "REJECT_QUANTITY_OVERFLOW",
+    "actual_injected_behavior": "Requested 6 units on line with purchase qty 1",
+    "created_at": "2026-03-30T13:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000106",
+    "entity_name": "return_lines",
+    "entity_id": "RMAL-RMA-2026-000128-01",
+    "parent_entity_id": "ORDL-ORD-2026-017573-01",
+    "issue_type": "QTY_EXCEEDS_PURCHASED",
+    "expected_decision": "REJECT_QUANTITY_OVERFLOW",
+    "actual_injected_behavior": "Requested 7 units on line with purchase qty 3",
+    "created_at": "2026-05-27T12:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000107",
+    "entity_name": "return_lines",
+    "entity_id": "RMAL-RMA-2026-000128-02",
+    "parent_entity_id": "ORDL-ORD-2026-017573-02",
+    "issue_type": "QTY_EXCEEDS_PURCHASED",
+    "expected_decision": "REJECT_QUANTITY_OVERFLOW",
+    "actual_injected_behavior": "Requested 4 units on line with purchase qty 2",
+    "created_at": "2026-05-27T12:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000108",
+    "entity_name": "inventory_dispositions",
+    "entity_id": "DISP-2026-000118",
+    "parent_entity_id": "INS-2026-000118",
+    "issue_type": "RESTOCK_BEFORE_INSPECTION",
+    "expected_decision": "BLOCK_PREMATURE_RESTOCK",
+    "actual_injected_behavior": "Restocked at 2026-06-16T22:00:00+00:00, before inspection 2026-06-17T19:00:00+00:00",
+    "created_at": "2026-06-16T22:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000109",
+    "entity_name": "return_lines",
+    "entity_id": "RMAL-RMA-2026-000131-01",
+    "parent_entity_id": "ORDL-ORD-2026-005345-02",
+    "issue_type": "QTY_EXCEEDS_PURCHASED",
+    "expected_decision": "REJECT_QUANTITY_OVERFLOW",
+    "actual_injected_behavior": "Requested 5 units on line with purchase qty 2",
+    "created_at": "2026-04-23T06:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000110",
+    "entity_name": "refunds",
+    "entity_id": "REF-2026-000103",
+    "parent_entity_id": "RMA-2026-000131",
+    "issue_type": "DUPLICATE_REFUND_ATTEMPT",
+    "expected_decision": "BLOCK_DUPLICATE_REFUND",
+    "actual_injected_behavior": "Duplicate payout attempted for RMA RMA-2026-000131",
+    "created_at": "2026-04-30T01:05:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000111",
+    "entity_name": "refunds",
+    "entity_id": "REF-2026-000105",
+    "parent_entity_id": "RMA-2026-000132",
+    "issue_type": "DUPLICATE_REFUND_ATTEMPT",
+    "expected_decision": "BLOCK_DUPLICATE_REFUND",
+    "actual_injected_behavior": "Duplicate payout attempted for RMA RMA-2026-000132",
+    "created_at": "2026-06-29T20:05:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000112",
+    "entity_name": "return_lines",
+    "entity_id": "RMAL-RMA-2026-000133-01",
+    "parent_entity_id": "ORDL-ORD-2026-035105-01",
+    "issue_type": "QTY_EXCEEDS_PURCHASED",
+    "expected_decision": "REJECT_QUANTITY_OVERFLOW",
+    "actual_injected_behavior": "Requested 3 units on line with purchase qty 1",
+    "created_at": "2026-04-13T23:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000113",
+    "entity_name": "refunds",
+    "entity_id": "REF-2026-000107",
+    "parent_entity_id": "RMA-2026-000134",
+    "issue_type": "DUPLICATE_REFUND_ATTEMPT",
+    "expected_decision": "BLOCK_DUPLICATE_REFUND",
+    "actual_injected_behavior": "Duplicate payout attempted for RMA RMA-2026-000134",
+    "created_at": "2026-03-26T15:05:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000114",
+    "entity_name": "return_requests",
+    "entity_id": "REQ-2026-000136",
+    "parent_entity_id": "ORD-2026-030790",
+    "issue_type": "RETURN_PAST_POLICY_WINDOW",
+    "expected_decision": "REJECTED_OR_OVERRIDE_REQUIRED",
+    "actual_injected_behavior": "Submitted at day 68 without override",
+    "created_at": "2026-05-18T19:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000115",
+    "entity_name": "return_requests",
+    "entity_id": "REQ-2026-000137",
+    "parent_entity_id": "ORD-2026-016533",
+    "issue_type": "RETURN_PAST_POLICY_WINDOW",
+    "expected_decision": "REJECTED_OR_OVERRIDE_REQUIRED",
+    "actual_injected_behavior": "Submitted at day 82 without override",
+    "created_at": "2026-08-20T02:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000116",
+    "entity_name": "return_lines",
+    "entity_id": "RMAL-RMA-2026-000137-02",
+    "parent_entity_id": "ORDL-ORD-2026-016533-01",
+    "issue_type": "QTY_EXCEEDS_PURCHASED",
+    "expected_decision": "REJECT_QUANTITY_OVERFLOW",
+    "actual_injected_behavior": "Requested 5 units on line with purchase qty 1",
+    "created_at": "2026-08-20T02:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000117",
+    "entity_name": "refunds",
+    "entity_id": "REF-2026-000109",
+    "parent_entity_id": "RMA-2026-000139",
+    "issue_type": "REFUND_EXCEEDS_PAID",
+    "expected_decision": "BLOCK_EXCESS_PAYOUT",
+    "actual_injected_behavior": "Refund calculated to exceed order total paid (760.30)",
+    "created_at": "2026-04-02T02:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000118",
+    "entity_name": "refunds",
+    "entity_id": "REF-2026-000110",
+    "parent_entity_id": "RMA-2026-000140",
+    "issue_type": "REFUND_EXCEEDS_PAID",
+    "expected_decision": "BLOCK_EXCESS_PAYOUT",
+    "actual_injected_behavior": "Refund calculated to exceed order total paid (740.88)",
+    "created_at": "2026-05-04T14:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000119",
+    "entity_name": "return_lines",
+    "entity_id": "RMAL-RMA-2026-000142-01",
+    "parent_entity_id": "ORDL-ORD-2026-027347-02",
+    "issue_type": "QTY_EXCEEDS_PURCHASED",
+    "expected_decision": "REJECT_QUANTITY_OVERFLOW",
+    "actual_injected_behavior": "Requested 6 units on line with purchase qty 3",
+    "created_at": "2026-03-05T21:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000120",
+    "entity_name": "inventory_dispositions",
+    "entity_id": "DISP-2026-000133",
+    "parent_entity_id": "INS-2026-000133",
+    "issue_type": "RESTOCK_BEFORE_INSPECTION",
+    "expected_decision": "BLOCK_PREMATURE_RESTOCK",
+    "actual_injected_behavior": "Restocked at 2026-04-06T04:00:00+00:00, before inspection 2026-04-07T10:00:00+00:00",
+    "created_at": "2026-04-06T04:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000121",
+    "entity_name": "inventory_dispositions",
+    "entity_id": "DISP-2026-000134",
+    "parent_entity_id": "INS-2026-000134",
+    "issue_type": "RESTOCK_BEFORE_INSPECTION",
+    "expected_decision": "BLOCK_PREMATURE_RESTOCK",
+    "actual_injected_behavior": "Restocked at 2026-04-06T15:00:00+00:00, before inspection 2026-04-07T10:00:00+00:00",
+    "created_at": "2026-04-06T15:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000122",
+    "entity_name": "return_lines",
+    "entity_id": "RMAL-RMA-2026-000148-02",
+    "parent_entity_id": "ORDL-ORD-2026-032009-02",
+    "issue_type": "QTY_EXCEEDS_PURCHASED",
+    "expected_decision": "REJECT_QUANTITY_OVERFLOW",
+    "actual_injected_behavior": "Requested 6 units on line with purchase qty 1",
+    "created_at": "2026-04-28T02:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000123",
+    "entity_name": "inventory_dispositions",
+    "entity_id": "DISP-2026-000135",
+    "parent_entity_id": "INS-2026-000135",
+    "issue_type": "RESTOCK_BEFORE_INSPECTION",
+    "expected_decision": "BLOCK_PREMATURE_RESTOCK",
+    "actual_injected_behavior": "Restocked at 2026-05-03T20:00:00+00:00, before inspection 2026-05-05T04:00:00+00:00",
+    "created_at": "2026-05-03T20:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000124",
+    "entity_name": "refunds",
+    "entity_id": "REF-2026-000117",
+    "parent_entity_id": "RMA-2026-000148",
+    "issue_type": "DUPLICATE_REFUND_ATTEMPT",
+    "expected_decision": "BLOCK_DUPLICATE_REFUND",
+    "actual_injected_behavior": "Duplicate payout attempted for RMA RMA-2026-000148",
+    "created_at": "2026-05-05T05:05:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000125",
+    "entity_name": "inventory_dispositions",
+    "entity_id": "DISP-2026-000137",
+    "parent_entity_id": "INS-2026-000137",
+    "issue_type": "RESTOCK_BEFORE_INSPECTION",
+    "expected_decision": "BLOCK_PREMATURE_RESTOCK",
+    "actual_injected_behavior": "Restocked at 2026-02-28T00:00:00+00:00, before inspection 2026-03-01T06:00:00+00:00",
+    "created_at": "2026-02-28T00:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000126",
+    "entity_name": "inventory_dispositions",
+    "entity_id": "DISP-2026-000139",
+    "parent_entity_id": "INS-2026-000139",
+    "issue_type": "RESTOCK_BEFORE_INSPECTION",
+    "expected_decision": "BLOCK_PREMATURE_RESTOCK",
+    "actual_injected_behavior": "Restocked at 2026-03-26T04:00:00+00:00, before inspection 2026-03-26T21:00:00+00:00",
+    "created_at": "2026-03-26T04:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000127",
+    "entity_name": "inventory_dispositions",
+    "entity_id": "DISP-2026-000140",
+    "parent_entity_id": "INS-2026-000140",
+    "issue_type": "RESTOCK_BEFORE_INSPECTION",
+    "expected_decision": "BLOCK_PREMATURE_RESTOCK",
+    "actual_injected_behavior": "Restocked at 2026-04-02T03:00:00+00:00, before inspection 2026-04-03T12:00:00+00:00",
+    "created_at": "2026-04-02T03:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000128",
+    "entity_name": "refunds",
+    "entity_id": "REF-2026-000121",
+    "parent_entity_id": "RMA-2026-000152",
+    "issue_type": "DUPLICATE_REFUND_ATTEMPT",
+    "expected_decision": "BLOCK_DUPLICATE_REFUND",
+    "actual_injected_behavior": "Duplicate payout attempted for RMA RMA-2026-000152",
+    "created_at": "2026-04-03T13:05:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000129",
+    "entity_name": "inventory_dispositions",
+    "entity_id": "DISP-2026-000142",
+    "parent_entity_id": "INS-2026-000142",
+    "issue_type": "RESTOCK_BEFORE_INSPECTION",
+    "expected_decision": "BLOCK_PREMATURE_RESTOCK",
+    "actual_injected_behavior": "Restocked at 2026-02-05T12:00:00+00:00, before inspection 2026-02-06T17:00:00+00:00",
+    "created_at": "2026-02-05T12:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000130",
+    "entity_name": "refunds",
+    "entity_id": "REF-2026-000123",
+    "parent_entity_id": "RMA-2026-000153",
+    "issue_type": "DUPLICATE_REFUND_ATTEMPT",
+    "expected_decision": "BLOCK_DUPLICATE_REFUND",
+    "actual_injected_behavior": "Duplicate payout attempted for RMA RMA-2026-000153",
+    "created_at": "2026-02-06T22:05:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000131",
+    "entity_name": "inventory_dispositions",
+    "entity_id": "DISP-2026-000145",
+    "parent_entity_id": "INS-2026-000145",
+    "issue_type": "RESTOCK_BEFORE_INSPECTION",
+    "expected_decision": "BLOCK_PREMATURE_RESTOCK",
+    "actual_injected_behavior": "Restocked at 2026-06-14T21:00:00+00:00, before inspection 2026-06-16T05:00:00+00:00",
+    "created_at": "2026-06-14T21:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000132",
+    "entity_name": "return_requests",
+    "entity_id": "REQ-2026-000158",
+    "parent_entity_id": "ORD-2026-028696",
+    "issue_type": "RETURN_PAST_POLICY_WINDOW",
+    "expected_decision": "REJECTED_OR_OVERRIDE_REQUIRED",
+    "actual_injected_behavior": "Submitted at day 92 without override",
+    "created_at": "2026-06-08T22:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000133",
+    "entity_name": "return_lines",
+    "entity_id": "RMAL-RMA-2026-000158-01",
+    "parent_entity_id": "ORDL-ORD-2026-028696-01",
+    "issue_type": "QTY_EXCEEDS_PURCHASED",
+    "expected_decision": "REJECT_QUANTITY_OVERFLOW",
+    "actual_injected_behavior": "Requested 6 units on line with purchase qty 1",
+    "created_at": "2026-06-08T22:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000134",
+    "entity_name": "return_lines",
+    "entity_id": "RMAL-RMA-2026-000161-01",
+    "parent_entity_id": "ORDL-ORD-2026-013809-01",
+    "issue_type": "QTY_EXCEEDS_PURCHASED",
+    "expected_decision": "REJECT_QUANTITY_OVERFLOW",
+    "actual_injected_behavior": "Requested 6 units on line with purchase qty 2",
+    "created_at": "2026-06-25T16:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000135",
+    "entity_name": "return_requests",
+    "entity_id": "REQ-2026-000163",
+    "parent_entity_id": "ORD-2026-027041",
+    "issue_type": "RETURN_PAST_POLICY_WINDOW",
+    "expected_decision": "REJECTED_OR_OVERRIDE_REQUIRED",
+    "actual_injected_behavior": "Submitted at day 74 without override",
+    "created_at": "2026-08-29T02:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000136",
+    "entity_name": "return_requests",
+    "entity_id": "REQ-2026-000166",
+    "parent_entity_id": "ORD-2026-014391",
+    "issue_type": "RETURN_PAST_POLICY_WINDOW",
+    "expected_decision": "REJECTED_OR_OVERRIDE_REQUIRED",
+    "actual_injected_behavior": "Submitted at day 95 without override",
+    "created_at": "2026-07-08T19:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000137",
+    "entity_name": "return_lines",
+    "entity_id": "RMAL-RMA-2026-000166-02",
+    "parent_entity_id": "ORDL-ORD-2026-014391-01",
+    "issue_type": "QTY_EXCEEDS_PURCHASED",
+    "expected_decision": "REJECT_QUANTITY_OVERFLOW",
+    "actual_injected_behavior": "Requested 5 units on line with purchase qty 1",
+    "created_at": "2026-07-08T19:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000138",
+    "entity_name": "return_requests",
+    "entity_id": "REQ-2026-000167",
+    "parent_entity_id": "ORD-2026-018592",
+    "issue_type": "RETURN_PAST_POLICY_WINDOW",
+    "expected_decision": "REJECTED_OR_OVERRIDE_REQUIRED",
+    "actual_injected_behavior": "Submitted at day 75 without override",
+    "created_at": "2026-08-12T21:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000139",
+    "entity_name": "return_lines",
+    "entity_id": "RMAL-RMA-2026-000167-02",
+    "parent_entity_id": "ORDL-ORD-2026-018592-03",
+    "issue_type": "QTY_EXCEEDS_PURCHASED",
+    "expected_decision": "REJECT_QUANTITY_OVERFLOW",
+    "actual_injected_behavior": "Requested 6 units on line with purchase qty 1",
+    "created_at": "2026-08-12T21:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000140",
+    "entity_name": "return_lines",
+    "entity_id": "RMAL-RMA-2026-000169-01",
+    "parent_entity_id": "ORDL-ORD-2026-004553-01",
+    "issue_type": "QTY_EXCEEDS_PURCHASED",
+    "expected_decision": "REJECT_QUANTITY_OVERFLOW",
+    "actual_injected_behavior": "Requested 3 units on line with purchase qty 1",
+    "created_at": "2026-05-23T10:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000141",
+    "entity_name": "inventory_dispositions",
+    "entity_id": "DISP-2026-000157",
+    "parent_entity_id": "INS-2026-000157",
+    "issue_type": "RESTOCK_BEFORE_INSPECTION",
+    "expected_decision": "BLOCK_PREMATURE_RESTOCK",
+    "actual_injected_behavior": "Restocked at 2026-06-21T20:00:00+00:00, before inspection 2026-06-23T00:00:00+00:00",
+    "created_at": "2026-06-21T20:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000142",
+    "entity_name": "refunds",
+    "entity_id": "REF-2026-000134",
+    "parent_entity_id": "RMA-2026-000171",
+    "issue_type": "DUPLICATE_REFUND_ATTEMPT",
+    "expected_decision": "BLOCK_DUPLICATE_REFUND",
+    "actual_injected_behavior": "Duplicate payout attempted for RMA RMA-2026-000171",
+    "created_at": "2026-04-18T10:05:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000143",
+    "entity_name": "refunds",
+    "entity_id": "REF-2026-000135",
+    "parent_entity_id": "RMA-2026-000172",
+    "issue_type": "REFUND_EXCEEDS_PAID",
+    "expected_decision": "BLOCK_EXCESS_PAYOUT",
+    "actual_injected_behavior": "Refund calculated to exceed order total paid (842.38)",
+    "created_at": "2026-02-09T23:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000144",
+    "entity_name": "return_requests",
+    "entity_id": "REQ-2026-000173",
+    "parent_entity_id": "ORD-2026-031573",
+    "issue_type": "RETURN_PAST_POLICY_WINDOW",
+    "expected_decision": "REJECTED_OR_OVERRIDE_REQUIRED",
+    "actual_injected_behavior": "Submitted at day 89 without override",
+    "created_at": "2026-09-22T16:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000145",
+    "entity_name": "return_requests",
+    "entity_id": "REQ-2026-000174",
+    "parent_entity_id": "ORD-2026-025050",
+    "issue_type": "RETURN_PAST_POLICY_WINDOW",
+    "expected_decision": "REJECTED_OR_OVERRIDE_REQUIRED",
+    "actual_injected_behavior": "Submitted at day 73 without override",
+    "created_at": "2026-05-10T05:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000146",
+    "entity_name": "return_lines",
+    "entity_id": "RMAL-RMA-2026-000174-02",
+    "parent_entity_id": "ORDL-ORD-2026-025050-01",
+    "issue_type": "QTY_EXCEEDS_PURCHASED",
+    "expected_decision": "REJECT_QUANTITY_OVERFLOW",
+    "actual_injected_behavior": "Requested 5 units on line with purchase qty 1",
+    "created_at": "2026-05-10T05:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000147",
+    "entity_name": "inventory_dispositions",
+    "entity_id": "DISP-2026-000161",
+    "parent_entity_id": "INS-2026-000161",
+    "issue_type": "RESTOCK_BEFORE_INSPECTION",
+    "expected_decision": "BLOCK_PREMATURE_RESTOCK",
+    "actual_injected_behavior": "Restocked at 2026-02-08T12:00:00+00:00, before inspection 2026-02-09T17:00:00+00:00",
+    "created_at": "2026-02-08T12:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000148",
+    "entity_name": "inventory_dispositions",
+    "entity_id": "DISP-2026-000162",
+    "parent_entity_id": "INS-2026-000162",
+    "issue_type": "RESTOCK_BEFORE_INSPECTION",
+    "expected_decision": "BLOCK_PREMATURE_RESTOCK",
+    "actual_injected_behavior": "Restocked at 2026-04-28T21:00:00+00:00, before inspection 2026-04-29T17:00:00+00:00",
+    "created_at": "2026-04-28T21:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000149",
+    "entity_name": "refunds",
+    "entity_id": "REF-2026-000138",
+    "parent_entity_id": "RMA-2026-000176",
+    "issue_type": "DUPLICATE_REFUND_ATTEMPT",
+    "expected_decision": "BLOCK_DUPLICATE_REFUND",
+    "actual_injected_behavior": "Duplicate payout attempted for RMA RMA-2026-000176",
+    "created_at": "2026-04-29T19:05:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000150",
+    "entity_name": "return_lines",
+    "entity_id": "RMAL-RMA-2026-000179-01",
+    "parent_entity_id": "ORDL-ORD-2026-027603-03",
+    "issue_type": "QTY_EXCEEDS_PURCHASED",
+    "expected_decision": "REJECT_QUANTITY_OVERFLOW",
+    "actual_injected_behavior": "Requested 4 units on line with purchase qty 1",
+    "created_at": "2026-04-14T20:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000151",
+    "entity_name": "return_lines",
+    "entity_id": "RMAL-RMA-2026-000179-02",
+    "parent_entity_id": "ORDL-ORD-2026-027603-04",
+    "issue_type": "QTY_EXCEEDS_PURCHASED",
+    "expected_decision": "REJECT_QUANTITY_OVERFLOW",
+    "actual_injected_behavior": "Requested 6 units on line with purchase qty 1",
+    "created_at": "2026-04-14T20:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000152",
+    "entity_name": "return_requests",
+    "entity_id": "REQ-2026-000180",
+    "parent_entity_id": "ORD-2026-009343",
+    "issue_type": "RETURN_PAST_POLICY_WINDOW",
+    "expected_decision": "REJECTED_OR_OVERRIDE_REQUIRED",
+    "actual_injected_behavior": "Submitted at day 67 without override",
+    "created_at": "2026-06-28T12:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000153",
+    "entity_name": "return_lines",
+    "entity_id": "RMAL-RMA-2026-000180-01",
+    "parent_entity_id": "ORDL-ORD-2026-009343-02",
+    "issue_type": "QTY_EXCEEDS_PURCHASED",
+    "expected_decision": "REJECT_QUANTITY_OVERFLOW",
+    "actual_injected_behavior": "Requested 5 units on line with purchase qty 1",
+    "created_at": "2026-06-28T12:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000154",
+    "entity_name": "return_lines",
+    "entity_id": "RMAL-RMA-2026-000180-02",
+    "parent_entity_id": "ORDL-ORD-2026-009343-03",
+    "issue_type": "QTY_EXCEEDS_PURCHASED",
+    "expected_decision": "REJECT_QUANTITY_OVERFLOW",
+    "actual_injected_behavior": "Requested 4 units on line with purchase qty 2",
+    "created_at": "2026-06-28T12:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000155",
+    "entity_name": "refunds",
+    "entity_id": "REF-2026-000140",
+    "parent_entity_id": "RMA-2026-000181",
+    "issue_type": "REFUND_EXCEEDS_PAID",
+    "expected_decision": "BLOCK_EXCESS_PAYOUT",
+    "actual_injected_behavior": "Refund calculated to exceed order total paid (149.58)",
+    "created_at": "2026-02-26T12:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000156",
+    "entity_name": "refunds",
+    "entity_id": "REF-2026-000141",
+    "parent_entity_id": "RMA-2026-000181",
+    "issue_type": "DUPLICATE_REFUND_ATTEMPT",
+    "expected_decision": "BLOCK_DUPLICATE_REFUND",
+    "actual_injected_behavior": "Duplicate payout attempted for RMA RMA-2026-000181",
+    "created_at": "2026-02-26T12:05:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000157",
+    "entity_name": "return_lines",
+    "entity_id": "RMAL-RMA-2026-000183-01",
+    "parent_entity_id": "ORDL-ORD-2026-034785-01",
+    "issue_type": "QTY_EXCEEDS_PURCHASED",
+    "expected_decision": "REJECT_QUANTITY_OVERFLOW",
+    "actual_injected_behavior": "Requested 6 units on line with purchase qty 1",
+    "created_at": "2026-02-12T05:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000158",
+    "entity_name": "inventory_dispositions",
+    "entity_id": "DISP-2026-000168",
+    "parent_entity_id": "INS-2026-000168",
+    "issue_type": "RESTOCK_BEFORE_INSPECTION",
+    "expected_decision": "BLOCK_PREMATURE_RESTOCK",
+    "actual_injected_behavior": "Restocked at 2026-03-15T20:00:00+00:00, before inspection 2026-03-16T11:00:00+00:00",
+    "created_at": "2026-03-15T20:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000159",
+    "entity_name": "refunds",
+    "entity_id": "REF-2026-000146",
+    "parent_entity_id": "RMA-2026-000185",
+    "issue_type": "DUPLICATE_REFUND_ATTEMPT",
+    "expected_decision": "BLOCK_DUPLICATE_REFUND",
+    "actual_injected_behavior": "Duplicate payout attempted for RMA RMA-2026-000185",
+    "created_at": "2026-02-18T14:05:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000160",
+    "entity_name": "return_requests",
+    "entity_id": "REQ-2026-000186",
+    "parent_entity_id": "ORD-2026-001716",
+    "issue_type": "RETURN_PAST_POLICY_WINDOW",
+    "expected_decision": "REJECTED_OR_OVERRIDE_REQUIRED",
+    "actual_injected_behavior": "Submitted at day 78 without override",
+    "created_at": "2026-07-04T19:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000161",
+    "entity_name": "return_lines",
+    "entity_id": "RMAL-RMA-2026-000186-01",
+    "parent_entity_id": "ORDL-ORD-2026-001716-01",
+    "issue_type": "QTY_EXCEEDS_PURCHASED",
+    "expected_decision": "REJECT_QUANTITY_OVERFLOW",
+    "actual_injected_behavior": "Requested 3 units on line with purchase qty 1",
+    "created_at": "2026-07-04T19:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000162",
+    "entity_name": "return_lines",
+    "entity_id": "RMAL-RMA-2026-000187-01",
+    "parent_entity_id": "ORDL-ORD-2026-030714-01",
+    "issue_type": "QTY_EXCEEDS_PURCHASED",
+    "expected_decision": "REJECT_QUANTITY_OVERFLOW",
+    "actual_injected_behavior": "Requested 5 units on line with purchase qty 1",
+    "created_at": "2026-03-16T08:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000163",
+    "entity_name": "inventory_dispositions",
+    "entity_id": "DISP-2026-000171",
+    "parent_entity_id": "INS-2026-000171",
+    "issue_type": "RESTOCK_BEFORE_INSPECTION",
+    "expected_decision": "BLOCK_PREMATURE_RESTOCK",
+    "actual_injected_behavior": "Restocked at 2026-03-23T04:00:00+00:00, before inspection 2026-03-24T12:00:00+00:00",
+    "created_at": "2026-03-23T04:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000164",
+    "entity_name": "inventory_dispositions",
+    "entity_id": "DISP-2026-000177",
+    "parent_entity_id": "INS-2026-000177",
+    "issue_type": "RESTOCK_BEFORE_INSPECTION",
+    "expected_decision": "BLOCK_PREMATURE_RESTOCK",
+    "actual_injected_behavior": "Restocked at 2026-04-17T12:00:00+00:00, before inspection 2026-04-18T18:00:00+00:00",
+    "created_at": "2026-04-17T12:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000165",
+    "entity_name": "refunds",
+    "entity_id": "REF-2026-000151",
+    "parent_entity_id": "RMA-2026-000191",
+    "issue_type": "REFUND_EXCEEDS_PAID",
+    "expected_decision": "BLOCK_EXCESS_PAYOUT",
+    "actual_injected_behavior": "Refund calculated to exceed order total paid (193.27)",
+    "created_at": "2026-04-18T21:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000166",
+    "entity_name": "return_lines",
+    "entity_id": "RMAL-RMA-2026-000192-02",
+    "parent_entity_id": "ORDL-ORD-2026-022562-01",
+    "issue_type": "QTY_EXCEEDS_PURCHASED",
+    "expected_decision": "REJECT_QUANTITY_OVERFLOW",
+    "actual_injected_behavior": "Requested 6 units on line with purchase qty 1",
+    "created_at": "2026-03-11T18:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000167",
+    "entity_name": "refunds",
+    "entity_id": "REF-2026-000153",
+    "parent_entity_id": "RMA-2026-000192",
+    "issue_type": "DUPLICATE_REFUND_ATTEMPT",
+    "expected_decision": "BLOCK_DUPLICATE_REFUND",
+    "actual_injected_behavior": "Duplicate payout attempted for RMA RMA-2026-000192",
+    "created_at": "2026-03-19T03:05:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000168",
+    "entity_name": "return_requests",
+    "entity_id": "REQ-2026-000194",
+    "parent_entity_id": "ORD-2026-025493",
+    "issue_type": "RETURN_PAST_POLICY_WINDOW",
+    "expected_decision": "REJECTED_OR_OVERRIDE_REQUIRED",
+    "actual_injected_behavior": "Submitted at day 85 without override",
+    "created_at": "2026-08-04T19:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000169",
+    "entity_name": "return_requests",
+    "entity_id": "REQ-2026-000195",
+    "parent_entity_id": "ORD-2026-004178",
+    "issue_type": "RETURN_PAST_POLICY_WINDOW",
+    "expected_decision": "REJECTED_OR_OVERRIDE_REQUIRED",
+    "actual_injected_behavior": "Submitted at day 66 without override",
+    "created_at": "2026-06-07T11:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000170",
+    "entity_name": "inventory_dispositions",
+    "entity_id": "DISP-2026-000185",
+    "parent_entity_id": "INS-2026-000185",
+    "issue_type": "RESTOCK_BEFORE_INSPECTION",
+    "expected_decision": "BLOCK_PREMATURE_RESTOCK",
+    "actual_injected_behavior": "Restocked at 2026-02-23T20:00:00+00:00, before inspection 2026-02-24T14:00:00+00:00",
+    "created_at": "2026-02-23T20:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000171",
+    "entity_name": "refunds",
+    "entity_id": "REF-2026-000158",
+    "parent_entity_id": "RMA-2026-000200",
+    "issue_type": "REFUND_EXCEEDS_PAID",
+    "expected_decision": "BLOCK_EXCESS_PAYOUT",
+    "actual_injected_behavior": "Refund calculated to exceed order total paid (991.42)",
+    "created_at": "2026-02-07T15:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000172",
+    "entity_name": "return_lines",
+    "entity_id": "RMAL-RMA-2026-000201-02",
+    "parent_entity_id": "ORDL-ORD-2026-021638-02",
+    "issue_type": "QTY_EXCEEDS_PURCHASED",
+    "expected_decision": "REJECT_QUANTITY_OVERFLOW",
+    "actual_injected_behavior": "Requested 3 units on line with purchase qty 1",
+    "created_at": "2026-01-23T20:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000173",
+    "entity_name": "return_lines",
+    "entity_id": "RMAL-RMA-2026-000202-02",
+    "parent_entity_id": "ORDL-ORD-2026-032603-02",
+    "issue_type": "QTY_EXCEEDS_PURCHASED",
+    "expected_decision": "REJECT_QUANTITY_OVERFLOW",
+    "actual_injected_behavior": "Requested 6 units on line with purchase qty 2",
+    "created_at": "2026-04-25T12:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000174",
+    "entity_name": "return_lines",
+    "entity_id": "RMAL-RMA-2026-000205-01",
+    "parent_entity_id": "ORDL-ORD-2026-014717-02",
+    "issue_type": "QTY_EXCEEDS_PURCHASED",
+    "expected_decision": "REJECT_QUANTITY_OVERFLOW",
+    "actual_injected_behavior": "Requested 6 units on line with purchase qty 1",
+    "created_at": "2026-04-12T19:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000175",
+    "entity_name": "return_requests",
+    "entity_id": "REQ-2026-000206",
+    "parent_entity_id": "ORD-2026-022132",
+    "issue_type": "RETURN_PAST_POLICY_WINDOW",
+    "expected_decision": "REJECTED_OR_OVERRIDE_REQUIRED",
+    "actual_injected_behavior": "Submitted at day 92 without override",
+    "created_at": "2026-05-19T22:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000176",
+    "entity_name": "inventory_dispositions",
+    "entity_id": "DISP-2026-000192",
+    "parent_entity_id": "INS-2026-000192",
+    "issue_type": "RESTOCK_BEFORE_INSPECTION",
+    "expected_decision": "BLOCK_PREMATURE_RESTOCK",
+    "actual_injected_behavior": "Restocked at 2026-03-08T16:00:00+00:00, before inspection 2026-03-09T21:00:00+00:00",
+    "created_at": "2026-03-08T16:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000177",
+    "entity_name": "inventory_dispositions",
+    "entity_id": "DISP-2026-000193",
+    "parent_entity_id": "INS-2026-000193",
+    "issue_type": "RESTOCK_BEFORE_INSPECTION",
+    "expected_decision": "BLOCK_PREMATURE_RESTOCK",
+    "actual_injected_behavior": "Restocked at 2026-03-09T08:00:00+00:00, before inspection 2026-03-09T21:00:00+00:00",
+    "created_at": "2026-03-09T08:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000178",
+    "entity_name": "return_requests",
+    "entity_id": "REQ-2026-000208",
+    "parent_entity_id": "ORD-2026-032217",
+    "issue_type": "RETURN_PAST_POLICY_WINDOW",
+    "expected_decision": "REJECTED_OR_OVERRIDE_REQUIRED",
+    "actual_injected_behavior": "Submitted at day 93 without override",
+    "created_at": "2026-06-15T19:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000179",
+    "entity_name": "inventory_dispositions",
+    "entity_id": "DISP-2026-000198",
+    "parent_entity_id": "INS-2026-000198",
+    "issue_type": "RESTOCK_BEFORE_INSPECTION",
+    "expected_decision": "BLOCK_PREMATURE_RESTOCK",
+    "actual_injected_behavior": "Restocked at 2026-03-12T14:00:00+00:00, before inspection 2026-03-13T19:00:00+00:00",
+    "created_at": "2026-03-12T14:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000180",
+    "entity_name": "return_requests",
+    "entity_id": "REQ-2026-000213",
+    "parent_entity_id": "ORD-2026-022570",
+    "issue_type": "RETURN_PAST_POLICY_WINDOW",
+    "expected_decision": "REJECTED_OR_OVERRIDE_REQUIRED",
+    "actual_injected_behavior": "Submitted at day 95 without override",
+    "created_at": "2026-06-19T15:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000181",
+    "entity_name": "inventory_dispositions",
+    "entity_id": "DISP-2026-000199",
+    "parent_entity_id": "INS-2026-000199",
+    "issue_type": "RESTOCK_BEFORE_INSPECTION",
+    "expected_decision": "BLOCK_PREMATURE_RESTOCK",
+    "actual_injected_behavior": "Restocked at 2026-03-24T14:00:00+00:00, before inspection 2026-03-25T10:00:00+00:00",
+    "created_at": "2026-03-24T14:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000182",
+    "entity_name": "return_requests",
+    "entity_id": "REQ-2026-000215",
+    "parent_entity_id": "ORD-2026-029450",
+    "issue_type": "RETURN_PAST_POLICY_WINDOW",
+    "expected_decision": "REJECTED_OR_OVERRIDE_REQUIRED",
+    "actual_injected_behavior": "Submitted at day 89 without override",
+    "created_at": "2026-09-01T11:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000183",
+    "entity_name": "return_requests",
+    "entity_id": "REQ-2026-000216",
+    "parent_entity_id": "ORD-2026-027463",
+    "issue_type": "RETURN_PAST_POLICY_WINDOW",
+    "expected_decision": "REJECTED_OR_OVERRIDE_REQUIRED",
+    "actual_injected_behavior": "Submitted at day 85 without override",
+    "created_at": "2026-08-16T15:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000184",
+    "entity_name": "return_lines",
+    "entity_id": "RMAL-RMA-2026-000216-01",
+    "parent_entity_id": "ORDL-ORD-2026-027463-01",
+    "issue_type": "QTY_EXCEEDS_PURCHASED",
+    "expected_decision": "REJECT_QUANTITY_OVERFLOW",
+    "actual_injected_behavior": "Requested 3 units on line with purchase qty 1",
+    "created_at": "2026-08-16T15:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000185",
+    "entity_name": "return_lines",
+    "entity_id": "RMAL-RMA-2026-000217-02",
+    "parent_entity_id": "ORDL-ORD-2026-009679-01",
+    "issue_type": "QTY_EXCEEDS_PURCHASED",
+    "expected_decision": "REJECT_QUANTITY_OVERFLOW",
+    "actual_injected_behavior": "Requested 6 units on line with purchase qty 1",
+    "created_at": "2026-04-23T20:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000186",
+    "entity_name": "inventory_dispositions",
+    "entity_id": "DISP-2026-000203",
+    "parent_entity_id": "INS-2026-000203",
+    "issue_type": "RESTOCK_BEFORE_INSPECTION",
+    "expected_decision": "BLOCK_PREMATURE_RESTOCK",
+    "actual_injected_behavior": "Restocked at 2026-04-13T08:00:00+00:00, before inspection 2026-04-14T02:00:00+00:00",
+    "created_at": "2026-04-13T08:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000187",
+    "entity_name": "return_requests",
+    "entity_id": "REQ-2026-000219",
+    "parent_entity_id": "ORD-2026-000619",
+    "issue_type": "RETURN_PAST_POLICY_WINDOW",
+    "expected_decision": "REJECTED_OR_OVERRIDE_REQUIRED",
+    "actual_injected_behavior": "Submitted at day 82 without override",
+    "created_at": "2026-07-24T16:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000188",
+    "entity_name": "return_lines",
+    "entity_id": "RMAL-RMA-2026-000220-02",
+    "parent_entity_id": "ORDL-ORD-2026-034693-01",
+    "issue_type": "QTY_EXCEEDS_PURCHASED",
+    "expected_decision": "REJECT_QUANTITY_OVERFLOW",
+    "actual_injected_behavior": "Requested 4 units on line with purchase qty 1",
+    "created_at": "2026-03-06T12:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000189",
+    "entity_name": "refunds",
+    "entity_id": "REF-2026-000171",
+    "parent_entity_id": "RMA-2026-000220",
+    "issue_type": "DUPLICATE_REFUND_ATTEMPT",
+    "expected_decision": "BLOCK_DUPLICATE_REFUND",
+    "actual_injected_behavior": "Duplicate payout attempted for RMA RMA-2026-000220",
+    "created_at": "2026-03-12T06:05:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000190",
+    "entity_name": "return_requests",
+    "entity_id": "REQ-2026-000221",
+    "parent_entity_id": "ORD-2026-010671",
+    "issue_type": "RETURN_PAST_POLICY_WINDOW",
+    "expected_decision": "REJECTED_OR_OVERRIDE_REQUIRED",
+    "actual_injected_behavior": "Submitted at day 92 without override",
+    "created_at": "2026-09-12T17:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000191",
+    "entity_name": "return_lines",
+    "entity_id": "RMAL-RMA-2026-000221-01",
+    "parent_entity_id": "ORDL-ORD-2026-010671-02",
+    "issue_type": "QTY_EXCEEDS_PURCHASED",
+    "expected_decision": "REJECT_QUANTITY_OVERFLOW",
+    "actual_injected_behavior": "Requested 4 units on line with purchase qty 1",
+    "created_at": "2026-09-12T17:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000192",
+    "entity_name": "return_lines",
+    "entity_id": "RMAL-RMA-2026-000223-01",
+    "parent_entity_id": "ORDL-ORD-2026-013895-01",
+    "issue_type": "QTY_EXCEEDS_PURCHASED",
+    "expected_decision": "REJECT_QUANTITY_OVERFLOW",
+    "actual_injected_behavior": "Requested 7 units on line with purchase qty 2",
+    "created_at": "2026-02-22T01:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000193",
+    "entity_name": "return_lines",
+    "entity_id": "RMAL-RMA-2026-000223-02",
+    "parent_entity_id": "ORDL-ORD-2026-013895-02",
+    "issue_type": "QTY_EXCEEDS_PURCHASED",
+    "expected_decision": "REJECT_QUANTITY_OVERFLOW",
+    "actual_injected_behavior": "Requested 6 units on line with purchase qty 1",
+    "created_at": "2026-02-22T01:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000194",
+    "entity_name": "return_lines",
+    "entity_id": "RMAL-RMA-2026-000224-01",
+    "parent_entity_id": "ORDL-ORD-2026-015217-02",
+    "issue_type": "QTY_EXCEEDS_PURCHASED",
+    "expected_decision": "REJECT_QUANTITY_OVERFLOW",
+    "actual_injected_behavior": "Requested 3 units on line with purchase qty 1",
+    "created_at": "2026-02-14T04:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000195",
+    "entity_name": "inventory_dispositions",
+    "entity_id": "DISP-2026-000207",
+    "parent_entity_id": "INS-2026-000207",
+    "issue_type": "RESTOCK_BEFORE_INSPECTION",
+    "expected_decision": "BLOCK_PREMATURE_RESTOCK",
+    "actual_injected_behavior": "Restocked at 2026-04-20T10:00:00+00:00, before inspection 2026-04-21T16:00:00+00:00",
+    "created_at": "2026-04-20T10:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000196",
+    "entity_name": "return_lines",
+    "entity_id": "RMAL-RMA-2026-000226-02",
+    "parent_entity_id": "ORDL-ORD-2026-011192-01",
+    "issue_type": "QTY_EXCEEDS_PURCHASED",
+    "expected_decision": "REJECT_QUANTITY_OVERFLOW",
+    "actual_injected_behavior": "Requested 4 units on line with purchase qty 1",
+    "created_at": "2026-04-15T19:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000197",
+    "entity_name": "refunds",
+    "entity_id": "REF-2026-000174",
+    "parent_entity_id": "RMA-2026-000226",
+    "issue_type": "REFUND_EXCEEDS_PAID",
+    "expected_decision": "BLOCK_EXCESS_PAYOUT",
+    "actual_injected_behavior": "Refund calculated to exceed order total paid (220.11)",
+    "created_at": "2026-04-22T23:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000198",
+    "entity_name": "return_lines",
+    "entity_id": "RMAL-RMA-2026-000227-02",
+    "parent_entity_id": "ORDL-ORD-2026-034299-02",
+    "issue_type": "QTY_EXCEEDS_PURCHASED",
+    "expected_decision": "REJECT_QUANTITY_OVERFLOW",
+    "actual_injected_behavior": "Requested 5 units on line with purchase qty 1",
+    "created_at": "2026-04-01T17:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000199",
+    "entity_name": "refunds",
+    "entity_id": "REF-2026-000175",
+    "parent_entity_id": "RMA-2026-000228",
+    "issue_type": "REFUND_EXCEEDS_PAID",
+    "expected_decision": "BLOCK_EXCESS_PAYOUT",
+    "actual_injected_behavior": "Refund calculated to exceed order total paid (172.79)",
+    "created_at": "2026-06-15T06:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000200",
+    "entity_name": "return_lines",
+    "entity_id": "RMAL-RMA-2026-000230-01",
+    "parent_entity_id": "ORDL-ORD-2026-023815-01",
+    "issue_type": "QTY_EXCEEDS_PURCHASED",
+    "expected_decision": "REJECT_QUANTITY_OVERFLOW",
+    "actual_injected_behavior": "Requested 6 units on line with purchase qty 2",
+    "created_at": "2026-02-19T11:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000201",
+    "entity_name": "inventory_dispositions",
+    "entity_id": "DISP-2026-000213",
+    "parent_entity_id": "INS-2026-000213",
+    "issue_type": "RESTOCK_BEFORE_INSPECTION",
+    "expected_decision": "BLOCK_PREMATURE_RESTOCK",
+    "actual_injected_behavior": "Restocked at 2026-04-13T18:00:00+00:00, before inspection 2026-04-14T10:00:00+00:00",
+    "created_at": "2026-04-13T18:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000202",
+    "entity_name": "refunds",
+    "entity_id": "REF-2026-000179",
+    "parent_entity_id": "RMA-2026-000233",
+    "issue_type": "REFUND_EXCEEDS_PAID",
+    "expected_decision": "BLOCK_EXCESS_PAYOUT",
+    "actual_injected_behavior": "Refund calculated to exceed order total paid (286.19)",
+    "created_at": "2026-05-03T00:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000203",
+    "entity_name": "return_requests",
+    "entity_id": "REQ-2026-000234",
+    "parent_entity_id": "ORD-2026-011628",
+    "issue_type": "RETURN_PAST_POLICY_WINDOW",
+    "expected_decision": "REJECTED_OR_OVERRIDE_REQUIRED",
+    "actual_injected_behavior": "Submitted at day 84 without override",
+    "created_at": "2026-07-19T14:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000204",
+    "entity_name": "refunds",
+    "entity_id": "REF-2026-000182",
+    "parent_entity_id": "RMA-2026-000237",
+    "issue_type": "DUPLICATE_REFUND_ATTEMPT",
+    "expected_decision": "BLOCK_DUPLICATE_REFUND",
+    "actual_injected_behavior": "Duplicate payout attempted for RMA RMA-2026-000237",
+    "created_at": "2026-05-11T06:05:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000205",
+    "entity_name": "refunds",
+    "entity_id": "REF-2026-000186",
+    "parent_entity_id": "RMA-2026-000241",
+    "issue_type": "REFUND_EXCEEDS_PAID",
+    "expected_decision": "BLOCK_EXCESS_PAYOUT",
+    "actual_injected_behavior": "Refund calculated to exceed order total paid (226.89)",
+    "created_at": "2026-04-06T11:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000206",
+    "entity_name": "inventory_dispositions",
+    "entity_id": "DISP-2026-000227",
+    "parent_entity_id": "INS-2026-000227",
+    "issue_type": "RESTOCK_BEFORE_INSPECTION",
+    "expected_decision": "BLOCK_PREMATURE_RESTOCK",
+    "actual_injected_behavior": "Restocked at 2026-04-14T06:00:00+00:00, before inspection 2026-04-15T13:00:00+00:00",
+    "created_at": "2026-04-14T06:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000207",
+    "entity_name": "refunds",
+    "entity_id": "REF-2026-000189",
+    "parent_entity_id": "RMA-2026-000243",
+    "issue_type": "DUPLICATE_REFUND_ATTEMPT",
+    "expected_decision": "BLOCK_DUPLICATE_REFUND",
+    "actual_injected_behavior": "Duplicate payout attempted for RMA RMA-2026-000243",
+    "created_at": "2026-04-15T18:05:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000208",
+    "entity_name": "refunds",
+    "entity_id": "REF-2026-000192",
+    "parent_entity_id": "RMA-2026-000245",
+    "issue_type": "DUPLICATE_REFUND_ATTEMPT",
+    "expected_decision": "BLOCK_DUPLICATE_REFUND",
+    "actual_injected_behavior": "Duplicate payout attempted for RMA RMA-2026-000245",
+    "created_at": "2026-04-16T22:05:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000209",
+    "entity_name": "return_requests",
+    "entity_id": "REQ-2026-000246",
+    "parent_entity_id": "ORD-2026-037050",
+    "issue_type": "RETURN_PAST_POLICY_WINDOW",
+    "expected_decision": "REJECTED_OR_OVERRIDE_REQUIRED",
+    "actual_injected_behavior": "Submitted at day 85 without override",
+    "created_at": "2026-05-15T07:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000210",
+    "entity_name": "inventory_dispositions",
+    "entity_id": "DISP-2026-000234",
+    "parent_entity_id": "INS-2026-000234",
+    "issue_type": "RESTOCK_BEFORE_INSPECTION",
+    "expected_decision": "BLOCK_PREMATURE_RESTOCK",
+    "actual_injected_behavior": "Restocked at 2026-05-06T05:00:00+00:00, before inspection 2026-05-07T14:00:00+00:00",
+    "created_at": "2026-05-06T05:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000211",
+    "entity_name": "refunds",
+    "entity_id": "REF-2026-000194",
+    "parent_entity_id": "RMA-2026-000248",
+    "issue_type": "REFUND_EXCEEDS_PAID",
+    "expected_decision": "BLOCK_EXCESS_PAYOUT",
+    "actual_injected_behavior": "Refund calculated to exceed order total paid (83.97)",
+    "created_at": "2026-05-07T19:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000212",
+    "entity_name": "refunds",
+    "entity_id": "REF-2026-000195",
+    "parent_entity_id": "RMA-2026-000248",
+    "issue_type": "DUPLICATE_REFUND_ATTEMPT",
+    "expected_decision": "BLOCK_DUPLICATE_REFUND",
+    "actual_injected_behavior": "Duplicate payout attempted for RMA RMA-2026-000248",
+    "created_at": "2026-05-07T19:05:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000213",
+    "entity_name": "return_requests",
+    "entity_id": "REQ-2026-000251",
+    "parent_entity_id": "ORD-2026-034859",
+    "issue_type": "RETURN_PAST_POLICY_WINDOW",
+    "expected_decision": "REJECTED_OR_OVERRIDE_REQUIRED",
+    "actual_injected_behavior": "Submitted at day 95 without override",
+    "created_at": "2026-09-01T15:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000214",
+    "entity_name": "refunds",
+    "entity_id": "REF-2026-000197",
+    "parent_entity_id": "RMA-2026-000252",
+    "issue_type": "REFUND_EXCEEDS_PAID",
+    "expected_decision": "BLOCK_EXCESS_PAYOUT",
+    "actual_injected_behavior": "Refund calculated to exceed order total paid (322.92)",
+    "created_at": "2026-04-26T03:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000215",
+    "entity_name": "refunds",
+    "entity_id": "REF-2026-000198",
+    "parent_entity_id": "RMA-2026-000252",
+    "issue_type": "DUPLICATE_REFUND_ATTEMPT",
+    "expected_decision": "BLOCK_DUPLICATE_REFUND",
+    "actual_injected_behavior": "Duplicate payout attempted for RMA RMA-2026-000252",
+    "created_at": "2026-04-26T03:05:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000216",
+    "entity_name": "return_requests",
+    "entity_id": "REQ-2026-000253",
+    "parent_entity_id": "ORD-2026-028601",
+    "issue_type": "RETURN_PAST_POLICY_WINDOW",
+    "expected_decision": "REJECTED_OR_OVERRIDE_REQUIRED",
+    "actual_injected_behavior": "Submitted at day 77 without override",
+    "created_at": "2026-06-16T00:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000217",
+    "entity_name": "inventory_dispositions",
+    "entity_id": "DISP-2026-000240",
+    "parent_entity_id": "INS-2026-000240",
+    "issue_type": "RESTOCK_BEFORE_INSPECTION",
+    "expected_decision": "BLOCK_PREMATURE_RESTOCK",
+    "actual_injected_behavior": "Restocked at 2026-04-05T01:00:00+00:00, before inspection 2026-04-06T09:00:00+00:00",
+    "created_at": "2026-04-05T01:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000218",
+    "entity_name": "refunds",
+    "entity_id": "REF-2026-000200",
+    "parent_entity_id": "RMA-2026-000255",
+    "issue_type": "REFUND_EXCEEDS_PAID",
+    "expected_decision": "BLOCK_EXCESS_PAYOUT",
+    "actual_injected_behavior": "Refund calculated to exceed order total paid (206.28)",
+    "created_at": "2026-04-06T11:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000219",
+    "entity_name": "inventory_dispositions",
+    "entity_id": "DISP-2026-000243",
+    "parent_entity_id": "INS-2026-000243",
+    "issue_type": "RESTOCK_BEFORE_INSPECTION",
+    "expected_decision": "BLOCK_PREMATURE_RESTOCK",
+    "actual_injected_behavior": "Restocked at 2026-04-07T15:00:00+00:00, before inspection 2026-04-08T12:00:00+00:00",
+    "created_at": "2026-04-07T15:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000220",
+    "entity_name": "refunds",
+    "entity_id": "REF-2026-000202",
+    "parent_entity_id": "RMA-2026-000257",
+    "issue_type": "REFUND_EXCEEDS_PAID",
+    "expected_decision": "BLOCK_EXCESS_PAYOUT",
+    "actual_injected_behavior": "Refund calculated to exceed order total paid (189.00)",
+    "created_at": "2026-04-08T17:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000221",
+    "entity_name": "return_requests",
+    "entity_id": "REQ-2026-000258",
+    "parent_entity_id": "ORD-2026-029065",
+    "issue_type": "RETURN_PAST_POLICY_WINDOW",
+    "expected_decision": "REJECTED_OR_OVERRIDE_REQUIRED",
+    "actual_injected_behavior": "Submitted at day 87 without override",
+    "created_at": "2026-04-24T03:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000222",
+    "entity_name": "refunds",
+    "entity_id": "REF-2026-000204",
+    "parent_entity_id": "RMA-2026-000260",
+    "issue_type": "REFUND_EXCEEDS_PAID",
+    "expected_decision": "BLOCK_EXCESS_PAYOUT",
+    "actual_injected_behavior": "Refund calculated to exceed order total paid (907.17)",
+    "created_at": "2026-02-11T10:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000223",
+    "entity_name": "refunds",
+    "entity_id": "REF-2026-000205",
+    "parent_entity_id": "RMA-2026-000261",
+    "issue_type": "REFUND_EXCEEDS_PAID",
+    "expected_decision": "BLOCK_EXCESS_PAYOUT",
+    "actual_injected_behavior": "Refund calculated to exceed order total paid (684.70)",
+    "created_at": "2026-06-10T13:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000224",
+    "entity_name": "inventory_dispositions",
+    "entity_id": "DISP-2026-000248",
+    "parent_entity_id": "INS-2026-000248",
+    "issue_type": "RESTOCK_BEFORE_INSPECTION",
+    "expected_decision": "BLOCK_PREMATURE_RESTOCK",
+    "actual_injected_behavior": "Restocked at 2026-06-11T10:00:00+00:00, before inspection 2026-06-12T15:00:00+00:00",
+    "created_at": "2026-06-11T10:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000225",
+    "entity_name": "inventory_dispositions",
+    "entity_id": "DISP-2026-000249",
+    "parent_entity_id": "INS-2026-000249",
+    "issue_type": "RESTOCK_BEFORE_INSPECTION",
+    "expected_decision": "BLOCK_PREMATURE_RESTOCK",
+    "actual_injected_behavior": "Restocked at 2026-06-15T20:00:00+00:00, before inspection 2026-06-16T09:00:00+00:00",
+    "created_at": "2026-06-15T20:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000226",
+    "entity_name": "refunds",
+    "entity_id": "REF-2026-000207",
+    "parent_entity_id": "RMA-2026-000265",
+    "issue_type": "REFUND_EXCEEDS_PAID",
+    "expected_decision": "BLOCK_EXCESS_PAYOUT",
+    "actual_injected_behavior": "Refund calculated to exceed order total paid (782.98)",
+    "created_at": "2026-06-16T12:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000227",
+    "entity_name": "refunds",
+    "entity_id": "REF-2026-000208",
+    "parent_entity_id": "RMA-2026-000265",
+    "issue_type": "DUPLICATE_REFUND_ATTEMPT",
+    "expected_decision": "BLOCK_DUPLICATE_REFUND",
+    "actual_injected_behavior": "Duplicate payout attempted for RMA RMA-2026-000265",
+    "created_at": "2026-06-16T12:05:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000228",
+    "entity_name": "refunds",
+    "entity_id": "REF-2026-000210",
+    "parent_entity_id": "RMA-2026-000267",
+    "issue_type": "REFUND_EXCEEDS_PAID",
+    "expected_decision": "BLOCK_EXCESS_PAYOUT",
+    "actual_injected_behavior": "Refund calculated to exceed order total paid (328.31)",
+    "created_at": "2026-05-12T14:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000229",
+    "entity_name": "refunds",
+    "entity_id": "REF-2026-000212",
+    "parent_entity_id": "RMA-2026-000269",
+    "issue_type": "REFUND_EXCEEDS_PAID",
+    "expected_decision": "BLOCK_EXCESS_PAYOUT",
+    "actual_injected_behavior": "Refund calculated to exceed order total paid (106.92)",
+    "created_at": "2026-06-21T20:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000230",
+    "entity_name": "inventory_dispositions",
+    "entity_id": "DISP-2026-000257",
+    "parent_entity_id": "INS-2026-000257",
+    "issue_type": "RESTOCK_BEFORE_INSPECTION",
+    "expected_decision": "BLOCK_PREMATURE_RESTOCK",
+    "actual_injected_behavior": "Restocked at 2026-05-29T03:00:00+00:00, before inspection 2026-05-29T22:00:00+00:00",
+    "created_at": "2026-05-29T03:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000231",
+    "entity_name": "refunds",
+    "entity_id": "REF-2026-000213",
+    "parent_entity_id": "RMA-2026-000270",
+    "issue_type": "REFUND_EXCEEDS_PAID",
+    "expected_decision": "BLOCK_EXCESS_PAYOUT",
+    "actual_injected_behavior": "Refund calculated to exceed order total paid (302.38)",
+    "created_at": "2026-05-30T02:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000232",
+    "entity_name": "return_requests",
+    "entity_id": "REQ-2026-000271",
+    "parent_entity_id": "ORD-2026-020769",
+    "issue_type": "RETURN_PAST_POLICY_WINDOW",
+    "expected_decision": "REJECTED_OR_OVERRIDE_REQUIRED",
+    "actual_injected_behavior": "Submitted at day 76 without override",
+    "created_at": "2026-07-08T06:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000233",
+    "entity_name": "inventory_dispositions",
+    "entity_id": "DISP-2026-000262",
+    "parent_entity_id": "INS-2026-000262",
+    "issue_type": "RESTOCK_BEFORE_INSPECTION",
+    "expected_decision": "BLOCK_PREMATURE_RESTOCK",
+    "actual_injected_behavior": "Restocked at 2026-03-03T10:00:00+00:00, before inspection 2026-03-04T18:00:00+00:00",
+    "created_at": "2026-03-03T10:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000234",
+    "entity_name": "refunds",
+    "entity_id": "REF-2026-000217",
+    "parent_entity_id": "RMA-2026-000276",
+    "issue_type": "REFUND_EXCEEDS_PAID",
+    "expected_decision": "BLOCK_EXCESS_PAYOUT",
+    "actual_injected_behavior": "Refund calculated to exceed order total paid (457.92)",
+    "created_at": "2026-03-04T21:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000235",
+    "entity_name": "refunds",
+    "entity_id": "REF-2026-000219",
+    "parent_entity_id": "RMA-2026-000277",
+    "issue_type": "DUPLICATE_REFUND_ATTEMPT",
+    "expected_decision": "BLOCK_DUPLICATE_REFUND",
+    "actual_injected_behavior": "Duplicate payout attempted for RMA RMA-2026-000277",
+    "created_at": "2026-04-22T02:05:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000236",
+    "entity_name": "inventory_dispositions",
+    "entity_id": "DISP-2026-000267",
+    "parent_entity_id": "INS-2026-000267",
+    "issue_type": "RESTOCK_BEFORE_INSPECTION",
+    "expected_decision": "BLOCK_PREMATURE_RESTOCK",
+    "actual_injected_behavior": "Restocked at 2026-02-26T13:00:00+00:00, before inspection 2026-02-27T19:00:00+00:00",
+    "created_at": "2026-02-26T13:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000237",
+    "entity_name": "refunds",
+    "entity_id": "REF-2026-000222",
+    "parent_entity_id": "RMA-2026-000282",
+    "issue_type": "REFUND_EXCEEDS_PAID",
+    "expected_decision": "BLOCK_EXCESS_PAYOUT",
+    "actual_injected_behavior": "Refund calculated to exceed order total paid (484.06)",
+    "created_at": "2026-03-27T15:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000238",
+    "entity_name": "return_requests",
+    "entity_id": "REQ-2026-000283",
+    "parent_entity_id": "ORD-2026-003810",
+    "issue_type": "RETURN_PAST_POLICY_WINDOW",
+    "expected_decision": "REJECTED_OR_OVERRIDE_REQUIRED",
+    "actual_injected_behavior": "Submitted at day 86 without override",
+    "created_at": "2026-06-30T13:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000239",
+    "entity_name": "inventory_dispositions",
+    "entity_id": "DISP-2026-000272",
+    "parent_entity_id": "INS-2026-000272",
+    "issue_type": "RESTOCK_BEFORE_INSPECTION",
+    "expected_decision": "BLOCK_PREMATURE_RESTOCK",
+    "actual_injected_behavior": "Restocked at 2026-03-16T13:00:00+00:00, before inspection 2026-03-17T21:00:00+00:00",
+    "created_at": "2026-03-16T13:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000240",
+    "entity_name": "return_requests",
+    "entity_id": "REQ-2026-000286",
+    "parent_entity_id": "ORD-2026-035856",
+    "issue_type": "RETURN_PAST_POLICY_WINDOW",
+    "expected_decision": "REJECTED_OR_OVERRIDE_REQUIRED",
+    "actual_injected_behavior": "Submitted at day 93 without override",
+    "created_at": "2026-08-02T15:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000241",
+    "entity_name": "return_requests",
+    "entity_id": "REQ-2026-000287",
+    "parent_entity_id": "ORD-2026-016746",
+    "issue_type": "RETURN_PAST_POLICY_WINDOW",
+    "expected_decision": "REJECTED_OR_OVERRIDE_REQUIRED",
+    "actual_injected_behavior": "Submitted at day 80 without override",
+    "created_at": "2026-05-20T22:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000242",
+    "entity_name": "refunds",
+    "entity_id": "REF-2026-000226",
+    "parent_entity_id": "RMA-2026-000289",
+    "issue_type": "REFUND_EXCEEDS_PAID",
+    "expected_decision": "BLOCK_EXCESS_PAYOUT",
+    "actual_injected_behavior": "Refund calculated to exceed order total paid (563.74)",
+    "created_at": "2026-05-06T20:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000243",
+    "entity_name": "inventory_dispositions",
+    "entity_id": "DISP-2026-000275",
+    "parent_entity_id": "INS-2026-000275",
+    "issue_type": "RESTOCK_BEFORE_INSPECTION",
+    "expected_decision": "BLOCK_PREMATURE_RESTOCK",
+    "actual_injected_behavior": "Restocked at 2026-06-15T07:00:00+00:00, before inspection 2026-06-16T14:00:00+00:00",
+    "created_at": "2026-06-15T07:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000244",
+    "entity_name": "return_requests",
+    "entity_id": "REQ-2026-000291",
+    "parent_entity_id": "ORD-2026-018534",
+    "issue_type": "RETURN_PAST_POLICY_WINDOW",
+    "expected_decision": "REJECTED_OR_OVERRIDE_REQUIRED",
+    "actual_injected_behavior": "Submitted at day 80 without override",
+    "created_at": "2026-07-19T07:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000245",
+    "entity_name": "inventory_dispositions",
+    "entity_id": "DISP-2026-000279",
+    "parent_entity_id": "INS-2026-000279",
+    "issue_type": "RESTOCK_BEFORE_INSPECTION",
+    "expected_decision": "BLOCK_PREMATURE_RESTOCK",
+    "actual_injected_behavior": "Restocked at 2026-03-18T18:00:00+00:00, before inspection 2026-03-19T15:00:00+00:00",
+    "created_at": "2026-03-18T18:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000246",
+    "entity_name": "refunds",
+    "entity_id": "REF-2026-000231",
+    "parent_entity_id": "RMA-2026-000294",
+    "issue_type": "DUPLICATE_REFUND_ATTEMPT",
+    "expected_decision": "BLOCK_DUPLICATE_REFUND",
+    "actual_injected_behavior": "Duplicate payout attempted for RMA RMA-2026-000294",
+    "created_at": "2026-04-26T04:05:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000247",
+    "entity_name": "refunds",
+    "entity_id": "REF-2026-000234",
+    "parent_entity_id": "RMA-2026-000299",
+    "issue_type": "DUPLICATE_REFUND_ATTEMPT",
+    "expected_decision": "BLOCK_DUPLICATE_REFUND",
+    "actual_injected_behavior": "Duplicate payout attempted for RMA RMA-2026-000299",
+    "created_at": "2026-02-27T07:05:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000248",
+    "entity_name": "refunds",
+    "entity_id": "REF-2026-000235",
+    "parent_entity_id": "RMA-2026-000300",
+    "issue_type": "REFUND_EXCEEDS_PAID",
+    "expected_decision": "BLOCK_EXCESS_PAYOUT",
+    "actual_injected_behavior": "Refund calculated to exceed order total paid (153.38)",
+    "created_at": "2026-05-12T22:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000249",
+    "entity_name": "inventory_dispositions",
+    "entity_id": "DISP-2026-000289",
+    "parent_entity_id": "INS-2026-000289",
+    "issue_type": "RESTOCK_BEFORE_INSPECTION",
+    "expected_decision": "BLOCK_PREMATURE_RESTOCK",
+    "actual_injected_behavior": "Restocked at 2026-04-04T13:00:00+00:00, before inspection 2026-04-05T03:00:00+00:00",
+    "created_at": "2026-04-04T13:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000250",
+    "entity_name": "refunds",
+    "entity_id": "REF-2026-000238",
+    "parent_entity_id": "RMA-2026-000302",
+    "issue_type": "DUPLICATE_REFUND_ATTEMPT",
+    "expected_decision": "BLOCK_DUPLICATE_REFUND",
+    "actual_injected_behavior": "Duplicate payout attempted for RMA RMA-2026-000302",
+    "created_at": "2026-04-05T08:05:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000251",
+    "entity_name": "refunds",
+    "entity_id": "REF-2026-000240",
+    "parent_entity_id": "RMA-2026-000303",
+    "issue_type": "DUPLICATE_REFUND_ATTEMPT",
+    "expected_decision": "BLOCK_DUPLICATE_REFUND",
+    "actual_injected_behavior": "Duplicate payout attempted for RMA RMA-2026-000303",
+    "created_at": "2026-03-20T22:05:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000252",
+    "entity_name": "refunds",
+    "entity_id": "REF-2026-000242",
+    "parent_entity_id": "RMA-2026-000304",
+    "issue_type": "DUPLICATE_REFUND_ATTEMPT",
+    "expected_decision": "BLOCK_DUPLICATE_REFUND",
+    "actual_injected_behavior": "Duplicate payout attempted for RMA RMA-2026-000304",
+    "created_at": "2026-05-11T16:05:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000253",
+    "entity_name": "return_requests",
+    "entity_id": "REQ-2026-000305",
+    "parent_entity_id": "ORD-2026-031192",
+    "issue_type": "RETURN_PAST_POLICY_WINDOW",
+    "expected_decision": "REJECTED_OR_OVERRIDE_REQUIRED",
+    "actual_injected_behavior": "Submitted at day 83 without override",
+    "created_at": "2026-07-21T05:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000254",
+    "entity_name": "refunds",
+    "entity_id": "REF-2026-000244",
+    "parent_entity_id": "RMA-2026-000306",
+    "issue_type": "DUPLICATE_REFUND_ATTEMPT",
+    "expected_decision": "BLOCK_DUPLICATE_REFUND",
+    "actual_injected_behavior": "Duplicate payout attempted for RMA RMA-2026-000306",
+    "created_at": "2026-05-16T07:05:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000255",
+    "entity_name": "refunds",
+    "entity_id": "REF-2026-000246",
+    "parent_entity_id": "RMA-2026-000307",
+    "issue_type": "DUPLICATE_REFUND_ATTEMPT",
+    "expected_decision": "BLOCK_DUPLICATE_REFUND",
+    "actual_injected_behavior": "Duplicate payout attempted for RMA RMA-2026-000307",
+    "created_at": "2026-04-14T16:05:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000256",
+    "entity_name": "inventory_dispositions",
+    "entity_id": "DISP-2026-000296",
+    "parent_entity_id": "INS-2026-000296",
+    "issue_type": "RESTOCK_BEFORE_INSPECTION",
+    "expected_decision": "BLOCK_PREMATURE_RESTOCK",
+    "actual_injected_behavior": "Restocked at 2026-06-07T18:00:00+00:00, before inspection 2026-06-08T16:00:00+00:00",
+    "created_at": "2026-06-07T18:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000257",
+    "entity_name": "refunds",
+    "entity_id": "REF-2026-000248",
+    "parent_entity_id": "RMA-2026-000308",
+    "issue_type": "DUPLICATE_REFUND_ATTEMPT",
+    "expected_decision": "BLOCK_DUPLICATE_REFUND",
+    "actual_injected_behavior": "Duplicate payout attempted for RMA RMA-2026-000308",
+    "created_at": "2026-06-08T21:05:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000258",
+    "entity_name": "return_requests",
+    "entity_id": "REQ-2026-000310",
+    "parent_entity_id": "ORD-2026-035785",
+    "issue_type": "RETURN_PAST_POLICY_WINDOW",
+    "expected_decision": "REJECTED_OR_OVERRIDE_REQUIRED",
+    "actual_injected_behavior": "Submitted at day 85 without override",
+    "created_at": "2026-09-15T20:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000259",
+    "entity_name": "inventory_dispositions",
+    "entity_id": "DISP-2026-000300",
+    "parent_entity_id": "INS-2026-000300",
+    "issue_type": "RESTOCK_BEFORE_INSPECTION",
+    "expected_decision": "BLOCK_PREMATURE_RESTOCK",
+    "actual_injected_behavior": "Restocked at 2026-05-14T08:00:00+00:00, before inspection 2026-05-15T19:00:00+00:00",
+    "created_at": "2026-05-14T08:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000260",
+    "entity_name": "refunds",
+    "entity_id": "REF-2026-000250",
+    "parent_entity_id": "RMA-2026-000311",
+    "issue_type": "REFUND_EXCEEDS_PAID",
+    "expected_decision": "BLOCK_EXCESS_PAYOUT",
+    "actual_injected_behavior": "Refund calculated to exceed order total paid (415.77)",
+    "created_at": "2026-05-15T21:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000261",
+    "entity_name": "refunds",
+    "entity_id": "REF-2026-000251",
+    "parent_entity_id": "RMA-2026-000311",
+    "issue_type": "DUPLICATE_REFUND_ATTEMPT",
+    "expected_decision": "BLOCK_DUPLICATE_REFUND",
+    "actual_injected_behavior": "Duplicate payout attempted for RMA RMA-2026-000311",
+    "created_at": "2026-05-15T21:05:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000262",
+    "entity_name": "refunds",
+    "entity_id": "REF-2026-000255",
+    "parent_entity_id": "RMA-2026-000314",
+    "issue_type": "DUPLICATE_REFUND_ATTEMPT",
+    "expected_decision": "BLOCK_DUPLICATE_REFUND",
+    "actual_injected_behavior": "Duplicate payout attempted for RMA RMA-2026-000314",
+    "created_at": "2026-04-27T09:05:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000263",
+    "entity_name": "return_requests",
+    "entity_id": "REQ-2026-000315",
+    "parent_entity_id": "ORD-2026-004155",
+    "issue_type": "RETURN_PAST_POLICY_WINDOW",
+    "expected_decision": "REJECTED_OR_OVERRIDE_REQUIRED",
+    "actual_injected_behavior": "Submitted at day 85 without override",
+    "created_at": "2026-04-18T21:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000264",
+    "entity_name": "refunds",
+    "entity_id": "REF-2026-000256",
+    "parent_entity_id": "RMA-2026-000316",
+    "issue_type": "REFUND_EXCEEDS_PAID",
+    "expected_decision": "BLOCK_EXCESS_PAYOUT",
+    "actual_injected_behavior": "Refund calculated to exceed order total paid (1099.86)",
+    "created_at": "2026-05-27T23:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000265",
+    "entity_name": "refunds",
+    "entity_id": "REF-2026-000257",
+    "parent_entity_id": "RMA-2026-000316",
+    "issue_type": "DUPLICATE_REFUND_ATTEMPT",
+    "expected_decision": "BLOCK_DUPLICATE_REFUND",
+    "actual_injected_behavior": "Duplicate payout attempted for RMA RMA-2026-000316",
+    "created_at": "2026-05-27T23:05:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000266",
+    "entity_name": "refunds",
+    "entity_id": "REF-2026-000259",
+    "parent_entity_id": "RMA-2026-000317",
+    "issue_type": "DUPLICATE_REFUND_ATTEMPT",
+    "expected_decision": "BLOCK_DUPLICATE_REFUND",
+    "actual_injected_behavior": "Duplicate payout attempted for RMA RMA-2026-000317",
+    "created_at": "2026-04-11T06:05:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000267",
+    "entity_name": "inventory_dispositions",
+    "entity_id": "DISP-2026-000311",
+    "parent_entity_id": "INS-2026-000311",
+    "issue_type": "RESTOCK_BEFORE_INSPECTION",
+    "expected_decision": "BLOCK_PREMATURE_RESTOCK",
+    "actual_injected_behavior": "Restocked at 2026-04-01T08:00:00+00:00, before inspection 2026-04-02T18:00:00+00:00",
+    "created_at": "2026-04-01T08:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000268",
+    "entity_name": "refunds",
+    "entity_id": "REF-2026-000261",
+    "parent_entity_id": "RMA-2026-000319",
+    "issue_type": "REFUND_EXCEEDS_PAID",
+    "expected_decision": "BLOCK_EXCESS_PAYOUT",
+    "actual_injected_behavior": "Refund calculated to exceed order total paid (858.36)",
+    "created_at": "2026-04-02T20:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000269",
+    "entity_name": "refunds",
+    "entity_id": "REF-2026-000266",
+    "parent_entity_id": "RMA-2026-000323",
+    "issue_type": "DUPLICATE_REFUND_ATTEMPT",
+    "expected_decision": "BLOCK_DUPLICATE_REFUND",
+    "actual_injected_behavior": "Duplicate payout attempted for RMA RMA-2026-000323",
+    "created_at": "2026-04-04T13:05:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000270",
+    "entity_name": "refunds",
+    "entity_id": "REF-2026-000268",
+    "parent_entity_id": "RMA-2026-000324",
+    "issue_type": "DUPLICATE_REFUND_ATTEMPT",
+    "expected_decision": "BLOCK_DUPLICATE_REFUND",
+    "actual_injected_behavior": "Duplicate payout attempted for RMA RMA-2026-000324",
+    "created_at": "2026-05-16T18:05:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000271",
+    "entity_name": "return_requests",
+    "entity_id": "REQ-2026-000325",
+    "parent_entity_id": "ORD-2026-016944",
+    "issue_type": "RETURN_PAST_POLICY_WINDOW",
+    "expected_decision": "REJECTED_OR_OVERRIDE_REQUIRED",
+    "actual_injected_behavior": "Submitted at day 77 without override",
+    "created_at": "2026-08-03T11:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000272",
+    "entity_name": "return_requests",
+    "entity_id": "REQ-2026-000326",
+    "parent_entity_id": "ORD-2026-009418",
+    "issue_type": "RETURN_PAST_POLICY_WINDOW",
+    "expected_decision": "REJECTED_OR_OVERRIDE_REQUIRED",
+    "actual_injected_behavior": "Submitted at day 87 without override",
+    "created_at": "2026-05-30T05:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000273",
+    "entity_name": "return_requests",
+    "entity_id": "REQ-2026-000335",
+    "parent_entity_id": "ORD-2026-019558",
+    "issue_type": "RETURN_PAST_POLICY_WINDOW",
+    "expected_decision": "REJECTED_OR_OVERRIDE_REQUIRED",
+    "actual_injected_behavior": "Submitted at day 87 without override",
+    "created_at": "2026-08-08T22:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000274",
+    "entity_name": "refunds",
+    "entity_id": "REF-2026-000275",
+    "parent_entity_id": "RMA-2026-000337",
+    "issue_type": "DUPLICATE_REFUND_ATTEMPT",
+    "expected_decision": "BLOCK_DUPLICATE_REFUND",
+    "actual_injected_behavior": "Duplicate payout attempted for RMA RMA-2026-000337",
+    "created_at": "2026-05-26T23:05:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000275",
+    "entity_name": "refunds",
+    "entity_id": "REF-2026-000277",
+    "parent_entity_id": "RMA-2026-000340",
+    "issue_type": "DUPLICATE_REFUND_ATTEMPT",
+    "expected_decision": "BLOCK_DUPLICATE_REFUND",
+    "actual_injected_behavior": "Duplicate payout attempted for RMA RMA-2026-000340",
+    "created_at": "2026-03-08T23:05:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000276",
+    "entity_name": "return_requests",
+    "entity_id": "REQ-2026-000344",
+    "parent_entity_id": "ORD-2026-023967",
+    "issue_type": "RETURN_PAST_POLICY_WINDOW",
+    "expected_decision": "REJECTED_OR_OVERRIDE_REQUIRED",
+    "actual_injected_behavior": "Submitted at day 93 without override",
+    "created_at": "2026-06-13T19:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000277",
+    "entity_name": "refunds",
+    "entity_id": "REF-2026-000281",
+    "parent_entity_id": "RMA-2026-000346",
+    "issue_type": "DUPLICATE_REFUND_ATTEMPT",
+    "expected_decision": "BLOCK_DUPLICATE_REFUND",
+    "actual_injected_behavior": "Duplicate payout attempted for RMA RMA-2026-000346",
+    "created_at": "2026-04-11T05:05:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000278",
+    "entity_name": "refunds",
+    "entity_id": "REF-2026-000284",
+    "parent_entity_id": "RMA-2026-000349",
+    "issue_type": "DUPLICATE_REFUND_ATTEMPT",
+    "expected_decision": "BLOCK_DUPLICATE_REFUND",
+    "actual_injected_behavior": "Duplicate payout attempted for RMA RMA-2026-000349",
+    "created_at": "2026-01-20T16:05:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000279",
+    "entity_name": "refunds",
+    "entity_id": "REF-2026-000286",
+    "parent_entity_id": "RMA-2026-000350",
+    "issue_type": "DUPLICATE_REFUND_ATTEMPT",
+    "expected_decision": "BLOCK_DUPLICATE_REFUND",
+    "actual_injected_behavior": "Duplicate payout attempted for RMA RMA-2026-000350",
+    "created_at": "2026-05-24T06:05:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000280",
+    "entity_name": "return_requests",
+    "entity_id": "REQ-2026-000353",
+    "parent_entity_id": "ORD-2026-009212",
+    "issue_type": "RETURN_PAST_POLICY_WINDOW",
+    "expected_decision": "REJECTED_OR_OVERRIDE_REQUIRED",
+    "actual_injected_behavior": "Submitted at day 89 without override",
+    "created_at": "2026-08-27T01:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000281",
+    "entity_name": "return_requests",
+    "entity_id": "REQ-2026-000354",
+    "parent_entity_id": "ORD-2026-029154",
+    "issue_type": "RETURN_PAST_POLICY_WINDOW",
+    "expected_decision": "REJECTED_OR_OVERRIDE_REQUIRED",
+    "actual_injected_behavior": "Submitted at day 80 without override",
+    "created_at": "2026-08-06T02:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000282",
+    "entity_name": "return_requests",
+    "entity_id": "REQ-2026-000356",
+    "parent_entity_id": "ORD-2026-021857",
+    "issue_type": "RETURN_PAST_POLICY_WINDOW",
+    "expected_decision": "REJECTED_OR_OVERRIDE_REQUIRED",
+    "actual_injected_behavior": "Submitted at day 87 without override",
+    "created_at": "2026-06-22T02:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000283",
+    "entity_name": "return_requests",
+    "entity_id": "REQ-2026-000357",
+    "parent_entity_id": "ORD-2026-007509",
+    "issue_type": "RETURN_PAST_POLICY_WINDOW",
+    "expected_decision": "REJECTED_OR_OVERRIDE_REQUIRED",
+    "actual_injected_behavior": "Submitted at day 65 without override",
+    "created_at": "2026-08-15T03:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000284",
+    "entity_name": "refunds",
+    "entity_id": "REF-2026-000288",
+    "parent_entity_id": "RMA-2026-000359",
+    "issue_type": "REFUND_EXCEEDS_PAID",
+    "expected_decision": "BLOCK_EXCESS_PAYOUT",
+    "actual_injected_behavior": "Refund calculated to exceed order total paid (63.98)",
+    "created_at": "2026-02-11T07:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000285",
+    "entity_name": "refunds",
+    "entity_id": "REF-2026-000290",
+    "parent_entity_id": "RMA-2026-000361",
+    "issue_type": "REFUND_EXCEEDS_PAID",
+    "expected_decision": "BLOCK_EXCESS_PAYOUT",
+    "actual_injected_behavior": "Refund calculated to exceed order total paid (172.20)",
+    "created_at": "2026-03-20T20:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000286",
+    "entity_name": "refunds",
+    "entity_id": "REF-2026-000291",
+    "parent_entity_id": "RMA-2026-000362",
+    "issue_type": "REFUND_EXCEEDS_PAID",
+    "expected_decision": "BLOCK_EXCESS_PAYOUT",
+    "actual_injected_behavior": "Refund calculated to exceed order total paid (383.31)",
+    "created_at": "2026-03-01T04:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000287",
+    "entity_name": "refunds",
+    "entity_id": "REF-2026-000292",
+    "parent_entity_id": "RMA-2026-000362",
+    "issue_type": "DUPLICATE_REFUND_ATTEMPT",
+    "expected_decision": "BLOCK_DUPLICATE_REFUND",
+    "actual_injected_behavior": "Duplicate payout attempted for RMA RMA-2026-000362",
+    "created_at": "2026-03-01T04:05:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000288",
+    "entity_name": "return_requests",
+    "entity_id": "REQ-2026-000364",
+    "parent_entity_id": "ORD-2026-022253",
+    "issue_type": "RETURN_PAST_POLICY_WINDOW",
+    "expected_decision": "REJECTED_OR_OVERRIDE_REQUIRED",
+    "actual_injected_behavior": "Submitted at day 81 without override",
+    "created_at": "2026-05-13T13:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000289",
+    "entity_name": "refunds",
+    "entity_id": "REF-2026-000294",
+    "parent_entity_id": "RMA-2026-000365",
+    "issue_type": "REFUND_EXCEEDS_PAID",
+    "expected_decision": "BLOCK_EXCESS_PAYOUT",
+    "actual_injected_behavior": "Refund calculated to exceed order total paid (86.39)",
+    "created_at": "2026-06-03T15:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000290",
+    "entity_name": "refunds",
+    "entity_id": "REF-2026-000297",
+    "parent_entity_id": "RMA-2026-000367",
+    "issue_type": "DUPLICATE_REFUND_ATTEMPT",
+    "expected_decision": "BLOCK_DUPLICATE_REFUND",
+    "actual_injected_behavior": "Duplicate payout attempted for RMA RMA-2026-000367",
+    "created_at": "2026-06-25T19:05:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000291",
+    "entity_name": "refunds",
+    "entity_id": "REF-2026-000301",
+    "parent_entity_id": "RMA-2026-000372",
+    "issue_type": "DUPLICATE_REFUND_ATTEMPT",
+    "expected_decision": "BLOCK_DUPLICATE_REFUND",
+    "actual_injected_behavior": "Duplicate payout attempted for RMA RMA-2026-000372",
+    "created_at": "2026-04-16T11:05:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000292",
+    "entity_name": "refunds",
+    "entity_id": "REF-2026-000303",
+    "parent_entity_id": "RMA-2026-000375",
+    "issue_type": "REFUND_EXCEEDS_PAID",
+    "expected_decision": "BLOCK_EXCESS_PAYOUT",
+    "actual_injected_behavior": "Refund calculated to exceed order total paid (403.49)",
+    "created_at": "2026-01-26T09:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000293",
+    "entity_name": "refunds",
+    "entity_id": "REF-2026-000308",
+    "parent_entity_id": "RMA-2026-000381",
+    "issue_type": "DUPLICATE_REFUND_ATTEMPT",
+    "expected_decision": "BLOCK_DUPLICATE_REFUND",
+    "actual_injected_behavior": "Duplicate payout attempted for RMA RMA-2026-000381",
+    "created_at": "2026-05-16T22:05:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000294",
+    "entity_name": "refunds",
+    "entity_id": "REF-2026-000309",
+    "parent_entity_id": "RMA-2026-000382",
+    "issue_type": "REFUND_EXCEEDS_PAID",
+    "expected_decision": "BLOCK_EXCESS_PAYOUT",
+    "actual_injected_behavior": "Refund calculated to exceed order total paid (300.62)",
+    "created_at": "2026-05-31T05:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000295",
+    "entity_name": "return_requests",
+    "entity_id": "REQ-2026-000383",
+    "parent_entity_id": "ORD-2026-030467",
+    "issue_type": "RETURN_PAST_POLICY_WINDOW",
+    "expected_decision": "REJECTED_OR_OVERRIDE_REQUIRED",
+    "actual_injected_behavior": "Submitted at day 84 without override",
+    "created_at": "2026-08-13T20:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000296",
+    "entity_name": "refunds",
+    "entity_id": "REF-2026-000311",
+    "parent_entity_id": "RMA-2026-000386",
+    "issue_type": "REFUND_EXCEEDS_PAID",
+    "expected_decision": "BLOCK_EXCESS_PAYOUT",
+    "actual_injected_behavior": "Refund calculated to exceed order total paid (772.72)",
+    "created_at": "2026-04-04T13:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000297",
+    "entity_name": "refunds",
+    "entity_id": "REF-2026-000315",
+    "parent_entity_id": "RMA-2026-000391",
+    "issue_type": "REFUND_EXCEEDS_PAID",
+    "expected_decision": "BLOCK_EXCESS_PAYOUT",
+    "actual_injected_behavior": "Refund calculated to exceed order total paid (120.96)",
+    "created_at": "2026-05-07T19:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000298",
+    "entity_name": "return_requests",
+    "entity_id": "REQ-2026-000395",
+    "parent_entity_id": "ORD-2026-013159",
+    "issue_type": "RETURN_PAST_POLICY_WINDOW",
+    "expected_decision": "REJECTED_OR_OVERRIDE_REQUIRED",
+    "actual_injected_behavior": "Submitted at day 73 without override",
+    "created_at": "2026-05-27T13:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000299",
+    "entity_name": "refunds",
+    "entity_id": "REF-2026-000320",
+    "parent_entity_id": "RMA-2026-000397",
+    "issue_type": "DUPLICATE_REFUND_ATTEMPT",
+    "expected_decision": "BLOCK_DUPLICATE_REFUND",
+    "actual_injected_behavior": "Duplicate payout attempted for RMA RMA-2026-000397",
+    "created_at": "2026-04-26T00:05:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000300",
+    "entity_name": "refunds",
+    "entity_id": "REF-2026-000321",
+    "parent_entity_id": "RMA-2026-000398",
+    "issue_type": "REFUND_EXCEEDS_PAID",
+    "expected_decision": "BLOCK_EXCESS_PAYOUT",
+    "actual_injected_behavior": "Refund calculated to exceed order total paid (151.19)",
+    "created_at": "2026-06-21T23:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000301",
+    "entity_name": "refunds",
+    "entity_id": "REF-2026-000322",
+    "parent_entity_id": "RMA-2026-000400",
+    "issue_type": "REFUND_EXCEEDS_PAID",
+    "expected_decision": "BLOCK_EXCESS_PAYOUT",
+    "actual_injected_behavior": "Refund calculated to exceed order total paid (496.30)",
+    "created_at": "2026-04-21T18:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000302",
+    "entity_name": "refunds",
+    "entity_id": "REF-2026-000324",
+    "parent_entity_id": "RMA-2026-000403",
+    "issue_type": "REFUND_EXCEEDS_PAID",
+    "expected_decision": "BLOCK_EXCESS_PAYOUT",
+    "actual_injected_behavior": "Refund calculated to exceed order total paid (532.06)",
+    "created_at": "2026-04-24T09:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000303",
+    "entity_name": "refunds",
+    "entity_id": "REF-2026-000328",
+    "parent_entity_id": "RMA-2026-000406",
+    "issue_type": "DUPLICATE_REFUND_ATTEMPT",
+    "expected_decision": "BLOCK_DUPLICATE_REFUND",
+    "actual_injected_behavior": "Duplicate payout attempted for RMA RMA-2026-000406",
+    "created_at": "2026-05-12T02:05:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000304",
+    "entity_name": "refunds",
+    "entity_id": "REF-2026-000334",
+    "parent_entity_id": "RMA-2026-000414",
+    "issue_type": "REFUND_EXCEEDS_PAID",
+    "expected_decision": "BLOCK_EXCESS_PAYOUT",
+    "actual_injected_behavior": "Refund calculated to exceed order total paid (669.52)",
+    "created_at": "2026-06-04T13:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000305",
+    "entity_name": "refunds",
+    "entity_id": "REF-2026-000336",
+    "parent_entity_id": "RMA-2026-000415",
+    "issue_type": "DUPLICATE_REFUND_ATTEMPT",
+    "expected_decision": "BLOCK_DUPLICATE_REFUND",
+    "actual_injected_behavior": "Duplicate payout attempted for RMA RMA-2026-000415",
+    "created_at": "2026-01-29T23:05:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000306",
+    "entity_name": "refunds",
+    "entity_id": "REF-2026-000338",
+    "parent_entity_id": "RMA-2026-000417",
+    "issue_type": "REFUND_EXCEEDS_PAID",
+    "expected_decision": "BLOCK_EXCESS_PAYOUT",
+    "actual_injected_behavior": "Refund calculated to exceed order total paid (313.19)",
+    "created_at": "2026-03-09T09:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000307",
+    "entity_name": "refunds",
+    "entity_id": "REF-2026-000340",
+    "parent_entity_id": "RMA-2026-000420",
+    "issue_type": "REFUND_EXCEEDS_PAID",
+    "expected_decision": "BLOCK_EXCESS_PAYOUT",
+    "actual_injected_behavior": "Refund calculated to exceed order total paid (529.19)",
+    "created_at": "2026-03-14T22:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000308",
+    "entity_name": "refunds",
+    "entity_id": "REF-2026-000344",
+    "parent_entity_id": "RMA-2026-000423",
+    "issue_type": "DUPLICATE_REFUND_ATTEMPT",
+    "expected_decision": "BLOCK_DUPLICATE_REFUND",
+    "actual_injected_behavior": "Duplicate payout attempted for RMA RMA-2026-000423",
+    "created_at": "2026-03-20T23:05:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000309",
+    "entity_name": "refunds",
+    "entity_id": "REF-2026-000349",
+    "parent_entity_id": "RMA-2026-000428",
+    "issue_type": "REFUND_EXCEEDS_PAID",
+    "expected_decision": "BLOCK_EXCESS_PAYOUT",
+    "actual_injected_behavior": "Refund calculated to exceed order total paid (211.33)",
+    "created_at": "2026-04-11T06:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000310",
+    "entity_name": "refunds",
+    "entity_id": "REF-2026-000353",
+    "parent_entity_id": "RMA-2026-000433",
+    "issue_type": "DUPLICATE_REFUND_ATTEMPT",
+    "expected_decision": "BLOCK_DUPLICATE_REFUND",
+    "actual_injected_behavior": "Duplicate payout attempted for RMA RMA-2026-000433",
+    "created_at": "2026-02-15T13:05:00+00:00"
+  }
+]

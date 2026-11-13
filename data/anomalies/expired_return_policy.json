@@ -1,0 +1,622 @@
+[
+  {
+    "anomaly_id": "ANO-000004",
+    "entity_name": "return_requests",
+    "entity_id": "REQ-2026-000005",
+    "parent_entity_id": "ORD-2026-008555",
+    "issue_type": "RETURN_PAST_POLICY_WINDOW",
+    "expected_decision": "REJECTED_OR_OVERRIDE_REQUIRED",
+    "actual_injected_behavior": "Submitted at day 78 without override",
+    "created_at": "2026-07-28T04:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000005",
+    "entity_name": "return_requests",
+    "entity_id": "REQ-2026-000006",
+    "parent_entity_id": "ORD-2026-016775",
+    "issue_type": "RETURN_PAST_POLICY_WINDOW",
+    "expected_decision": "REJECTED_OR_OVERRIDE_REQUIRED",
+    "actual_injected_behavior": "Submitted at day 68 without override",
+    "created_at": "2026-09-09T20:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000008",
+    "entity_name": "return_requests",
+    "entity_id": "REQ-2026-000009",
+    "parent_entity_id": "ORD-2026-016224",
+    "issue_type": "RETURN_PAST_POLICY_WINDOW",
+    "expected_decision": "REJECTED_OR_OVERRIDE_REQUIRED",
+    "actual_injected_behavior": "Submitted at day 65 without override",
+    "created_at": "2026-07-07T08:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000012",
+    "entity_name": "return_requests",
+    "entity_id": "REQ-2026-000012",
+    "parent_entity_id": "ORD-2026-028718",
+    "issue_type": "RETURN_PAST_POLICY_WINDOW",
+    "expected_decision": "REJECTED_OR_OVERRIDE_REQUIRED",
+    "actual_injected_behavior": "Submitted at day 71 without override",
+    "created_at": "2026-06-05T08:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000016",
+    "entity_name": "return_requests",
+    "entity_id": "REQ-2026-000017",
+    "parent_entity_id": "ORD-2026-032246",
+    "issue_type": "RETURN_PAST_POLICY_WINDOW",
+    "expected_decision": "REJECTED_OR_OVERRIDE_REQUIRED",
+    "actual_injected_behavior": "Submitted at day 86 without override",
+    "created_at": "2026-05-14T11:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000020",
+    "entity_name": "return_requests",
+    "entity_id": "REQ-2026-000026",
+    "parent_entity_id": "ORD-2026-011796",
+    "issue_type": "RETURN_PAST_POLICY_WINDOW",
+    "expected_decision": "REJECTED_OR_OVERRIDE_REQUIRED",
+    "actual_injected_behavior": "Submitted at day 89 without override",
+    "created_at": "2026-07-30T12:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000030",
+    "entity_name": "return_requests",
+    "entity_id": "REQ-2026-000046",
+    "parent_entity_id": "ORD-2026-007571",
+    "issue_type": "RETURN_PAST_POLICY_WINDOW",
+    "expected_decision": "REJECTED_OR_OVERRIDE_REQUIRED",
+    "actual_injected_behavior": "Submitted at day 73 without override",
+    "created_at": "2026-06-01T04:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000035",
+    "entity_name": "return_requests",
+    "entity_id": "REQ-2026-000050",
+    "parent_entity_id": "ORD-2026-034605",
+    "issue_type": "RETURN_PAST_POLICY_WINDOW",
+    "expected_decision": "REJECTED_OR_OVERRIDE_REQUIRED",
+    "actual_injected_behavior": "Submitted at day 91 without override",
+    "created_at": "2026-06-04T13:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000045",
+    "entity_name": "return_requests",
+    "entity_id": "REQ-2026-000063",
+    "parent_entity_id": "ORD-2026-021918",
+    "issue_type": "RETURN_PAST_POLICY_WINDOW",
+    "expected_decision": "REJECTED_OR_OVERRIDE_REQUIRED",
+    "actual_injected_behavior": "Submitted at day 74 without override",
+    "created_at": "2026-07-08T03:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000046",
+    "entity_name": "return_requests",
+    "entity_id": "REQ-2026-000065",
+    "parent_entity_id": "ORD-2026-031190",
+    "issue_type": "RETURN_PAST_POLICY_WINDOW",
+    "expected_decision": "REJECTED_OR_OVERRIDE_REQUIRED",
+    "actual_injected_behavior": "Submitted at day 73 without override",
+    "created_at": "2026-04-09T03:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000053",
+    "entity_name": "return_requests",
+    "entity_id": "REQ-2026-000074",
+    "parent_entity_id": "ORD-2026-034210",
+    "issue_type": "RETURN_PAST_POLICY_WINDOW",
+    "expected_decision": "REJECTED_OR_OVERRIDE_REQUIRED",
+    "actual_injected_behavior": "Submitted at day 68 without override",
+    "created_at": "2026-06-02T13:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000062",
+    "entity_name": "return_requests",
+    "entity_id": "REQ-2026-000084",
+    "parent_entity_id": "ORD-2026-002458",
+    "issue_type": "RETURN_PAST_POLICY_WINDOW",
+    "expected_decision": "REJECTED_OR_OVERRIDE_REQUIRED",
+    "actual_injected_behavior": "Submitted at day 81 without override",
+    "created_at": "2026-06-21T13:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000070",
+    "entity_name": "return_requests",
+    "entity_id": "REQ-2026-000091",
+    "parent_entity_id": "ORD-2026-009662",
+    "issue_type": "RETURN_PAST_POLICY_WINDOW",
+    "expected_decision": "REJECTED_OR_OVERRIDE_REQUIRED",
+    "actual_injected_behavior": "Submitted at day 68 without override",
+    "created_at": "2026-07-16T18:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000071",
+    "entity_name": "return_requests",
+    "entity_id": "REQ-2026-000095",
+    "parent_entity_id": "ORD-2026-024310",
+    "issue_type": "RETURN_PAST_POLICY_WINDOW",
+    "expected_decision": "REJECTED_OR_OVERRIDE_REQUIRED",
+    "actual_injected_behavior": "Submitted at day 72 without override",
+    "created_at": "2026-07-03T21:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000083",
+    "entity_name": "return_requests",
+    "entity_id": "REQ-2026-000103",
+    "parent_entity_id": "ORD-2026-033002",
+    "issue_type": "RETURN_PAST_POLICY_WINDOW",
+    "expected_decision": "REJECTED_OR_OVERRIDE_REQUIRED",
+    "actual_injected_behavior": "Submitted at day 73 without override",
+    "created_at": "2026-06-08T03:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000086",
+    "entity_name": "return_requests",
+    "entity_id": "REQ-2026-000106",
+    "parent_entity_id": "ORD-2026-028304",
+    "issue_type": "RETURN_PAST_POLICY_WINDOW",
+    "expected_decision": "REJECTED_OR_OVERRIDE_REQUIRED",
+    "actual_injected_behavior": "Submitted at day 67 without override",
+    "created_at": "2026-06-19T08:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000091",
+    "entity_name": "return_requests",
+    "entity_id": "REQ-2026-000112",
+    "parent_entity_id": "ORD-2026-012641",
+    "issue_type": "RETURN_PAST_POLICY_WINDOW",
+    "expected_decision": "REJECTED_OR_OVERRIDE_REQUIRED",
+    "actual_injected_behavior": "Submitted at day 86 without override",
+    "created_at": "2026-06-09T02:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000102",
+    "entity_name": "return_requests",
+    "entity_id": "REQ-2026-000123",
+    "parent_entity_id": "ORD-2026-025550",
+    "issue_type": "RETURN_PAST_POLICY_WINDOW",
+    "expected_decision": "REJECTED_OR_OVERRIDE_REQUIRED",
+    "actual_injected_behavior": "Submitted at day 74 without override",
+    "created_at": "2026-05-19T18:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000104",
+    "entity_name": "return_requests",
+    "entity_id": "REQ-2026-000125",
+    "parent_entity_id": "ORD-2026-020029",
+    "issue_type": "RETURN_PAST_POLICY_WINDOW",
+    "expected_decision": "REJECTED_OR_OVERRIDE_REQUIRED",
+    "actual_injected_behavior": "Submitted at day 90 without override",
+    "created_at": "2026-07-15T12:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000114",
+    "entity_name": "return_requests",
+    "entity_id": "REQ-2026-000136",
+    "parent_entity_id": "ORD-2026-030790",
+    "issue_type": "RETURN_PAST_POLICY_WINDOW",
+    "expected_decision": "REJECTED_OR_OVERRIDE_REQUIRED",
+    "actual_injected_behavior": "Submitted at day 68 without override",
+    "created_at": "2026-05-18T19:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000115",
+    "entity_name": "return_requests",
+    "entity_id": "REQ-2026-000137",
+    "parent_entity_id": "ORD-2026-016533",
+    "issue_type": "RETURN_PAST_POLICY_WINDOW",
+    "expected_decision": "REJECTED_OR_OVERRIDE_REQUIRED",
+    "actual_injected_behavior": "Submitted at day 82 without override",
+    "created_at": "2026-08-20T02:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000132",
+    "entity_name": "return_requests",
+    "entity_id": "REQ-2026-000158",
+    "parent_entity_id": "ORD-2026-028696",
+    "issue_type": "RETURN_PAST_POLICY_WINDOW",
+    "expected_decision": "REJECTED_OR_OVERRIDE_REQUIRED",
+    "actual_injected_behavior": "Submitted at day 92 without override",
+    "created_at": "2026-06-08T22:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000135",
+    "entity_name": "return_requests",
+    "entity_id": "REQ-2026-000163",
+    "parent_entity_id": "ORD-2026-027041",
+    "issue_type": "RETURN_PAST_POLICY_WINDOW",
+    "expected_decision": "REJECTED_OR_OVERRIDE_REQUIRED",
+    "actual_injected_behavior": "Submitted at day 74 without override",
+    "created_at": "2026-08-29T02:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000136",
+    "entity_name": "return_requests",
+    "entity_id": "REQ-2026-000166",
+    "parent_entity_id": "ORD-2026-014391",
+    "issue_type": "RETURN_PAST_POLICY_WINDOW",
+    "expected_decision": "REJECTED_OR_OVERRIDE_REQUIRED",
+    "actual_injected_behavior": "Submitted at day 95 without override",
+    "created_at": "2026-07-08T19:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000138",
+    "entity_name": "return_requests",
+    "entity_id": "REQ-2026-000167",
+    "parent_entity_id": "ORD-2026-018592",
+    "issue_type": "RETURN_PAST_POLICY_WINDOW",
+    "expected_decision": "REJECTED_OR_OVERRIDE_REQUIRED",
+    "actual_injected_behavior": "Submitted at day 75 without override",
+    "created_at": "2026-08-12T21:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000144",
+    "entity_name": "return_requests",
+    "entity_id": "REQ-2026-000173",
+    "parent_entity_id": "ORD-2026-031573",
+    "issue_type": "RETURN_PAST_POLICY_WINDOW",
+    "expected_decision": "REJECTED_OR_OVERRIDE_REQUIRED",
+    "actual_injected_behavior": "Submitted at day 89 without override",
+    "created_at": "2026-09-22T16:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000145",
+    "entity_name": "return_requests",
+    "entity_id": "REQ-2026-000174",
+    "parent_entity_id": "ORD-2026-025050",
+    "issue_type": "RETURN_PAST_POLICY_WINDOW",
+    "expected_decision": "REJECTED_OR_OVERRIDE_REQUIRED",
+    "actual_injected_behavior": "Submitted at day 73 without override",
+    "created_at": "2026-05-10T05:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000152",
+    "entity_name": "return_requests",
+    "entity_id": "REQ-2026-000180",
+    "parent_entity_id": "ORD-2026-009343",
+    "issue_type": "RETURN_PAST_POLICY_WINDOW",
+    "expected_decision": "REJECTED_OR_OVERRIDE_REQUIRED",
+    "actual_injected_behavior": "Submitted at day 67 without override",
+    "created_at": "2026-06-28T12:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000160",
+    "entity_name": "return_requests",
+    "entity_id": "REQ-2026-000186",
+    "parent_entity_id": "ORD-2026-001716",
+    "issue_type": "RETURN_PAST_POLICY_WINDOW",
+    "expected_decision": "REJECTED_OR_OVERRIDE_REQUIRED",
+    "actual_injected_behavior": "Submitted at day 78 without override",
+    "created_at": "2026-07-04T19:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000168",
+    "entity_name": "return_requests",
+    "entity_id": "REQ-2026-000194",
+    "parent_entity_id": "ORD-2026-025493",
+    "issue_type": "RETURN_PAST_POLICY_WINDOW",
+    "expected_decision": "REJECTED_OR_OVERRIDE_REQUIRED",
+    "actual_injected_behavior": "Submitted at day 85 without override",
+    "created_at": "2026-08-04T19:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000169",
+    "entity_name": "return_requests",
+    "entity_id": "REQ-2026-000195",
+    "parent_entity_id": "ORD-2026-004178",
+    "issue_type": "RETURN_PAST_POLICY_WINDOW",
+    "expected_decision": "REJECTED_OR_OVERRIDE_REQUIRED",
+    "actual_injected_behavior": "Submitted at day 66 without override",
+    "created_at": "2026-06-07T11:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000175",
+    "entity_name": "return_requests",
+    "entity_id": "REQ-2026-000206",
+    "parent_entity_id": "ORD-2026-022132",
+    "issue_type": "RETURN_PAST_POLICY_WINDOW",
+    "expected_decision": "REJECTED_OR_OVERRIDE_REQUIRED",
+    "actual_injected_behavior": "Submitted at day 92 without override",
+    "created_at": "2026-05-19T22:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000178",
+    "entity_name": "return_requests",
+    "entity_id": "REQ-2026-000208",
+    "parent_entity_id": "ORD-2026-032217",
+    "issue_type": "RETURN_PAST_POLICY_WINDOW",
+    "expected_decision": "REJECTED_OR_OVERRIDE_REQUIRED",
+    "actual_injected_behavior": "Submitted at day 93 without override",
+    "created_at": "2026-06-15T19:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000180",
+    "entity_name": "return_requests",
+    "entity_id": "REQ-2026-000213",
+    "parent_entity_id": "ORD-2026-022570",
+    "issue_type": "RETURN_PAST_POLICY_WINDOW",
+    "expected_decision": "REJECTED_OR_OVERRIDE_REQUIRED",
+    "actual_injected_behavior": "Submitted at day 95 without override",
+    "created_at": "2026-06-19T15:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000182",
+    "entity_name": "return_requests",
+    "entity_id": "REQ-2026-000215",
+    "parent_entity_id": "ORD-2026-029450",
+    "issue_type": "RETURN_PAST_POLICY_WINDOW",
+    "expected_decision": "REJECTED_OR_OVERRIDE_REQUIRED",
+    "actual_injected_behavior": "Submitted at day 89 without override",
+    "created_at": "2026-09-01T11:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000183",
+    "entity_name": "return_requests",
+    "entity_id": "REQ-2026-000216",
+    "parent_entity_id": "ORD-2026-027463",
+    "issue_type": "RETURN_PAST_POLICY_WINDOW",
+    "expected_decision": "REJECTED_OR_OVERRIDE_REQUIRED",
+    "actual_injected_behavior": "Submitted at day 85 without override",
+    "created_at": "2026-08-16T15:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000187",
+    "entity_name": "return_requests",
+    "entity_id": "REQ-2026-000219",
+    "parent_entity_id": "ORD-2026-000619",
+    "issue_type": "RETURN_PAST_POLICY_WINDOW",
+    "expected_decision": "REJECTED_OR_OVERRIDE_REQUIRED",
+    "actual_injected_behavior": "Submitted at day 82 without override",
+    "created_at": "2026-07-24T16:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000190",
+    "entity_name": "return_requests",
+    "entity_id": "REQ-2026-000221",
+    "parent_entity_id": "ORD-2026-010671",
+    "issue_type": "RETURN_PAST_POLICY_WINDOW",
+    "expected_decision": "REJECTED_OR_OVERRIDE_REQUIRED",
+    "actual_injected_behavior": "Submitted at day 92 without override",
+    "created_at": "2026-09-12T17:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000203",
+    "entity_name": "return_requests",
+    "entity_id": "REQ-2026-000234",
+    "parent_entity_id": "ORD-2026-011628",
+    "issue_type": "RETURN_PAST_POLICY_WINDOW",
+    "expected_decision": "REJECTED_OR_OVERRIDE_REQUIRED",
+    "actual_injected_behavior": "Submitted at day 84 without override",
+    "created_at": "2026-07-19T14:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000209",
+    "entity_name": "return_requests",
+    "entity_id": "REQ-2026-000246",
+    "parent_entity_id": "ORD-2026-037050",
+    "issue_type": "RETURN_PAST_POLICY_WINDOW",
+    "expected_decision": "REJECTED_OR_OVERRIDE_REQUIRED",
+    "actual_injected_behavior": "Submitted at day 85 without override",
+    "created_at": "2026-05-15T07:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000213",
+    "entity_name": "return_requests",
+    "entity_id": "REQ-2026-000251",
+    "parent_entity_id": "ORD-2026-034859",
+    "issue_type": "RETURN_PAST_POLICY_WINDOW",
+    "expected_decision": "REJECTED_OR_OVERRIDE_REQUIRED",
+    "actual_injected_behavior": "Submitted at day 95 without override",
+    "created_at": "2026-09-01T15:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000216",
+    "entity_name": "return_requests",
+    "entity_id": "REQ-2026-000253",
+    "parent_entity_id": "ORD-2026-028601",
+    "issue_type": "RETURN_PAST_POLICY_WINDOW",
+    "expected_decision": "REJECTED_OR_OVERRIDE_REQUIRED",
+    "actual_injected_behavior": "Submitted at day 77 without override",
+    "created_at": "2026-06-16T00:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000221",
+    "entity_name": "return_requests",
+    "entity_id": "REQ-2026-000258",
+    "parent_entity_id": "ORD-2026-029065",
+    "issue_type": "RETURN_PAST_POLICY_WINDOW",
+    "expected_decision": "REJECTED_OR_OVERRIDE_REQUIRED",
+    "actual_injected_behavior": "Submitted at day 87 without override",
+    "created_at": "2026-04-24T03:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000232",
+    "entity_name": "return_requests",
+    "entity_id": "REQ-2026-000271",
+    "parent_entity_id": "ORD-2026-020769",
+    "issue_type": "RETURN_PAST_POLICY_WINDOW",
+    "expected_decision": "REJECTED_OR_OVERRIDE_REQUIRED",
+    "actual_injected_behavior": "Submitted at day 76 without override",
+    "created_at": "2026-07-08T06:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000238",
+    "entity_name": "return_requests",
+    "entity_id": "REQ-2026-000283",
+    "parent_entity_id": "ORD-2026-003810",
+    "issue_type": "RETURN_PAST_POLICY_WINDOW",
+    "expected_decision": "REJECTED_OR_OVERRIDE_REQUIRED",
+    "actual_injected_behavior": "Submitted at day 86 without override",
+    "created_at": "2026-06-30T13:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000240",
+    "entity_name": "return_requests",
+    "entity_id": "REQ-2026-000286",
+    "parent_entity_id": "ORD-2026-035856",
+    "issue_type": "RETURN_PAST_POLICY_WINDOW",
+    "expected_decision": "REJECTED_OR_OVERRIDE_REQUIRED",
+    "actual_injected_behavior": "Submitted at day 93 without override",
+    "created_at": "2026-08-02T15:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000241",
+    "entity_name": "return_requests",
+    "entity_id": "REQ-2026-000287",
+    "parent_entity_id": "ORD-2026-016746",
+    "issue_type": "RETURN_PAST_POLICY_WINDOW",
+    "expected_decision": "REJECTED_OR_OVERRIDE_REQUIRED",
+    "actual_injected_behavior": "Submitted at day 80 without override",
+    "created_at": "2026-05-20T22:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000244",
+    "entity_name": "return_requests",
+    "entity_id": "REQ-2026-000291",
+    "parent_entity_id": "ORD-2026-018534",
+    "issue_type": "RETURN_PAST_POLICY_WINDOW",
+    "expected_decision": "REJECTED_OR_OVERRIDE_REQUIRED",
+    "actual_injected_behavior": "Submitted at day 80 without override",
+    "created_at": "2026-07-19T07:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000253",
+    "entity_name": "return_requests",
+    "entity_id": "REQ-2026-000305",
+    "parent_entity_id": "ORD-2026-031192",
+    "issue_type": "RETURN_PAST_POLICY_WINDOW",
+    "expected_decision": "REJECTED_OR_OVERRIDE_REQUIRED",
+    "actual_injected_behavior": "Submitted at day 83 without override",
+    "created_at": "2026-07-21T05:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000258",
+    "entity_name": "return_requests",
+    "entity_id": "REQ-2026-000310",
+    "parent_entity_id": "ORD-2026-035785",
+    "issue_type": "RETURN_PAST_POLICY_WINDOW",
+    "expected_decision": "REJECTED_OR_OVERRIDE_REQUIRED",
+    "actual_injected_behavior": "Submitted at day 85 without override",
+    "created_at": "2026-09-15T20:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000263",
+    "entity_name": "return_requests",
+    "entity_id": "REQ-2026-000315",
+    "parent_entity_id": "ORD-2026-004155",
+    "issue_type": "RETURN_PAST_POLICY_WINDOW",
+    "expected_decision": "REJECTED_OR_OVERRIDE_REQUIRED",
+    "actual_injected_behavior": "Submitted at day 85 without override",
+    "created_at": "2026-04-18T21:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000271",
+    "entity_name": "return_requests",
+    "entity_id": "REQ-2026-000325",
+    "parent_entity_id": "ORD-2026-016944",
+    "issue_type": "RETURN_PAST_POLICY_WINDOW",
+    "expected_decision": "REJECTED_OR_OVERRIDE_REQUIRED",
+    "actual_injected_behavior": "Submitted at day 77 without override",
+    "created_at": "2026-08-03T11:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000272",
+    "entity_name": "return_requests",
+    "entity_id": "REQ-2026-000326",
+    "parent_entity_id": "ORD-2026-009418",
+    "issue_type": "RETURN_PAST_POLICY_WINDOW",
+    "expected_decision": "REJECTED_OR_OVERRIDE_REQUIRED",
+    "actual_injected_behavior": "Submitted at day 87 without override",
+    "created_at": "2026-05-30T05:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000273",
+    "entity_name": "return_requests",
+    "entity_id": "REQ-2026-000335",
+    "parent_entity_id": "ORD-2026-019558",
+    "issue_type": "RETURN_PAST_POLICY_WINDOW",
+    "expected_decision": "REJECTED_OR_OVERRIDE_REQUIRED",
+    "actual_injected_behavior": "Submitted at day 87 without override",
+    "created_at": "2026-08-08T22:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000276",
+    "entity_name": "return_requests",
+    "entity_id": "REQ-2026-000344",
+    "parent_entity_id": "ORD-2026-023967",
+    "issue_type": "RETURN_PAST_POLICY_WINDOW",
+    "expected_decision": "REJECTED_OR_OVERRIDE_REQUIRED",
+    "actual_injected_behavior": "Submitted at day 93 without override",
+    "created_at": "2026-06-13T19:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000280",
+    "entity_name": "return_requests",
+    "entity_id": "REQ-2026-000353",
+    "parent_entity_id": "ORD-2026-009212",
+    "issue_type": "RETURN_PAST_POLICY_WINDOW",
+    "expected_decision": "REJECTED_OR_OVERRIDE_REQUIRED",
+    "actual_injected_behavior": "Submitted at day 89 without override",
+    "created_at": "2026-08-27T01:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000281",
+    "entity_name": "return_requests",
+    "entity_id": "REQ-2026-000354",
+    "parent_entity_id": "ORD-2026-029154",
+    "issue_type": "RETURN_PAST_POLICY_WINDOW",
+    "expected_decision": "REJECTED_OR_OVERRIDE_REQUIRED",
+    "actual_injected_behavior": "Submitted at day 80 without override",
+    "created_at": "2026-08-06T02:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000282",
+    "entity_name": "return_requests",
+    "entity_id": "REQ-2026-000356",
+    "parent_entity_id": "ORD-2026-021857",
+    "issue_type": "RETURN_PAST_POLICY_WINDOW",
+    "expected_decision": "REJECTED_OR_OVERRIDE_REQUIRED",
+    "actual_injected_behavior": "Submitted at day 87 without override",
+    "created_at": "2026-06-22T02:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000283",
+    "entity_name": "return_requests",
+    "entity_id": "REQ-2026-000357",
+    "parent_entity_id": "ORD-2026-007509",
+    "issue_type": "RETURN_PAST_POLICY_WINDOW",
+    "expected_decision": "REJECTED_OR_OVERRIDE_REQUIRED",
+    "actual_injected_behavior": "Submitted at day 65 without override",
+    "created_at": "2026-08-15T03:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000288",
+    "entity_name": "return_requests",
+    "entity_id": "REQ-2026-000364",
+    "parent_entity_id": "ORD-2026-022253",
+    "issue_type": "RETURN_PAST_POLICY_WINDOW",
+    "expected_decision": "REJECTED_OR_OVERRIDE_REQUIRED",
+    "actual_injected_behavior": "Submitted at day 81 without override",
+    "created_at": "2026-05-13T13:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000295",
+    "entity_name": "return_requests",
+    "entity_id": "REQ-2026-000383",
+    "parent_entity_id": "ORD-2026-030467",
+    "issue_type": "RETURN_PAST_POLICY_WINDOW",
+    "expected_decision": "REJECTED_OR_OVERRIDE_REQUIRED",
+    "actual_injected_behavior": "Submitted at day 84 without override",
+    "created_at": "2026-08-13T20:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000298",
+    "entity_name": "return_requests",
+    "entity_id": "REQ-2026-000395",
+    "parent_entity_id": "ORD-2026-013159",
+    "issue_type": "RETURN_PAST_POLICY_WINDOW",
+    "expected_decision": "REJECTED_OR_OVERRIDE_REQUIRED",
+    "actual_injected_behavior": "Submitted at day 73 without override",
+    "created_at": "2026-05-27T13:00:00+00:00"
+  }
+]

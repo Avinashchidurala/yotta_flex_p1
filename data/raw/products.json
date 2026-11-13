@@ -1,0 +1,162 @@
+[
+  {
+    "sku": "SKU-ELEC-01",
+    "product_name": "Wireless Noise-Canceling Headphones",
+    "category": "ELECTRONICS",
+    "unit_price": "199.99",
+    "is_returnable": 1,
+    "return_window_days": 14,
+    "restock_fee_rate": "0.15",
+    "created_at": "2025-12-01T00:00:00+00:00"
+  },
+  {
+    "sku": "SKU-ELEC-02",
+    "product_name": "4K Ultra HD Action Camera",
+    "category": "ELECTRONICS",
+    "unit_price": "299.99",
+    "is_returnable": 1,
+    "return_window_days": 14,
+    "restock_fee_rate": "0.15",
+    "created_at": "2025-12-01T00:00:00+00:00"
+  },
+  {
+    "sku": "SKU-ELEC-03",
+    "product_name": "Smart Fitness Watch V2",
+    "category": "ELECTRONICS",
+    "unit_price": "149.50",
+    "is_returnable": 1,
+    "return_window_days": 14,
+    "restock_fee_rate": "0.15",
+    "created_at": "2025-12-01T00:00:00+00:00"
+  },
+  {
+    "sku": "SKU-ELEC-04",
+    "product_name": "Portable Bluetooth Speaker Pro",
+    "category": "ELECTRONICS",
+    "unit_price": "89.95",
+    "is_returnable": 1,
+    "return_window_days": 14,
+    "restock_fee_rate": "0.15",
+    "created_at": "2025-12-01T00:00:00+00:00"
+  },
+  {
+    "sku": "SKU-APPR-01",
+    "product_name": "Merino Wool Crewneck Sweater",
+    "category": "APPAREL",
+    "unit_price": "89.00",
+    "is_returnable": 1,
+    "return_window_days": 30,
+    "restock_fee_rate": "0.00",
+    "created_at": "2025-12-01T00:00:00+00:00"
+  },
+  {
+    "sku": "SKU-APPR-02",
+    "product_name": "Tailored Stretch Chino Pants",
+    "category": "APPAREL",
+    "unit_price": "68.00",
+    "is_returnable": 1,
+    "return_window_days": 30,
+    "restock_fee_rate": "0.00",
+    "created_at": "2025-12-01T00:00:00+00:00"
+  },
+  {
+    "sku": "SKU-APPR-03",
+    "product_name": "Waterproof Outdoor Jacket",
+    "category": "APPAREL",
+    "unit_price": "125.00",
+    "is_returnable": 1,
+    "return_window_days": 30,
+    "restock_fee_rate": "0.00",
+    "created_at": "2025-12-01T00:00:00+00:00"
+  },
+  {
+    "sku": "SKU-APPR-04",
+    "product_name": "Classic Oxford Cotton Shirt",
+    "category": "APPAREL",
+    "unit_price": "55.00",
+    "is_returnable": 1,
+    "return_window_days": 30,
+    "restock_fee_rate": "0.00",
+    "created_at": "2025-12-01T00:00:00+00:00"
+  },
+  {
+    "sku": "SKU-FOOT-01",
+    "product_name": "Performance Trail Running Shoes",
+    "category": "FOOTWEAR",
+    "unit_price": "139.99",
+    "is_returnable": 1,
+    "return_window_days": 30,
+    "restock_fee_rate": "0.00",
+    "created_at": "2025-12-01T00:00:00+00:00"
+  },
+  {
+    "sku": "SKU-FOOT-02",
+    "product_name": "Leather Oxford Dress Shoes",
+    "category": "FOOTWEAR",
+    "unit_price": "175.00",
+    "is_returnable": 1,
+    "return_window_days": 30,
+    "restock_fee_rate": "0.00",
+    "created_at": "2025-12-01T00:00:00+00:00"
+  },
+  {
+    "sku": "SKU-HOME-01",
+    "product_name": "Cast Iron Dutch Oven 6qt",
+    "category": "HOME_GOODS",
+    "unit_price": "79.99",
+    "is_returnable": 1,
+    "return_window_days": 30,
+    "restock_fee_rate": "0.05",
+    "created_at": "2025-12-01T00:00:00+00:00"
+  },
+  {
+    "sku": "SKU-HOME-02",
+    "product_name": "Ergonomic Memory Foam Pillow",
+    "category": "HOME_GOODS",
+    "unit_price": "49.99",
+    "is_returnable": 1,
+    "return_window_days": 30,
+    "restock_fee_rate": "0.05",
+    "created_at": "2025-12-01T00:00:00+00:00"
+  },
+  {
+    "sku": "SKU-HOME-03",
+    "product_name": "Stainless Steel Cookware Set 10pc",
+    "category": "HOME_GOODS",
+    "unit_price": "249.00",
+    "is_returnable": 1,
+    "return_window_days": 30,
+    "restock_fee_rate": "0.05",
+    "created_at": "2025-12-01T00:00:00+00:00"
+  },
+  {
+    "sku": "SKU-PERS-01",
+    "product_name": "Organic Roast Coffee Beans 2lb",
+    "category": "PERISHABLE",
+    "unit_price": "28.50",
+    "is_returnable": 0,
+    "return_window_days": 0,
+    "restock_fee_rate": "0.00",
+    "created_at": "2025-12-01T00:00:00+00:00"
+  },
+  {
+    "sku": "SKU-PERS-02",
+    "product_name": "Artisan Loose Leaf Tea Selection",
+    "category": "PERISHABLE",
+    "unit_price": "22.00",
+    "is_returnable": 0,
+    "return_window_days": 0,
+    "restock_fee_rate": "0.00",
+    "created_at": "2025-12-01T00:00:00+00:00"
+  },
+  {
+    "sku": "SKU-FSLE-01",
+    "product_name": "Clearance Graphic T-Shirt",
+    "category": "FINAL_SALE",
+    "unit_price": "15.00",
+    "is_returnable": 0,
+    "return_window_days": 0,
+    "restock_fee_rate": "0.00",
+    "created_at": "2025-12-01T00:00:00+00:00"
+  }
+]

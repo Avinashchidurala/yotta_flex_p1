@@ -1,0 +1,622 @@
+[
+  {
+    "anomaly_id": "ANO-000001",
+    "entity_name": "return_lines",
+    "entity_id": "RMAL-RMA-2026-000001-01",
+    "parent_entity_id": "ORDL-ORD-2026-028578-01",
+    "issue_type": "QTY_EXCEEDS_PURCHASED",
+    "expected_decision": "REJECT_QUANTITY_OVERFLOW",
+    "actual_injected_behavior": "Requested 6 units on line with purchase qty 1",
+    "created_at": "2026-04-11T14:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000006",
+    "entity_name": "return_lines",
+    "entity_id": "RMAL-RMA-2026-000006-01",
+    "parent_entity_id": "ORDL-ORD-2026-016775-01",
+    "issue_type": "QTY_EXCEEDS_PURCHASED",
+    "expected_decision": "REJECT_QUANTITY_OVERFLOW",
+    "actual_injected_behavior": "Requested 5 units on line with purchase qty 1",
+    "created_at": "2026-09-09T20:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000009",
+    "entity_name": "return_lines",
+    "entity_id": "RMAL-RMA-2026-000010-01",
+    "parent_entity_id": "ORDL-ORD-2026-012008-03",
+    "issue_type": "QTY_EXCEEDS_PURCHASED",
+    "expected_decision": "REJECT_QUANTITY_OVERFLOW",
+    "actual_injected_behavior": "Requested 3 units on line with purchase qty 1",
+    "created_at": "2026-04-21T22:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000013",
+    "entity_name": "return_lines",
+    "entity_id": "RMAL-RMA-2026-000013-01",
+    "parent_entity_id": "ORDL-ORD-2026-009777-02",
+    "issue_type": "QTY_EXCEEDS_PURCHASED",
+    "expected_decision": "REJECT_QUANTITY_OVERFLOW",
+    "actual_injected_behavior": "Requested 6 units on line with purchase qty 1",
+    "created_at": "2026-05-22T00:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000018",
+    "entity_name": "return_lines",
+    "entity_id": "RMAL-RMA-2026-000022-02",
+    "parent_entity_id": "ORDL-ORD-2026-017132-01",
+    "issue_type": "QTY_EXCEEDS_PURCHASED",
+    "expected_decision": "REJECT_QUANTITY_OVERFLOW",
+    "actual_injected_behavior": "Requested 5 units on line with purchase qty 1",
+    "created_at": "2026-03-20T23:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000022",
+    "entity_name": "return_lines",
+    "entity_id": "RMAL-RMA-2026-000033-01",
+    "parent_entity_id": "ORDL-ORD-2026-010869-02",
+    "issue_type": "QTY_EXCEEDS_PURCHASED",
+    "expected_decision": "REJECT_QUANTITY_OVERFLOW",
+    "actual_injected_behavior": "Requested 5 units on line with purchase qty 1",
+    "created_at": "2026-03-01T12:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000027",
+    "entity_name": "return_lines",
+    "entity_id": "RMAL-RMA-2026-000043-02",
+    "parent_entity_id": "ORDL-ORD-2026-022876-02",
+    "issue_type": "QTY_EXCEEDS_PURCHASED",
+    "expected_decision": "REJECT_QUANTITY_OVERFLOW",
+    "actual_injected_behavior": "Requested 5 units on line with purchase qty 2",
+    "created_at": "2026-03-05T09:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000028",
+    "entity_name": "return_lines",
+    "entity_id": "RMAL-RMA-2026-000044-01",
+    "parent_entity_id": "ORDL-ORD-2026-036490-01",
+    "issue_type": "QTY_EXCEEDS_PURCHASED",
+    "expected_decision": "REJECT_QUANTITY_OVERFLOW",
+    "actual_injected_behavior": "Requested 6 units on line with purchase qty 1",
+    "created_at": "2026-05-12T13:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000029",
+    "entity_name": "return_lines",
+    "entity_id": "RMAL-RMA-2026-000045-01",
+    "parent_entity_id": "ORDL-ORD-2026-034607-01",
+    "issue_type": "QTY_EXCEEDS_PURCHASED",
+    "expected_decision": "REJECT_QUANTITY_OVERFLOW",
+    "actual_injected_behavior": "Requested 6 units on line with purchase qty 1",
+    "created_at": "2026-03-20T22:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000031",
+    "entity_name": "return_lines",
+    "entity_id": "RMAL-RMA-2026-000047-02",
+    "parent_entity_id": "ORDL-ORD-2026-017956-01",
+    "issue_type": "QTY_EXCEEDS_PURCHASED",
+    "expected_decision": "REJECT_QUANTITY_OVERFLOW",
+    "actual_injected_behavior": "Requested 7 units on line with purchase qty 3",
+    "created_at": "2026-05-21T14:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000039",
+    "entity_name": "return_lines",
+    "entity_id": "RMAL-RMA-2026-000055-01",
+    "parent_entity_id": "ORDL-ORD-2026-018980-01",
+    "issue_type": "QTY_EXCEEDS_PURCHASED",
+    "expected_decision": "REJECT_QUANTITY_OVERFLOW",
+    "actual_injected_behavior": "Requested 5 units on line with purchase qty 1",
+    "created_at": "2026-04-25T22:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000041",
+    "entity_name": "return_lines",
+    "entity_id": "RMAL-RMA-2026-000059-01",
+    "parent_entity_id": "ORDL-ORD-2026-028381-01",
+    "issue_type": "QTY_EXCEEDS_PURCHASED",
+    "expected_decision": "REJECT_QUANTITY_OVERFLOW",
+    "actual_injected_behavior": "Requested 6 units on line with purchase qty 1",
+    "created_at": "2026-05-22T05:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000042",
+    "entity_name": "return_lines",
+    "entity_id": "RMAL-RMA-2026-000060-02",
+    "parent_entity_id": "ORDL-ORD-2026-025422-02",
+    "issue_type": "QTY_EXCEEDS_PURCHASED",
+    "expected_decision": "REJECT_QUANTITY_OVERFLOW",
+    "actual_injected_behavior": "Requested 4 units on line with purchase qty 1",
+    "created_at": "2026-02-03T18:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000043",
+    "entity_name": "return_lines",
+    "entity_id": "RMAL-RMA-2026-000061-02",
+    "parent_entity_id": "ORDL-ORD-2026-010819-01",
+    "issue_type": "QTY_EXCEEDS_PURCHASED",
+    "expected_decision": "REJECT_QUANTITY_OVERFLOW",
+    "actual_injected_behavior": "Requested 6 units on line with purchase qty 2",
+    "created_at": "2026-03-26T14:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000048",
+    "entity_name": "return_lines",
+    "entity_id": "RMAL-RMA-2026-000067-01",
+    "parent_entity_id": "ORDL-ORD-2026-016534-03",
+    "issue_type": "QTY_EXCEEDS_PURCHASED",
+    "expected_decision": "REJECT_QUANTITY_OVERFLOW",
+    "actual_injected_behavior": "Requested 6 units on line with purchase qty 1",
+    "created_at": "2026-03-28T21:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000058",
+    "entity_name": "return_lines",
+    "entity_id": "RMAL-RMA-2026-000078-02",
+    "parent_entity_id": "ORDL-ORD-2026-024668-02",
+    "issue_type": "QTY_EXCEEDS_PURCHASED",
+    "expected_decision": "REJECT_QUANTITY_OVERFLOW",
+    "actual_injected_behavior": "Requested 6 units on line with purchase qty 1",
+    "created_at": "2026-05-15T07:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000059",
+    "entity_name": "return_lines",
+    "entity_id": "RMAL-RMA-2026-000079-01",
+    "parent_entity_id": "ORDL-ORD-2026-024666-03",
+    "issue_type": "QTY_EXCEEDS_PURCHASED",
+    "expected_decision": "REJECT_QUANTITY_OVERFLOW",
+    "actual_injected_behavior": "Requested 3 units on line with purchase qty 1",
+    "created_at": "2026-02-22T11:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000060",
+    "entity_name": "return_lines",
+    "entity_id": "RMAL-RMA-2026-000081-01",
+    "parent_entity_id": "ORDL-ORD-2026-019978-01",
+    "issue_type": "QTY_EXCEEDS_PURCHASED",
+    "expected_decision": "REJECT_QUANTITY_OVERFLOW",
+    "actual_injected_behavior": "Requested 6 units on line with purchase qty 2",
+    "created_at": "2026-03-15T08:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000061",
+    "entity_name": "return_lines",
+    "entity_id": "RMAL-RMA-2026-000083-02",
+    "parent_entity_id": "ORDL-ORD-2026-009448-01",
+    "issue_type": "QTY_EXCEEDS_PURCHASED",
+    "expected_decision": "REJECT_QUANTITY_OVERFLOW",
+    "actual_injected_behavior": "Requested 4 units on line with purchase qty 2",
+    "created_at": "2026-03-09T17:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000066",
+    "entity_name": "return_lines",
+    "entity_id": "RMAL-RMA-2026-000087-02",
+    "parent_entity_id": "ORDL-ORD-2026-019426-01",
+    "issue_type": "QTY_EXCEEDS_PURCHASED",
+    "expected_decision": "REJECT_QUANTITY_OVERFLOW",
+    "actual_injected_behavior": "Requested 3 units on line with purchase qty 1",
+    "created_at": "2026-05-07T07:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000067",
+    "entity_name": "return_lines",
+    "entity_id": "RMAL-RMA-2026-000090-01",
+    "parent_entity_id": "ORDL-ORD-2026-034168-03",
+    "issue_type": "QTY_EXCEEDS_PURCHASED",
+    "expected_decision": "REJECT_QUANTITY_OVERFLOW",
+    "actual_injected_behavior": "Requested 5 units on line with purchase qty 1",
+    "created_at": "2026-05-08T04:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000075",
+    "entity_name": "return_lines",
+    "entity_id": "RMAL-RMA-2026-000099-01",
+    "parent_entity_id": "ORDL-ORD-2026-026818-04",
+    "issue_type": "QTY_EXCEEDS_PURCHASED",
+    "expected_decision": "REJECT_QUANTITY_OVERFLOW",
+    "actual_injected_behavior": "Requested 6 units on line with purchase qty 2",
+    "created_at": "2026-05-23T23:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000085",
+    "entity_name": "return_lines",
+    "entity_id": "RMAL-RMA-2026-000105-02",
+    "parent_entity_id": "ORDL-ORD-2026-034412-01",
+    "issue_type": "QTY_EXCEEDS_PURCHASED",
+    "expected_decision": "REJECT_QUANTITY_OVERFLOW",
+    "actual_injected_behavior": "Requested 6 units on line with purchase qty 2",
+    "created_at": "2026-02-26T13:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000092",
+    "entity_name": "return_lines",
+    "entity_id": "RMAL-RMA-2026-000112-01",
+    "parent_entity_id": "ORDL-ORD-2026-012641-02",
+    "issue_type": "QTY_EXCEEDS_PURCHASED",
+    "expected_decision": "REJECT_QUANTITY_OVERFLOW",
+    "actual_injected_behavior": "Requested 3 units on line with purchase qty 1",
+    "created_at": "2026-06-09T02:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000093",
+    "entity_name": "return_lines",
+    "entity_id": "RMAL-RMA-2026-000112-02",
+    "parent_entity_id": "ORDL-ORD-2026-012641-01",
+    "issue_type": "QTY_EXCEEDS_PURCHASED",
+    "expected_decision": "REJECT_QUANTITY_OVERFLOW",
+    "actual_injected_behavior": "Requested 6 units on line with purchase qty 2",
+    "created_at": "2026-06-09T02:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000098",
+    "entity_name": "return_lines",
+    "entity_id": "RMAL-RMA-2026-000120-02",
+    "parent_entity_id": "ORDL-ORD-2026-010789-01",
+    "issue_type": "QTY_EXCEEDS_PURCHASED",
+    "expected_decision": "REJECT_QUANTITY_OVERFLOW",
+    "actual_injected_behavior": "Requested 6 units on line with purchase qty 2",
+    "created_at": "2026-06-20T15:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000099",
+    "entity_name": "return_lines",
+    "entity_id": "RMAL-RMA-2026-000121-01",
+    "parent_entity_id": "ORDL-ORD-2026-012547-01",
+    "issue_type": "QTY_EXCEEDS_PURCHASED",
+    "expected_decision": "REJECT_QUANTITY_OVERFLOW",
+    "actual_injected_behavior": "Requested 6 units on line with purchase qty 1",
+    "created_at": "2026-03-24T01:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000105",
+    "entity_name": "return_lines",
+    "entity_id": "RMAL-RMA-2026-000127-01",
+    "parent_entity_id": "ORDL-ORD-2026-014977-02",
+    "issue_type": "QTY_EXCEEDS_PURCHASED",
+    "expected_decision": "REJECT_QUANTITY_OVERFLOW",
+    "actual_injected_behavior": "Requested 6 units on line with purchase qty 1",
+    "created_at": "2026-03-30T13:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000106",
+    "entity_name": "return_lines",
+    "entity_id": "RMAL-RMA-2026-000128-01",
+    "parent_entity_id": "ORDL-ORD-2026-017573-01",
+    "issue_type": "QTY_EXCEEDS_PURCHASED",
+    "expected_decision": "REJECT_QUANTITY_OVERFLOW",
+    "actual_injected_behavior": "Requested 7 units on line with purchase qty 3",
+    "created_at": "2026-05-27T12:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000107",
+    "entity_name": "return_lines",
+    "entity_id": "RMAL-RMA-2026-000128-02",
+    "parent_entity_id": "ORDL-ORD-2026-017573-02",
+    "issue_type": "QTY_EXCEEDS_PURCHASED",
+    "expected_decision": "REJECT_QUANTITY_OVERFLOW",
+    "actual_injected_behavior": "Requested 4 units on line with purchase qty 2",
+    "created_at": "2026-05-27T12:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000109",
+    "entity_name": "return_lines",
+    "entity_id": "RMAL-RMA-2026-000131-01",
+    "parent_entity_id": "ORDL-ORD-2026-005345-02",
+    "issue_type": "QTY_EXCEEDS_PURCHASED",
+    "expected_decision": "REJECT_QUANTITY_OVERFLOW",
+    "actual_injected_behavior": "Requested 5 units on line with purchase qty 2",
+    "created_at": "2026-04-23T06:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000112",
+    "entity_name": "return_lines",
+    "entity_id": "RMAL-RMA-2026-000133-01",
+    "parent_entity_id": "ORDL-ORD-2026-035105-01",
+    "issue_type": "QTY_EXCEEDS_PURCHASED",
+    "expected_decision": "REJECT_QUANTITY_OVERFLOW",
+    "actual_injected_behavior": "Requested 3 units on line with purchase qty 1",
+    "created_at": "2026-04-13T23:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000116",
+    "entity_name": "return_lines",
+    "entity_id": "RMAL-RMA-2026-000137-02",
+    "parent_entity_id": "ORDL-ORD-2026-016533-01",
+    "issue_type": "QTY_EXCEEDS_PURCHASED",
+    "expected_decision": "REJECT_QUANTITY_OVERFLOW",
+    "actual_injected_behavior": "Requested 5 units on line with purchase qty 1",
+    "created_at": "2026-08-20T02:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000119",
+    "entity_name": "return_lines",
+    "entity_id": "RMAL-RMA-2026-000142-01",
+    "parent_entity_id": "ORDL-ORD-2026-027347-02",
+    "issue_type": "QTY_EXCEEDS_PURCHASED",
+    "expected_decision": "REJECT_QUANTITY_OVERFLOW",
+    "actual_injected_behavior": "Requested 6 units on line with purchase qty 3",
+    "created_at": "2026-03-05T21:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000122",
+    "entity_name": "return_lines",
+    "entity_id": "RMAL-RMA-2026-000148-02",
+    "parent_entity_id": "ORDL-ORD-2026-032009-02",
+    "issue_type": "QTY_EXCEEDS_PURCHASED",
+    "expected_decision": "REJECT_QUANTITY_OVERFLOW",
+    "actual_injected_behavior": "Requested 6 units on line with purchase qty 1",
+    "created_at": "2026-04-28T02:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000133",
+    "entity_name": "return_lines",
+    "entity_id": "RMAL-RMA-2026-000158-01",
+    "parent_entity_id": "ORDL-ORD-2026-028696-01",
+    "issue_type": "QTY_EXCEEDS_PURCHASED",
+    "expected_decision": "REJECT_QUANTITY_OVERFLOW",
+    "actual_injected_behavior": "Requested 6 units on line with purchase qty 1",
+    "created_at": "2026-06-08T22:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000134",
+    "entity_name": "return_lines",
+    "entity_id": "RMAL-RMA-2026-000161-01",
+    "parent_entity_id": "ORDL-ORD-2026-013809-01",
+    "issue_type": "QTY_EXCEEDS_PURCHASED",
+    "expected_decision": "REJECT_QUANTITY_OVERFLOW",
+    "actual_injected_behavior": "Requested 6 units on line with purchase qty 2",
+    "created_at": "2026-06-25T16:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000137",
+    "entity_name": "return_lines",
+    "entity_id": "RMAL-RMA-2026-000166-02",
+    "parent_entity_id": "ORDL-ORD-2026-014391-01",
+    "issue_type": "QTY_EXCEEDS_PURCHASED",
+    "expected_decision": "REJECT_QUANTITY_OVERFLOW",
+    "actual_injected_behavior": "Requested 5 units on line with purchase qty 1",
+    "created_at": "2026-07-08T19:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000139",
+    "entity_name": "return_lines",
+    "entity_id": "RMAL-RMA-2026-000167-02",
+    "parent_entity_id": "ORDL-ORD-2026-018592-03",
+    "issue_type": "QTY_EXCEEDS_PURCHASED",
+    "expected_decision": "REJECT_QUANTITY_OVERFLOW",
+    "actual_injected_behavior": "Requested 6 units on line with purchase qty 1",
+    "created_at": "2026-08-12T21:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000140",
+    "entity_name": "return_lines",
+    "entity_id": "RMAL-RMA-2026-000169-01",
+    "parent_entity_id": "ORDL-ORD-2026-004553-01",
+    "issue_type": "QTY_EXCEEDS_PURCHASED",
+    "expected_decision": "REJECT_QUANTITY_OVERFLOW",
+    "actual_injected_behavior": "Requested 3 units on line with purchase qty 1",
+    "created_at": "2026-05-23T10:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000146",
+    "entity_name": "return_lines",
+    "entity_id": "RMAL-RMA-2026-000174-02",
+    "parent_entity_id": "ORDL-ORD-2026-025050-01",
+    "issue_type": "QTY_EXCEEDS_PURCHASED",
+    "expected_decision": "REJECT_QUANTITY_OVERFLOW",
+    "actual_injected_behavior": "Requested 5 units on line with purchase qty 1",
+    "created_at": "2026-05-10T05:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000150",
+    "entity_name": "return_lines",
+    "entity_id": "RMAL-RMA-2026-000179-01",
+    "parent_entity_id": "ORDL-ORD-2026-027603-03",
+    "issue_type": "QTY_EXCEEDS_PURCHASED",
+    "expected_decision": "REJECT_QUANTITY_OVERFLOW",
+    "actual_injected_behavior": "Requested 4 units on line with purchase qty 1",
+    "created_at": "2026-04-14T20:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000151",
+    "entity_name": "return_lines",
+    "entity_id": "RMAL-RMA-2026-000179-02",
+    "parent_entity_id": "ORDL-ORD-2026-027603-04",
+    "issue_type": "QTY_EXCEEDS_PURCHASED",
+    "expected_decision": "REJECT_QUANTITY_OVERFLOW",
+    "actual_injected_behavior": "Requested 6 units on line with purchase qty 1",
+    "created_at": "2026-04-14T20:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000153",
+    "entity_name": "return_lines",
+    "entity_id": "RMAL-RMA-2026-000180-01",
+    "parent_entity_id": "ORDL-ORD-2026-009343-02",
+    "issue_type": "QTY_EXCEEDS_PURCHASED",
+    "expected_decision": "REJECT_QUANTITY_OVERFLOW",
+    "actual_injected_behavior": "Requested 5 units on line with purchase qty 1",
+    "created_at": "2026-06-28T12:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000154",
+    "entity_name": "return_lines",
+    "entity_id": "RMAL-RMA-2026-000180-02",
+    "parent_entity_id": "ORDL-ORD-2026-009343-03",
+    "issue_type": "QTY_EXCEEDS_PURCHASED",
+    "expected_decision": "REJECT_QUANTITY_OVERFLOW",
+    "actual_injected_behavior": "Requested 4 units on line with purchase qty 2",
+    "created_at": "2026-06-28T12:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000157",
+    "entity_name": "return_lines",
+    "entity_id": "RMAL-RMA-2026-000183-01",
+    "parent_entity_id": "ORDL-ORD-2026-034785-01",
+    "issue_type": "QTY_EXCEEDS_PURCHASED",
+    "expected_decision": "REJECT_QUANTITY_OVERFLOW",
+    "actual_injected_behavior": "Requested 6 units on line with purchase qty 1",
+    "created_at": "2026-02-12T05:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000161",
+    "entity_name": "return_lines",
+    "entity_id": "RMAL-RMA-2026-000186-01",
+    "parent_entity_id": "ORDL-ORD-2026-001716-01",
+    "issue_type": "QTY_EXCEEDS_PURCHASED",
+    "expected_decision": "REJECT_QUANTITY_OVERFLOW",
+    "actual_injected_behavior": "Requested 3 units on line with purchase qty 1",
+    "created_at": "2026-07-04T19:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000162",
+    "entity_name": "return_lines",
+    "entity_id": "RMAL-RMA-2026-000187-01",
+    "parent_entity_id": "ORDL-ORD-2026-030714-01",
+    "issue_type": "QTY_EXCEEDS_PURCHASED",
+    "expected_decision": "REJECT_QUANTITY_OVERFLOW",
+    "actual_injected_behavior": "Requested 5 units on line with purchase qty 1",
+    "created_at": "2026-03-16T08:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000166",
+    "entity_name": "return_lines",
+    "entity_id": "RMAL-RMA-2026-000192-02",
+    "parent_entity_id": "ORDL-ORD-2026-022562-01",
+    "issue_type": "QTY_EXCEEDS_PURCHASED",
+    "expected_decision": "REJECT_QUANTITY_OVERFLOW",
+    "actual_injected_behavior": "Requested 6 units on line with purchase qty 1",
+    "created_at": "2026-03-11T18:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000172",
+    "entity_name": "return_lines",
+    "entity_id": "RMAL-RMA-2026-000201-02",
+    "parent_entity_id": "ORDL-ORD-2026-021638-02",
+    "issue_type": "QTY_EXCEEDS_PURCHASED",
+    "expected_decision": "REJECT_QUANTITY_OVERFLOW",
+    "actual_injected_behavior": "Requested 3 units on line with purchase qty 1",
+    "created_at": "2026-01-23T20:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000173",
+    "entity_name": "return_lines",
+    "entity_id": "RMAL-RMA-2026-000202-02",
+    "parent_entity_id": "ORDL-ORD-2026-032603-02",
+    "issue_type": "QTY_EXCEEDS_PURCHASED",
+    "expected_decision": "REJECT_QUANTITY_OVERFLOW",
+    "actual_injected_behavior": "Requested 6 units on line with purchase qty 2",
+    "created_at": "2026-04-25T12:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000174",
+    "entity_name": "return_lines",
+    "entity_id": "RMAL-RMA-2026-000205-01",
+    "parent_entity_id": "ORDL-ORD-2026-014717-02",
+    "issue_type": "QTY_EXCEEDS_PURCHASED",
+    "expected_decision": "REJECT_QUANTITY_OVERFLOW",
+    "actual_injected_behavior": "Requested 6 units on line with purchase qty 1",
+    "created_at": "2026-04-12T19:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000184",
+    "entity_name": "return_lines",
+    "entity_id": "RMAL-RMA-2026-000216-01",
+    "parent_entity_id": "ORDL-ORD-2026-027463-01",
+    "issue_type": "QTY_EXCEEDS_PURCHASED",
+    "expected_decision": "REJECT_QUANTITY_OVERFLOW",
+    "actual_injected_behavior": "Requested 3 units on line with purchase qty 1",
+    "created_at": "2026-08-16T15:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000185",
+    "entity_name": "return_lines",
+    "entity_id": "RMAL-RMA-2026-000217-02",
+    "parent_entity_id": "ORDL-ORD-2026-009679-01",
+    "issue_type": "QTY_EXCEEDS_PURCHASED",
+    "expected_decision": "REJECT_QUANTITY_OVERFLOW",
+    "actual_injected_behavior": "Requested 6 units on line with purchase qty 1",
+    "created_at": "2026-04-23T20:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000188",
+    "entity_name": "return_lines",
+    "entity_id": "RMAL-RMA-2026-000220-02",
+    "parent_entity_id": "ORDL-ORD-2026-034693-01",
+    "issue_type": "QTY_EXCEEDS_PURCHASED",
+    "expected_decision": "REJECT_QUANTITY_OVERFLOW",
+    "actual_injected_behavior": "Requested 4 units on line with purchase qty 1",
+    "created_at": "2026-03-06T12:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000191",
+    "entity_name": "return_lines",
+    "entity_id": "RMAL-RMA-2026-000221-01",
+    "parent_entity_id": "ORDL-ORD-2026-010671-02",
+    "issue_type": "QTY_EXCEEDS_PURCHASED",
+    "expected_decision": "REJECT_QUANTITY_OVERFLOW",
+    "actual_injected_behavior": "Requested 4 units on line with purchase qty 1",
+    "created_at": "2026-09-12T17:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000192",
+    "entity_name": "return_lines",
+    "entity_id": "RMAL-RMA-2026-000223-01",
+    "parent_entity_id": "ORDL-ORD-2026-013895-01",
+    "issue_type": "QTY_EXCEEDS_PURCHASED",
+    "expected_decision": "REJECT_QUANTITY_OVERFLOW",
+    "actual_injected_behavior": "Requested 7 units on line with purchase qty 2",
+    "created_at": "2026-02-22T01:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000193",
+    "entity_name": "return_lines",
+    "entity_id": "RMAL-RMA-2026-000223-02",
+    "parent_entity_id": "ORDL-ORD-2026-013895-02",
+    "issue_type": "QTY_EXCEEDS_PURCHASED",
+    "expected_decision": "REJECT_QUANTITY_OVERFLOW",
+    "actual_injected_behavior": "Requested 6 units on line with purchase qty 1",
+    "created_at": "2026-02-22T01:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000194",
+    "entity_name": "return_lines",
+    "entity_id": "RMAL-RMA-2026-000224-01",
+    "parent_entity_id": "ORDL-ORD-2026-015217-02",
+    "issue_type": "QTY_EXCEEDS_PURCHASED",
+    "expected_decision": "REJECT_QUANTITY_OVERFLOW",
+    "actual_injected_behavior": "Requested 3 units on line with purchase qty 1",
+    "created_at": "2026-02-14T04:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000196",
+    "entity_name": "return_lines",
+    "entity_id": "RMAL-RMA-2026-000226-02",
+    "parent_entity_id": "ORDL-ORD-2026-011192-01",
+    "issue_type": "QTY_EXCEEDS_PURCHASED",
+    "expected_decision": "REJECT_QUANTITY_OVERFLOW",
+    "actual_injected_behavior": "Requested 4 units on line with purchase qty 1",
+    "created_at": "2026-04-15T19:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000198",
+    "entity_name": "return_lines",
+    "entity_id": "RMAL-RMA-2026-000227-02",
+    "parent_entity_id": "ORDL-ORD-2026-034299-02",
+    "issue_type": "QTY_EXCEEDS_PURCHASED",
+    "expected_decision": "REJECT_QUANTITY_OVERFLOW",
+    "actual_injected_behavior": "Requested 5 units on line with purchase qty 1",
+    "created_at": "2026-04-01T17:00:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000200",
+    "entity_name": "return_lines",
+    "entity_id": "RMAL-RMA-2026-000230-01",
+    "parent_entity_id": "ORDL-ORD-2026-023815-01",
+    "issue_type": "QTY_EXCEEDS_PURCHASED",
+    "expected_decision": "REJECT_QUANTITY_OVERFLOW",
+    "actual_injected_behavior": "Requested 6 units on line with purchase qty 2",
+    "created_at": "2026-02-19T11:00:00+00:00"
+  }
+]

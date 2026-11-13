@@ -1,0 +1,1355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YottaFlex Reverse Logistics Engine — Operations Console</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .custom-scrollbar::-webkit-scrollbar { width: 6px; height: 6px; }
+        .custom-scrollbar::-webkit-scrollbar-track { background: #0f172a; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: #334155; border-radius: 3px; }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover { background: #475569; }
+    </style>
+</head>
+<body class="bg-slate-900 text-slate-100 min-h-screen font-sans antialiased flex flex-col justify-between">
+
+    <!-- Top Navigation Header -->
+    <header class="border-b border-slate-800 bg-slate-950/90 backdrop-blur sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-indigo-600 to-indigo-400 flex items-center justify-center text-white shadow-lg shadow-indigo-500/30">
+                    <i class="fa-solid fa-boxes-packing text-lg"></i>
+                </div>
+                <div>
+                    <h1 class="text-base font-bold text-white tracking-wide flex items-center gap-2">
+                        YottaFlex RMS
+                        <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-emerald-950/80 text-emerald-400 border border-emerald-800">v2.0 Active</span>
+                    </h1>
+                    <p class="text-xs text-slate-400 font-mono">Scale: 37,500 Orders • 6,250 RMAs • 15,000 Customers • Seed 20261022</p>
+                </div>
+            </div>
+
+            <!-- Role Selector Switcher -->
+            <div class="flex items-center space-x-3 bg-slate-900 border border-slate-800 rounded-xl p-1.5 shadow-sm">
+                <span class="text-xs font-semibold text-slate-400 px-2 uppercase tracking-wider flex items-center gap-1.5">
+                    <i class="fa-solid fa-user-shield text-indigo-400"></i> Role:
+                </span>
+                <select id="roleSelector" onchange="switchRole(this.value)" class="bg-slate-800 text-indigo-300 text-xs font-semibold rounded-lg px-3 py-1.5 outline-none border border-slate-700 cursor-pointer hover:border-indigo-500 transition">
+                    <option value="analyst">E-Commerce Analyst</option>
+                    <option value="customer">Customer Portal</option>
+                    <option value="operator">Warehouse Operator</option>
+                    <option value="manager">Operations Manager</option>
+                </select>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <main class="max-w-7xl mx-auto px-6 py-8 space-y-8 flex-1 w-full">
+
+        <!-- Top Platform Summary Metrics (Live & Dynamically Computed) -->
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-5">
+            <div class="bg-slate-950 border border-slate-800/80 rounded-xl p-5 shadow-sm hover:border-slate-700 transition">
+                <div class="flex justify-between items-start">
+                    <span class="text-xs font-medium text-slate-400 uppercase tracking-wider">Delivered Orders</span>
+                    <i class="fa-solid fa-cart-shopping text-indigo-400"></i>
+                </div>
+                <div class="text-2xl font-bold text-white mt-2" id="statDeliveredOrders">Loading...</div>
+                <div class="text-xs text-emerald-400 mt-1 flex items-center" id="statDeliveredSubtext">
+                    <i class="fa-solid fa-spinner fa-spin mr-1 text-[10px]"></i> Fetching order counts...
+                </div>
+            </div>
+
+            <div class="bg-slate-950 border border-slate-800/80 rounded-xl p-5 shadow-sm hover:border-slate-700 transition">
+                <div class="flex justify-between items-start">
+                    <span class="text-xs font-medium text-slate-400 uppercase tracking-wider">Processed RMAs</span>
+                    <i class="fa-solid fa-rotate-left text-amber-400"></i>
+                </div>
+                <div class="text-2xl font-bold text-white mt-2" id="statProcessedRMAs">Loading...</div>
+                <div class="text-xs text-slate-400 mt-1" id="statRMAsSubtext">Fetching return lines...</div>
+            </div>
+
+            <div class="bg-slate-950 border border-slate-800/80 rounded-xl p-5 shadow-sm hover:border-slate-700 transition">
+                <div class="flex justify-between items-start">
+                    <span class="text-xs font-medium text-slate-400 uppercase tracking-wider">Total Net Refunds</span>
+                    <i class="fa-solid fa-receipt text-emerald-400"></i>
+                </div>
+                <div class="text-2xl font-bold text-emerald-400 mt-2" id="statNetRefunds">Loading...</div>
+                <div class="text-xs text-slate-400 mt-1" id="statRefundsSubtext">Reconciling ledger...</div>
+            </div>
+
+            <div class="bg-slate-950 border border-slate-800/80 rounded-xl p-5 shadow-sm hover:border-slate-700 transition">
+                <div class="flex justify-between items-start">
+                    <span class="text-xs font-medium text-slate-400 uppercase tracking-wider">Ground Truth Recall</span>
+                    <i class="fa-solid fa-shield-halved text-cyan-400"></i>
+                </div>
+                <div class="text-2xl font-bold text-cyan-400 mt-2" id="statRecallPct">Loading...</div>
+                <div class="text-xs text-emerald-400 mt-1" id="statRecallSubtext">Auditing benchmark anomalies...</div>
+            </div>
+        </div>
+
+        <!-- ========================================================================================= -->
+        <!-- 1. E-COMMERCE ANALYST VIEW -->
+        <!-- ========================================================================================= -->
+        <section id="analystView" class="space-y-6">
+            <!-- Category Velocity & Ground Truth Cards -->
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                <div class="lg:col-span-2 bg-slate-950 border border-slate-800 rounded-xl p-6">
+                    <div class="flex items-center justify-between mb-4">
+                        <h2 class="text-sm font-bold text-white uppercase tracking-wider flex items-center">
+                            <i class="fa-solid fa-chart-pie text-indigo-400 mr-2"></i> Category Return Velocity & Policy Windows
+                        </h2>
+                    </div>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left text-xs">
+                            <thead class="text-slate-400 border-b border-slate-800">
+                                <tr>
+                                    <th class="py-2.5">Category</th>
+                                    <th>Return Window</th>
+                                    <th>Sold Lines</th>
+                                    <th>Returned Lines</th>
+                                    <th>Return Rate</th>
+                                    <th>Restock Fee</th>
+                                </tr>
+                            </thead>
+                            <tbody id="categoryVelocityTableBody" class="divide-y divide-slate-800/60 font-mono text-slate-300">
+                                <tr><td colspan="6" class="text-center py-6 text-slate-500"><i class="fa-solid fa-spinner fa-spin mr-2"></i> Loading live category velocity...</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Labeled Ground Truth Status Card (Live & Dynamic) -->
+                <div class="bg-slate-950 border border-slate-800 rounded-xl p-6 flex flex-col justify-between">
+                    <div>
+                        <h2 class="text-sm font-bold text-white uppercase tracking-wider mb-4 flex items-center">
+                            <i class="fa-solid fa-triangle-exclamation text-amber-400 mr-2"></i> Labeled Ground Truth
+                        </h2>
+                        <div id="groundTruthList" class="space-y-3">
+                            <div class="text-center py-6 text-xs text-slate-500"><i class="fa-solid fa-spinner fa-spin mr-2"></i> Loading anomaly distribution...</div>
+                        </div>
+                    </div>
+                    <div class="mt-4 pt-3 border-t border-slate-800 text-[11px] text-slate-400">
+                        * Isolated in <code>ground_truth.json</code> with zero feature leakage.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Analyst Universal Paginated Data Explorer -->
+            <div class="bg-slate-950 border border-slate-800 rounded-xl p-6 space-y-4">
+                <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+                    <div>
+                        <h2 class="text-sm font-bold text-white uppercase tracking-wider flex items-center">
+                            <i class="fa-solid fa-database text-indigo-400 mr-2"></i> Universal Master Data Explorer
+                        </h2>
+                        <p class="text-xs text-slate-400 mt-0.5">Explore all 12 canonical relational tables and ground truth benchmarks with live pagination and search.</p>
+                    </div>
+
+                    <div class="flex flex-wrap items-center gap-3">
+                        <!-- Table Selection -->
+                        <div class="flex items-center space-x-2">
+                            <label class="text-xs font-semibold text-slate-400">Table:</label>
+                            <select id="analystTableSelect" onchange="changeTable('analyst', this.value)" class="bg-slate-900 border border-slate-700 text-indigo-300 text-xs font-semibold rounded-lg px-3 py-1.5 outline-none hover:border-indigo-500">
+                                <option value="orders">orders (37,500)</option>
+                                <option value="customers">customers (15,000)</option>
+                                <option value="order_lines">order_lines (62,784)</option>
+                                <option value="return_requests">return_requests (6,250)</option>
+                                <option value="return_lines">return_lines (10,000)</option>
+                                <option value="return_authorizations">return_authorizations (6,250)</option>
+                                <option value="return_shipments">return_shipments (5,562)</option>
+                                <option value="inspections">inspections (7,297)</option>
+                                <option value="inventory_dispositions">inventory_dispositions (7,297)</option>
+                                <option value="refunds">refunds (5,110)</option>
+                                <option value="products">products (16 SKUs)</option>
+                                <option value="return_events">return_events (23,172)</option>
+                                <option value="ground_truth_anomalies">ground_truth_anomalies (310)</option>
+                            </select>
+                        </div>
+
+                        <!-- Search Box -->
+                        <div class="relative">
+                            <i class="fa-solid fa-search absolute left-3 top-2.5 text-xs text-slate-500"></i>
+                            <input id="analystSearchInput" type="text" placeholder="Search records..." oninput="handleSearch('analyst', this.value)" class="bg-slate-900 border border-slate-700 rounded-lg pl-8 pr-3 py-1.5 text-xs text-white placeholder-slate-500 outline-none hover:border-slate-600 focus:border-indigo-500 w-48 md:w-64">
+                        </div>
+
+                        <!-- Page Size Selector -->
+                        <div class="flex items-center space-x-1.5">
+                            <label class="text-xs text-slate-400">Rows:</label>
+                            <select id="analystPageSize" onchange="changePageSize('analyst', this.value)" class="bg-slate-900 border border-slate-700 text-xs text-slate-300 rounded px-2 py-1 outline-none">
+                                <option value="10">10</option>
+                                <option value="25" selected>25</option>
+                                <option value="50">50</option>
+                                <option value="100">100</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Paginated Table Container -->
+                <div class="overflow-x-auto border border-slate-800 rounded-lg custom-scrollbar">
+                    <table class="w-full text-left text-xs whitespace-nowrap">
+                        <thead id="analystTableHead" class="bg-slate-900/90 text-slate-400 font-semibold uppercase text-[11px] border-b border-slate-800"></thead>
+                        <tbody id="analystTableBody" class="divide-y divide-slate-800/60 font-mono text-slate-300">
+                            <tr><td colspan="10" class="text-center py-8 text-slate-500">Loading records...</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Pagination Bar -->
+                <div class="flex flex-col sm:flex-row items-center justify-between gap-3 pt-2 text-xs text-slate-400">
+                    <div id="analystRecordSummary">Showing 0 to 0 of 0 records</div>
+                    <div class="flex items-center space-x-1.5">
+                        <button onclick="gotoPage('analyst', 1)" class="px-2.5 py-1 rounded bg-slate-900 border border-slate-800 hover:border-slate-700 text-slate-300 disabled:opacity-40" id="analystBtnFirst"><i class="fa-solid fa-angles-left"></i></button>
+                        <button onclick="changePage('analyst', -1)" class="px-2.5 py-1 rounded bg-slate-900 border border-slate-800 hover:border-slate-700 text-slate-300 disabled:opacity-40" id="analystBtnPrev"><i class="fa-solid fa-chevron-left mr-1"></i> Prev</button>
+                        <span class="px-3 py-1 font-mono text-white font-semibold bg-slate-900 rounded border border-slate-800" id="analystPageIndicator">Page 1 / 1</span>
+                        <button onclick="changePage('analyst', 1)" class="px-2.5 py-1 rounded bg-slate-900 border border-slate-800 hover:border-slate-700 text-slate-300 disabled:opacity-40" id="analystBtnNext">Next <i class="fa-solid fa-chevron-right ml-1"></i></button>
+                        <button onclick="gotoLastPage('analyst')" class="px-2.5 py-1 rounded bg-slate-900 border border-slate-800 hover:border-slate-700 text-slate-300 disabled:opacity-40" id="analystBtnLast"><i class="fa-solid fa-angles-right"></i></button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================================================================= -->
+        <!-- 2. CUSTOMER SELF-SERVICE PORTAL (FOCUSED ON SELECTED CUSTOMER) -->
+        <!-- ========================================================================================= -->
+        <section id="customerView" class="hidden space-y-6">
+            <!-- Customer Selection Header Bar -->
+            <div class="bg-slate-950 border border-slate-800 rounded-xl p-6 space-y-4">
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                    <div>
+                        <h2 class="text-sm font-bold text-white uppercase tracking-wider flex items-center">
+                            <i class="fa-solid fa-user-check text-indigo-400 mr-2"></i> Select Customer Account
+                        </h2>
+                        <p class="text-xs text-slate-400 mt-0.5">Choose a customer to load their personalized portal, order history, return authorizations, and refunds.</p>
+                    </div>
+                    <span class="text-xs font-mono text-indigo-400 bg-indigo-950/60 border border-indigo-800/80 px-2.5 py-1 rounded-lg self-start sm:self-auto">Personalized Portal</span>
+                </div>
+
+                <!-- Customer Search & Live Auto-Adjusting Dropdown -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-3 pt-1">
+                    <div class="relative">
+                        <input id="custSearchInput" type="text" placeholder="Type customer name, email, or ID to filter..." oninput="filterCustomerDropdown(this.value)" class="w-full bg-slate-900 border border-slate-700 focus:border-indigo-500 rounded-lg px-3.5 py-2.5 text-xs text-white placeholder-slate-500 outline-none">
+                        <div class="absolute right-3 top-2.5 text-[11px] text-slate-500 pointer-events-none font-mono">Live Filter</div>
+                    </div>
+
+                    <div>
+                        <select id="custDropdownSelect" onchange="selectCustomerFromDropdown(this.value)" class="w-full bg-slate-900 border border-slate-700 text-indigo-300 text-xs font-semibold rounded-lg px-3.5 py-2.5 outline-none hover:border-indigo-500">
+                            <option value="">-- Choose Customer from Dropdown --</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Selected Customer Profile Card & 4 Personal Metrics -->
+                <div id="custDetailsBanner" class="hidden space-y-4 pt-2">
+                    <div class="bg-slate-900/80 border border-indigo-900/70 p-4 rounded-xl flex flex-wrap items-center justify-between gap-4">
+                        <div class="flex items-center space-x-3.5">
+                            <div class="w-11 h-11 rounded-xl bg-gradient-to-tr from-indigo-600 to-indigo-400 border border-indigo-400/50 text-white flex items-center justify-center font-bold text-base shadow-md shadow-indigo-600/20" id="custAvatar">AL</div>
+                            <div>
+                                <div class="flex items-center gap-2">
+                                    <span class="font-bold text-white text-sm" id="custNameText">Aria Lopez</span>
+                                    <span class="font-mono text-indigo-300 text-xs font-semibold" id="custIdText">(CUST-000001)</span>
+                                </div>
+                                <div class="text-xs text-slate-400 mt-0.5" id="custContactText">aria.lopez1@example.com • +15555747202</div>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-2.5">
+                            <span class="px-3 py-1 rounded-lg bg-amber-950/80 text-amber-300 font-bold text-xs border border-amber-800" id="custTierBadge">VIP TIER</span>
+                            <span class="px-3 py-1 rounded-lg bg-emerald-950/80 text-emerald-300 text-xs border border-emerald-800" id="custRiskBadge">Risk Score: 0.03 (Low)</span>
+                        </div>
+                    </div>
+
+                    <!-- 4 Personal Summary Cards for THIS Customer Only -->
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                        <div class="bg-slate-900/60 border border-slate-800 rounded-xl p-3.5">
+                            <span class="text-[11px] font-medium text-slate-400 uppercase tracking-wider">His Orders</span>
+                            <div class="text-xl font-bold text-white mt-1" id="custStatOrders">0</div>
+                            <span class="text-[10px] text-slate-500" id="custStatDelivered">0 delivered</span>
+                        </div>
+                        <div class="bg-slate-900/60 border border-slate-800 rounded-xl p-3.5">
+                            <span class="text-[11px] font-medium text-slate-400 uppercase tracking-wider">His Lifetime Spend</span>
+                            <div class="text-xl font-bold text-emerald-400 mt-1" id="custStatSpent">$0.00</div>
+                            <span class="text-[10px] text-slate-500">Across all orders</span>
+                        </div>
+                        <div class="bg-slate-900/60 border border-slate-800 rounded-xl p-3.5">
+                            <span class="text-[11px] font-medium text-slate-400 uppercase tracking-wider">His Returns & RMAs</span>
+                            <div class="text-xl font-bold text-amber-400 mt-1" id="custStatReturns">0</div>
+                            <span class="text-[10px] text-slate-500">Submitted requests</span>
+                        </div>
+                        <div class="bg-slate-900/60 border border-slate-800 rounded-xl p-3.5">
+                            <span class="text-[11px] font-medium text-slate-400 uppercase tracking-wider">His Refunds Received</span>
+                            <div class="text-xl font-bold text-indigo-400 mt-1" id="custStatRefunded">$0.00</div>
+                            <span class="text-[10px] text-slate-500">Net returned payouts</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tabs to view THIS Customer's Orders, Returns & Refunds -->
+            <div id="custTablesContainer" class="hidden bg-slate-950 border border-slate-800 rounded-xl p-6 space-y-4">
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between border-b border-slate-800 pb-3 gap-3">
+                    <div class="flex items-center space-x-2">
+                        <button id="custTabBtnOrders" onclick="switchCustTab('orders')" class="px-3.5 py-1.5 rounded-lg text-xs font-semibold bg-indigo-600 text-white transition flex items-center gap-1.5">
+                            <i class="fa-solid fa-cart-shopping"></i> His Orders (<span id="custTabCountOrders">0</span>)
+                        </button>
+                        <button id="custTabBtnReturns" onclick="switchCustTab('returns')" class="px-3.5 py-1.5 rounded-lg text-xs font-semibold bg-slate-900 hover:bg-slate-800 text-slate-300 transition flex items-center gap-1.5">
+                            <i class="fa-solid fa-rotate-left"></i> His Return Requests (<span id="custTabCountReturns">0</span>)
+                        </button>
+                        <button id="custTabBtnRefunds" onclick="switchCustTab('refunds')" class="px-3.5 py-1.5 rounded-lg text-xs font-semibold bg-slate-900 hover:bg-slate-800 text-slate-300 transition flex items-center gap-1.5">
+                            <i class="fa-solid fa-receipt"></i> His Refunds (<span id="custTabCountRefunds">0</span>)
+                        </button>
+                    </div>
+                    <span class="text-xs text-slate-400 font-mono" id="custCurrentAccountNotice">Viewing customer records</span>
+                </div>
+
+                <!-- 1. Customer's Orders Table -->
+                <div id="custOrdersTabContent" class="space-y-2">
+                    <div class="overflow-x-auto border border-slate-800 rounded-lg custom-scrollbar">
+                        <table class="w-full text-left text-xs whitespace-nowrap">
+                            <thead class="bg-slate-900/90 text-slate-400 font-semibold uppercase text-[11px] border-b border-slate-800">
+                                <tr>
+                                    <th class="py-3 px-4">Order ID</th>
+                                    <th class="py-3 px-4">Order Date</th>
+                                    <th class="py-3 px-4">Status</th>
+                                    <th class="py-3 px-4">Delivery Date</th>
+                                    <th class="py-3 px-4">Purchased Items</th>
+                                    <th class="py-3 px-4">Total Paid</th>
+                                    <th class="py-3 px-4">Action</th>
+                                </tr>
+                            </thead>
+                            <tbody id="custOrdersTableBody" class="divide-y divide-slate-800/60 font-mono text-slate-300">
+                                <tr><td colspan="7" class="text-center py-6 text-slate-500">Select a customer to view their orders.</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- 2. Customer's Return Requests Table -->
+                <div id="custReturnsTabContent" class="hidden space-y-2">
+                    <div class="overflow-x-auto border border-slate-800 rounded-lg custom-scrollbar">
+                        <table class="w-full text-left text-xs whitespace-nowrap">
+                            <thead class="bg-slate-900/90 text-slate-400 font-semibold uppercase text-[11px] border-b border-slate-800">
+                                <tr>
+                                    <th class="py-3 px-4">Request ID</th>
+                                    <th class="py-3 px-4">Order ID</th>
+                                    <th class="py-3 px-4">RMA ID</th>
+                                    <th class="py-3 px-4">Request Date</th>
+                                    <th class="py-3 px-4">RMA Status</th>
+                                    <th class="py-3 px-4">Approved Qty</th>
+                                    <th class="py-3 px-4">Carrier Tracking</th>
+                                    <th class="py-3 px-4">RMA Expiration</th>
+                                </tr>
+                            </thead>
+                            <tbody id="custReturnsTableBody" class="divide-y divide-slate-800/60 font-mono text-slate-300">
+                                <tr><td colspan="8" class="text-center py-6 text-slate-500">No return requests submitted for this customer yet.</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- 3. Customer's Refunds Table -->
+                <div id="custRefundsTabContent" class="hidden space-y-2">
+                    <div class="overflow-x-auto border border-slate-800 rounded-lg custom-scrollbar">
+                        <table class="w-full text-left text-xs whitespace-nowrap">
+                            <thead class="bg-slate-900/90 text-slate-400 font-semibold uppercase text-[11px] border-b border-slate-800">
+                                <tr>
+                                    <th class="py-3 px-4">Refund ID</th>
+                                    <th class="py-3 px-4">RMA ID</th>
+                                    <th class="py-3 px-4">Refund Date</th>
+                                    <th class="py-3 px-4">Gross Amount</th>
+                                    <th class="py-3 px-4">Prorated Discount</th>
+                                    <th class="py-3 px-4">Tax Refunded</th>
+                                    <th class="py-3 px-4">Restocking Fee</th>
+                                    <th class="py-3 px-4">Net Refund Payout</th>
+                                    <th class="py-3 px-4">Status</th>
+                                </tr>
+                            </thead>
+                            <tbody id="custRefundsTableBody" class="divide-y divide-slate-800/60 font-mono text-slate-300">
+                                <tr><td colspan="9" class="text-center py-6 text-slate-500">No refund transactions issued for this customer yet.</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- "If He Wants He Can Do Return Request Too" Submission Card -->
+            <div id="returnFormCard" class="bg-slate-950 border border-slate-800 rounded-xl p-6 space-y-5">
+                <div class="flex items-center justify-between border-b border-slate-800 pb-3">
+                    <div>
+                        <h2 class="text-sm font-bold text-white uppercase tracking-wider flex items-center">
+                            <i class="fa-solid fa-paper-plane text-indigo-400 mr-2"></i> Submit a New Return Request
+                        </h2>
+                        <p class="text-xs text-slate-400 mt-0.5">Customer can pick any delivered order and line item to initiate a return request with instant eligibility evaluation.</p>
+                    </div>
+                    <span class="text-xs font-mono text-emerald-400 bg-emerald-950/60 border border-emerald-800/80 px-2.5 py-1 rounded-lg">Instant Eligibility Engine</span>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 pt-1">
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-400 mb-1">Delivered Order Number</label>
+                        <select id="custOrderSelect" onchange="handleOrderSelection(this.value)" class="w-full bg-slate-900 border border-slate-700 rounded-lg px-3 py-2 text-xs font-mono text-white outline-none focus:border-indigo-500">
+                            <option value="">-- Select Customer First --</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-400 mb-1">Purchased Line Item</label>
+                        <select id="custLineSelect" class="w-full bg-slate-900 border border-slate-700 rounded-lg px-3 py-2 text-xs font-mono text-white outline-none focus:border-indigo-500">
+                            <option value="">-- Select Order First --</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-400 mb-1">Requested Quantity</label>
+                        <input id="custReturnQty" type="number" value="1" min="1" max="10" class="w-full bg-slate-900 border border-slate-700 rounded-lg px-3 py-2 text-xs font-mono text-white outline-none focus:border-indigo-500">
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-400 mb-1">Reason for Return</label>
+                        <select id="custReasonSelect" class="w-full bg-slate-900 border border-slate-700 rounded-lg px-3 py-2 text-xs text-white outline-none focus:border-indigo-500">
+                            <option value="DEFECTIVE">Item Defective / Damaged</option>
+                            <option value="DOES_NOT_FIT">Size / Fit Discrepancy</option>
+                            <option value="CHANGED_MIND">Changed Mind</option>
+                            <option value="WRONG_ITEM">Shipped Wrong SKU</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-400 mb-1">Reported Item Condition</label>
+                        <select id="custConditionSelect" class="w-full bg-slate-900 border border-slate-700 rounded-lg px-3 py-2 text-xs text-white outline-none focus:border-indigo-500">
+                            <option value="UNOPENED">Unopened / Factory Sealed</option>
+                            <option value="OPENED_UNUSED">Opened / Pristine</option>
+                            <option value="USED">Used / Minor Wear</option>
+                            <option value="DEFECTIVE">Defective / Functional Issue</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-400 mb-1">Customer Notes (Optional)</label>
+                        <input id="custNotesInput" type="text" placeholder="e.g. Color was darker than pictured" class="w-full bg-slate-900 border border-slate-700 rounded-lg px-3 py-2 text-xs text-white outline-none focus:border-indigo-500">
+                    </div>
+                </div>
+
+                <div class="flex justify-end pt-2">
+                    <button onclick="submitCustomerReturn()" class="bg-indigo-600 hover:bg-indigo-500 text-white font-semibold text-xs px-5 py-2.5 rounded-lg shadow-md transition flex items-center gap-2">
+                        <i class="fa-solid fa-paper-plane"></i> Submit Return Authorization Request
+                    </button>
+                </div>
+
+                <div id="custStatusBox" class="hidden text-xs rounded-lg p-4 border"></div>
+            </div>
+        </section>
+
+        <!-- ========================================================================================= -->
+        <!-- 3. WAREHOUSE OPERATOR CONSOLE -->
+        <!-- ========================================================================================= -->
+        <section id="operatorView" class="hidden space-y-6">
+            <div class="bg-slate-950 border border-slate-800 rounded-xl p-6 space-y-4">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <h2 class="text-sm font-bold text-white uppercase tracking-wider flex items-center">
+                            <i class="fa-solid fa-barcode text-indigo-400 mr-2"></i> Inbound Receiving, Inspection & Bin Routing
+                        </h2>
+                        <p class="text-xs text-slate-400 mt-0.5">Inspect physically received parcels, verify serial numbers, assign quality grades, and route to warehouse bins.</p>
+                    </div>
+                    <span class="text-xs font-mono text-emerald-400 bg-emerald-950/60 border border-emerald-800/80 px-2.5 py-1 rounded-lg">Operator Station</span>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-4 pt-2">
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-400 mb-1">RMA Identifier</label>
+                        <input id="op_rma_id" type="text" value="RMA-2026-000001" class="w-full bg-slate-900 border border-slate-700 rounded-lg px-3 py-2 text-xs font-mono text-white outline-none focus:border-indigo-500">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-400 mb-1">Inspected SKU</label>
+                        <input id="op_sku" type="text" value="SKU-ELEC-01" class="w-full bg-slate-900 border border-slate-700 rounded-lg px-3 py-2 text-xs font-mono text-white outline-none focus:border-indigo-500">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-400 mb-1">Physical Condition Grade</label>
+                        <select id="op_item_grade" class="w-full bg-slate-900 border border-slate-700 rounded-lg px-3 py-2 text-xs text-white outline-none focus:border-indigo-500">
+                            <option value="GRADE_A_NEW">GRADE A — Unopened / Like-New</option>
+                            <option value="GRADE_B_OPEN_BOX">GRADE B — Open Box / Pristine</option>
+                            <option value="GRADE_C_REFURBISHABLE">GRADE C — Minor Wear / Refurbishable</option>
+                            <option value="GRADE_D_DAMAGED">GRADE D — Damaged / Non-Functional</option>
+                            <option value="COUNTERFEIT_FRAUD">COUNTERFEIT — Fraudulent / Non-Authentic</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-400 mb-1">Target Disposition Bin</label>
+                        <select id="op_disp_action" class="w-full bg-slate-900 border border-slate-700 rounded-lg px-3 py-2 text-xs text-white outline-none focus:border-indigo-500">
+                            <option value="RESTOCK_PRIMARY">RESTOCK PRIMARY (BIN-PRIMARY-A1)</option>
+                            <option value="RESTOCK_OUTLET">RESTOCK OUTLET (BIN-OUTLET-B2)</option>
+                            <option value="SEND_TO_REFURBISH">REFURBISH (BIN-REFURB-C3)</option>
+                            <option value="SCRAP_RECYCLE">SCRAP & RECYCLE (BIN-SCRAP-D4)</option>
+                            <option value="QUARANTINE_FRAUD">QUARANTINE (BIN-QUARANTINE-Q9)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="flex justify-end pt-2">
+                    <button onclick="submitInspection()" class="bg-indigo-600 hover:bg-indigo-500 text-white font-semibold text-xs px-5 py-2.5 rounded-lg shadow-md transition flex items-center gap-2">
+                        <i class="fa-solid fa-check-double"></i> Confirm Receiving & Route Disposition
+                    </button>
+                </div>
+                <div id="opStatus" class="hidden text-xs rounded-lg p-3"></div>
+            </div>
+
+            <!-- Warehouse Records Table with Pagination -->
+            <div class="bg-slate-950 border border-slate-800 rounded-xl p-6 space-y-4">
+                <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+                    <div>
+                        <h2 class="text-sm font-bold text-white uppercase tracking-wider flex items-center">
+                            <i class="fa-solid fa-boxes-stacked text-indigo-400 mr-2"></i> Warehouse Inspections & Shipments Ledger
+                        </h2>
+                        <p class="text-xs text-slate-400 mt-0.5">Paginated view of receiving inspections and carrier tracking shipments.</p>
+                    </div>
+
+                    <div class="flex items-center gap-3">
+                        <select id="operatorTableSelect" onchange="changeTable('operator', this.value)" class="bg-slate-900 border border-slate-700 text-xs text-indigo-300 font-semibold rounded-lg px-3 py-1.5 outline-none">
+                            <option value="inspections">inspections (7,297)</option>
+                            <option value="return_shipments">return_shipments (5,562)</option>
+                            <option value="inventory_dispositions">inventory_dispositions (7,297)</option>
+                        </select>
+                        <input id="operatorSearchInput" type="text" placeholder="Search inspections..." oninput="handleSearch('operator', this.value)" class="bg-slate-900 border border-slate-700 rounded-lg px-3 py-1.5 text-xs text-white placeholder-slate-500 outline-none w-48">
+                        <select id="operatorPageSize" onchange="changePageSize('operator', this.value)" class="bg-slate-900 border border-slate-700 text-xs text-slate-300 rounded px-2 py-1 outline-none">
+                            <option value="10">10</option>
+                            <option value="25" selected>25</option>
+                            <option value="50">50</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="overflow-x-auto border border-slate-800 rounded-lg custom-scrollbar">
+                    <table class="w-full text-left text-xs whitespace-nowrap">
+                        <thead id="operatorTableHead" class="bg-slate-900/90 text-slate-400 font-semibold uppercase text-[11px] border-b border-slate-800"></thead>
+                        <tbody id="operatorTableBody" class="divide-y divide-slate-800/60 font-mono text-slate-300">
+                            <tr><td colspan="10" class="text-center py-6 text-slate-500">Loading records...</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="flex flex-col sm:flex-row items-center justify-between gap-3 pt-2 text-xs text-slate-400">
+                    <div id="operatorRecordSummary">Showing 0 to 0 of 0 records</div>
+                    <div class="flex items-center space-x-1.5">
+                        <button onclick="gotoPage('operator', 1)" class="px-2.5 py-1 rounded bg-slate-900 border border-slate-800 hover:border-slate-700 text-slate-300 disabled:opacity-40" id="operatorBtnFirst"><i class="fa-solid fa-angles-left"></i></button>
+                        <button onclick="changePage('operator', -1)" class="px-2.5 py-1 rounded bg-slate-900 border border-slate-800 hover:border-slate-700 text-slate-300 disabled:opacity-40" id="operatorBtnPrev"><i class="fa-solid fa-chevron-left mr-1"></i> Prev</button>
+                        <span class="px-3 py-1 font-mono text-white font-semibold bg-slate-900 rounded border border-slate-800" id="operatorPageIndicator">Page 1 / 1</span>
+                        <button onclick="changePage('operator', 1)" class="px-2.5 py-1 rounded bg-slate-900 border border-slate-800 hover:border-slate-700 text-slate-300 disabled:opacity-40" id="operatorBtnNext">Next <i class="fa-solid fa-chevron-right ml-1"></i></button>
+                        <button onclick="gotoLastPage('operator')" class="px-2.5 py-1 rounded bg-slate-900 border border-slate-800 hover:border-slate-700 text-slate-300 disabled:opacity-40" id="operatorBtnLast"><i class="fa-solid fa-angles-right"></i></button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================================================================= -->
+        <!-- 4. OPERATIONS MANAGER CONSOLE -->
+        <!-- ========================================================================================= -->
+        <section id="managerView" class="hidden space-y-6">
+            <div class="bg-slate-950 border border-slate-800 rounded-xl p-6 space-y-4">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <h2 class="text-sm font-bold text-white uppercase tracking-wider flex items-center">
+                            <i class="fa-solid fa-stamp text-amber-400 mr-2"></i> Policy Override & Exception Management Queue
+                        </h2>
+                        <p class="text-xs text-slate-400 mt-0.5">Review policy window violations, final sale restrictions, and issue auditable management overrides.</p>
+                    </div>
+                    <span class="text-xs font-mono text-amber-400 bg-amber-950/60 border border-amber-800/80 px-2.5 py-1 rounded-lg">Manager Authorization</span>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 pt-2">
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-400 mb-1">Return Request ID</label>
+                        <input id="mgr_req_id" type="text" placeholder="REQ-2026-000001" class="w-full bg-slate-900 border border-slate-700 rounded-lg px-3 py-2 text-xs font-mono text-white outline-none focus:border-amber-500">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-400 mb-1">Reason for Policy Override</label>
+                        <input id="mgr_override_reason" type="text" value="Customer goodwill / Carrier transit delay verified" class="w-full bg-slate-900 border border-slate-700 rounded-lg px-3 py-2 text-xs text-white outline-none focus:border-amber-500">
+                    </div>
+                </div>
+
+                <div class="flex justify-end pt-2">
+                    <button onclick="applyOverride()" class="bg-amber-600 hover:bg-amber-500 text-white font-semibold text-xs px-5 py-2.5 rounded-lg shadow-md transition flex items-center gap-2">
+                        <i class="fa-solid fa-check"></i> Authorize Manager Policy Override
+                    </button>
+                </div>
+                <div id="mgrStatus" class="hidden text-xs rounded-lg p-3"></div>
+            </div>
+
+            <!-- Operations Manager Records Table with Pagination -->
+            <div class="bg-slate-950 border border-slate-800 rounded-xl p-6 space-y-4">
+                <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+                    <div>
+                        <h2 class="text-sm font-bold text-white uppercase tracking-wider flex items-center">
+                            <i class="fa-solid fa-clipboard-check text-indigo-400 mr-2"></i> Return Merchandise Authorizations & Exceptions Ledger
+                        </h2>
+                        <p class="text-xs text-slate-400 mt-0.5">Paginated view of all RMAs, financial refund settlements, and lifecycle audit events.</p>
+                    </div>
+
+                    <div class="flex items-center gap-3">
+                        <select id="managerTableSelect" onchange="changeTable('manager', this.value)" class="bg-slate-900 border border-slate-700 text-xs text-indigo-300 font-semibold rounded-lg px-3 py-1.5 outline-none">
+                            <option value="return_authorizations">return_authorizations (6,250)</option>
+                            <option value="refunds">refunds (5,110)</option>
+                            <option value="return_events">return_events (23,172)</option>
+                            <option value="ground_truth_anomalies">ground_truth_anomalies (310)</option>
+                        </select>
+                        <input id="managerSearchInput" type="text" placeholder="Search RMAs..." oninput="handleSearch('manager', this.value)" class="bg-slate-900 border border-slate-700 rounded-lg px-3 py-1.5 text-xs text-white placeholder-slate-500 outline-none w-48">
+                        <select id="managerPageSize" onchange="changePageSize('manager', this.value)" class="bg-slate-900 border border-slate-700 text-xs text-slate-300 rounded px-2 py-1 outline-none">
+                            <option value="10">10</option>
+                            <option value="25" selected>25</option>
+                            <option value="50">50</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="overflow-x-auto border border-slate-800 rounded-lg custom-scrollbar">
+                    <table class="w-full text-left text-xs whitespace-nowrap">
+                        <thead id="managerTableHead" class="bg-slate-900/90 text-slate-400 font-semibold uppercase text-[11px] border-b border-slate-800"></thead>
+                        <tbody id="managerTableBody" class="divide-y divide-slate-800/60 font-mono text-slate-300">
+                            <tr><td colspan="10" class="text-center py-6 text-slate-500">Loading records...</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="flex flex-col sm:flex-row items-center justify-between gap-3 pt-2 text-xs text-slate-400">
+                    <div id="managerRecordSummary">Showing 0 to 0 of 0 records</div>
+                    <div class="flex items-center space-x-1.5">
+                        <button onclick="gotoPage('manager', 1)" class="px-2.5 py-1 rounded bg-slate-900 border border-slate-800 hover:border-slate-700 text-slate-300 disabled:opacity-40" id="managerBtnFirst"><i class="fa-solid fa-angles-left"></i></button>
+                        <button onclick="changePage('manager', -1)" class="px-2.5 py-1 rounded bg-slate-900 border border-slate-800 hover:border-slate-700 text-slate-300 disabled:opacity-40" id="managerBtnPrev"><i class="fa-solid fa-chevron-left mr-1"></i> Prev</button>
+                        <span class="px-3 py-1 font-mono text-white font-semibold bg-slate-900 rounded border border-slate-800" id="managerPageIndicator">Page 1 / 1</span>
+                        <button onclick="changePage('manager', 1)" class="px-2.5 py-1 rounded bg-slate-900 border border-slate-800 hover:border-slate-700 text-slate-300 disabled:opacity-40" id="managerBtnNext">Next <i class="fa-solid fa-chevron-right ml-1"></i></button>
+                        <button onclick="gotoLastPage('manager')" class="px-2.5 py-1 rounded bg-slate-900 border border-slate-800 hover:border-slate-700 text-slate-300 disabled:opacity-40" id="managerBtnLast"><i class="fa-solid fa-angles-right"></i></button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer with Author Copyright & Query Inquiries -->
+    <footer class="border-t border-slate-800 py-6 text-center text-xs text-slate-400 bg-slate-950">
+        All copyrights to Avinash Chidurala. Please contact me for any queries: <a href="mailto:Chiduralaavinash@gmail.com" class="text-indigo-400 hover:underline">Chiduralaavinash@gmail.com</a>
+    </footer>
+
+    <!-- Interactive Client Scripts with Full Pagination & Searchable Dropdown -->
+    <script>
+        // Automatic API Base detection: handles both http://127.0.0.1:8000 and direct file:/// opening
+        const API_BASE = (window.location.protocol === 'file:') ? 'http://127.0.0.1:8000' : '';
+
+        // Pagination state for all 4 panels
+        const state = {
+            analyst: { table: 'orders', page: 1, pageSize: 25, search: '', total: 0, totalPages: 1 },
+            customer: { table: 'return_requests', page: 1, pageSize: 10, search: '', total: 0, totalPages: 1 },
+            operator: { table: 'inspections', page: 1, pageSize: 25, search: '', total: 0, totalPages: 1 },
+            manager: { table: 'return_authorizations', page: 1, pageSize: 25, search: '', total: 0, totalPages: 1 }
+        };
+
+        // Cache for customer delivered orders
+        let currentCustomerDeliveredOrders = [];
+        let searchDebounceTimers = {};
+
+        // Role switcher
+        function switchRole(role) {
+            document.getElementById('analystView').classList.add('hidden');
+            document.getElementById('customerView').classList.add('hidden');
+            document.getElementById('operatorView').classList.add('hidden');
+            document.getElementById('managerView').classList.add('hidden');
+
+            const activeView = document.getElementById(role + 'View');
+            if (activeView) activeView.classList.remove('hidden');
+
+            // Load data for the active role's panel
+            if (role === 'customer') {
+                const select = document.getElementById('custDropdownSelect');
+                if (select && select.value) {
+                    selectCustomerFromDropdown(select.value);
+                } else {
+                    loadInitialCustomers();
+                }
+            } else {
+                loadPanelData(role);
+            }
+        }
+
+        // Generic Loader for Paginated Tables
+        async function loadPanelData(panelKey) {
+            const p = state[panelKey];
+            if (!p) return;
+            const tbody = document.getElementById(panelKey + 'TableBody');
+            const thead = document.getElementById(panelKey + 'TableHead');
+            if (!tbody) return;
+
+            try {
+                tbody.innerHTML = `<tr><td colspan="10" class="text-center py-6 text-slate-400"><i class="fa-solid fa-spinner fa-spin mr-2"></i> Fetching records from server...</td></tr>`;
+
+                const url = `${API_BASE}/api/v1/data/${p.table}?page=${p.page}&page_size=${p.pageSize}&search=${encodeURIComponent(p.search)}`;
+                const res = await fetch(url);
+                if (!res.ok) {
+                    let errMsg = `Server returned HTTP ${res.status} (${res.statusText})`;
+                    try {
+                        const errJson = await res.json();
+                        if (errJson && errJson.detail) errMsg += `: ${errJson.detail}`;
+                    } catch(e) {}
+                    throw new Error(errMsg);
+                }
+                const json = await res.json();
+
+                p.total = json.total_records;
+                p.totalPages = json.total_pages;
+                p.page = json.page;
+
+                // Render Table Header
+                let thHtml = '<tr>';
+                json.columns.forEach(col => {
+                    thHtml += `<th class="py-3 px-4">${formatColumnName(col)}</th>`;
+                });
+                thHtml += '</tr>';
+                thead.innerHTML = thHtml;
+
+                // Render Table Rows
+                if (json.rows.length === 0) {
+                    tbody.innerHTML = `<tr><td colspan="${json.columns.length}" class="text-center py-8 text-slate-500">No records found matching search criteria.</td></tr>`;
+                } else {
+                    let rowsHtml = '';
+                    json.rows.forEach(row => {
+                        rowsHtml += `<tr class="hover:bg-slate-900/60 transition">`;
+                        json.columns.forEach(col => {
+                            const val = row[col];
+                            rowsHtml += `<td class="py-2.5 px-4">${formatCellValue(col, val)}</td>`;
+                        });
+                        rowsHtml += `</tr>`;
+                    });
+                    tbody.innerHTML = rowsHtml;
+                }
+
+                // Update Pagination Controls
+                updatePaginationControls(panelKey);
+
+            } catch (err) {
+                console.error('Error loading panel data:', err);
+                tbody.innerHTML = `<tr><td colspan="10" class="text-center py-6 text-rose-400">
+                    <div class="font-bold mb-1"><i class="fa-solid fa-triangle-exclamation mr-1.5"></i> Error loading data: ${err.message}</div>
+                    <div class="text-[11px] text-slate-400 mb-3">Please ensure the backend server is running with: <code class="text-indigo-300 font-mono bg-slate-900 px-1.5 py-0.5 rounded border border-slate-800">.\\run.ps1 serve</code></div>
+                    <button onclick="loadPanelData('${panelKey}')" class="px-3 py-1 bg-indigo-600 hover:bg-indigo-500 text-white rounded text-xs transition">
+                        <i class="fa-solid fa-rotate-right mr-1"></i> Retry Loading
+                    </button>
+                </td></tr>`;
+            }
+        }
+
+        function formatColumnName(col) {
+            return col.replace(/_/g, ' ');
+        }
+
+        function formatCellValue(col, val) {
+            if (val === null || val === undefined) return '<span class="text-slate-600">—</span>';
+            const s = String(val);
+
+            // Format status badges
+            if (col.includes('status') || col === 'decision') {
+                if (s === 'APPROVED' || s === 'COMPLETED' || s === 'DELIVERED') {
+                    return `<span class="px-2 py-0.5 rounded bg-emerald-950 text-emerald-400 text-[10px] font-semibold border border-emerald-800">${s}</span>`;
+                }
+                if (s === 'REJECTED' || s === 'CANCELLED') {
+                    return `<span class="px-2 py-0.5 rounded bg-rose-950 text-rose-400 text-[10px] font-semibold border border-rose-800">${s}</span>`;
+                }
+                if (s.includes('PARTIAL') || s === 'SUBMITTED' || s === 'IN_TRANSIT') {
+                    return `<span class="px-2 py-0.5 rounded bg-amber-950 text-amber-300 text-[10px] font-semibold border border-amber-800">${s}</span>`;
+                }
+            }
+
+            // Format monetary columns
+            if (col.includes('amount') || col.includes('fee') || col.includes('price') || col.includes('recovery')) {
+                const num = parseFloat(s);
+                if (!isNaN(num)) return `<span class="text-emerald-300">$${num.toFixed(2)}</span>`;
+            }
+
+            // Grade badges
+            if (col === 'item_grade') {
+                if (s === 'GRADE_A_NEW') return `<span class="text-emerald-400 font-bold">${s}</span>`;
+                if (s === 'COUNTERFEIT_FRAUD') return `<span class="px-2 py-0.5 rounded bg-rose-950 text-rose-300 font-bold border border-rose-800">${s}</span>`;
+                return `<span class="text-slate-300">${s}</span>`;
+            }
+
+            // Boolean flags
+            if (typeof val === 'boolean' || col.includes('flag') || col.includes('verified') || col.includes('intact')) {
+                if (val === 1 || val === true) return '<span class="text-emerald-400"><i class="fa-solid fa-check"></i> Yes</span>';
+                if (val === 0 || val === false) return '<span class="text-slate-500"><i class="fa-solid fa-xmark"></i> No</span>';
+            }
+
+            // Truncate long strings/dates
+            if (s.length > 36) return `<span title="${s}">${s.substring(0, 36)}...</span>`;
+            return s;
+        }
+
+        function updatePaginationControls(panelKey) {
+            const p = state[panelKey];
+            const start = p.total === 0 ? 0 : (p.page - 1) * p.pageSize + 1;
+            const end = Math.min(p.page * p.pageSize, p.total);
+
+            document.getElementById(panelKey + 'RecordSummary').innerText = `Showing ${start.toLocaleString()} to ${end.toLocaleString()} of ${p.total.toLocaleString()} records`;
+            document.getElementById(panelKey + 'PageIndicator').innerText = `Page ${p.page.toLocaleString()} / ${p.totalPages.toLocaleString()}`;
+
+            document.getElementById(panelKey + 'BtnFirst').disabled = (p.page <= 1);
+            document.getElementById(panelKey + 'BtnPrev').disabled = (p.page <= 1);
+            document.getElementById(panelKey + 'BtnNext').disabled = (p.page >= p.totalPages);
+            document.getElementById(panelKey + 'BtnLast').disabled = (p.page >= p.totalPages);
+        }
+
+        function changePage(panelKey, delta) {
+            const p = state[panelKey];
+            const newPage = p.page + delta;
+            if (newPage >= 1 && newPage <= p.totalPages) {
+                p.page = newPage;
+                loadPanelData(panelKey);
+            }
+        }
+
+        function gotoPage(panelKey, pageNum) {
+            const p = state[panelKey];
+            p.page = pageNum;
+            loadPanelData(panelKey);
+        }
+
+        function gotoLastPage(panelKey) {
+            const p = state[panelKey];
+            p.page = p.totalPages;
+            loadPanelData(panelKey);
+        }
+
+        function changeTable(panelKey, newTable) {
+            state[panelKey].table = newTable;
+            state[panelKey].page = 1;
+            state[panelKey].search = '';
+            const searchInput = document.getElementById(panelKey + 'SearchInput');
+            if (searchInput) searchInput.value = '';
+            loadPanelData(panelKey);
+        }
+
+        function changePageSize(panelKey, newSize) {
+            state[panelKey].pageSize = parseInt(newSize, 10);
+            state[panelKey].page = 1;
+            loadPanelData(panelKey);
+        }
+
+        function handleSearch(panelKey, text) {
+            clearTimeout(searchDebounceTimers[panelKey]);
+            searchDebounceTimers[panelKey] = setTimeout(() => {
+                state[panelKey].search = text.trim();
+                state[panelKey].page = 1;
+                loadPanelData(panelKey);
+            }, 300);
+        }
+
+        // =========================================================================
+        // CUSTOMER PANEL: SEARCHABLE DROPDOWN & LIVE AUTO-ADJUSTING
+        // =========================================================================
+
+        let customerSearchDebounce = null;
+
+        async function loadInitialCustomers() {
+            try {
+                const res = await fetch(`${API_BASE}/api/v1/customers/search?limit=60`);
+                if (!res.ok) return;
+                const customers = await res.json();
+                populateCustomerSelectDropdown(customers);
+
+                // Auto-select first customer for great out-of-the-box demo
+                if (customers.length > 0) {
+                    selectCustomerFromDropdown(customers[0].customer_id);
+                }
+            } catch (e) {
+                console.error('Failed to load initial customers:', e);
+            }
+        }
+
+        function populateCustomerSelectDropdown(customers) {
+            const select = document.getElementById('custDropdownSelect');
+            if (!select) return;
+
+            let html = '<option value="">-- Choose Customer from Dropdown (' + customers.length + ' matching) --</option>';
+            customers.forEach(c => {
+                html += `<option value="${c.customer_id}">${c.customer_id} — ${c.first_name} ${c.last_name} (${c.customer_tier} Tier, ${c.email})</option>`;
+            });
+            select.innerHTML = html;
+        }
+
+        function filterCustomerDropdown(query) {
+            clearTimeout(customerSearchDebounce);
+            customerSearchDebounce = setTimeout(async () => {
+                try {
+                    const res = await fetch(`${API_BASE}/api/v1/customers/search?q=${encodeURIComponent(query)}&limit=60`);
+                    if (!res.ok) return;
+                    const customers = await res.json();
+                    populateCustomerSelectDropdown(customers);
+
+                    // If exact match or only 1 returned, auto-select
+                    if (customers.length === 1) {
+                        selectCustomerFromDropdown(customers[0].customer_id);
+                    }
+                } catch (e) {
+                    console.error('Failed to filter customers:', e);
+                }
+            }, 200);
+        }
+
+        async function selectCustomerFromDropdown(customerId) {
+            if (!customerId) return;
+            const select = document.getElementById('custDropdownSelect');
+            if (select) select.value = customerId;
+
+            try {
+                const res = await fetch(`${API_BASE}/api/v1/customers/${customerId}/details`);
+                if (!res.ok) throw new Error('Customer details not found');
+                const data = await res.json();
+
+                const c = data.customer;
+                currentCustomerDeliveredOrders = data.delivered_orders || [];
+
+                // 1. Show Containers & Update Customer Profile Banner
+                const banner = document.getElementById('custDetailsBanner');
+                if (banner) banner.classList.remove('hidden');
+                const tablesContainer = document.getElementById('custTablesContainer');
+                if (tablesContainer) tablesContainer.classList.remove('hidden');
+
+                document.getElementById('custNameText').innerText = `${c.first_name} ${c.last_name}`;
+                document.getElementById('custIdText').innerText = `(${c.customer_id})`;
+                document.getElementById('custAvatar').innerText = `${c.first_name ? c.first_name[0] : ''}${c.last_name ? c.last_name[0] : ''}`;
+                document.getElementById('custContactText').innerText = `${c.email} • ${c.phone}`;
+                document.getElementById('custTierBadge').innerText = `${c.customer_tier} TIER`;
+                document.getElementById('custRiskBadge').innerText = `Risk Score: ${Number(c.risk_score || 0).toFixed(3)}`;
+                document.getElementById('custCurrentAccountNotice').innerText = `Viewing records for ${c.first_name} ${c.last_name} (${c.customer_id})`;
+
+                // 2. Update 4 Personal Metrics for THIS Customer
+                const stats = data.stats || {};
+                document.getElementById('custStatOrders').innerText = stats.total_orders || 0;
+                document.getElementById('custStatDelivered').innerText = `${stats.delivered_orders_count || 0} delivered`;
+                document.getElementById('custStatSpent').innerText = `$${Number(stats.total_spent || 0).toFixed(2)}`;
+                document.getElementById('custStatReturns').innerText = stats.total_returns || 0;
+                document.getElementById('custStatRefunded').innerText = `$${Number(stats.total_refunded || 0).toFixed(2)}`;
+
+                // 3. Update Tab Counters
+                const orders = data.orders || [];
+                const returns = data.return_requests || [];
+                const refunds = data.refunds || [];
+                document.getElementById('custTabCountOrders').innerText = orders.length;
+                document.getElementById('custTabCountReturns').innerText = returns.length;
+                document.getElementById('custTabCountRefunds').innerText = refunds.length;
+
+                // 4. Render Customer Orders Table
+                const ordersTbody = document.getElementById('custOrdersTableBody');
+                if (ordersTbody) {
+                    if (orders.length === 0) {
+                        ordersTbody.innerHTML = `<tr><td colspan="7" class="text-center py-6 text-slate-500">No orders found for this customer.</td></tr>`;
+                    } else {
+                        ordersTbody.innerHTML = orders.map(o => {
+                            const itemsSummary = (o.lines || []).map(l => `${l.quantity}x ${l.product_name}`).join(', ') || '—';
+                            const isDelivered = o.order_status === 'DELIVERED';
+                            const actionBtn = isDelivered 
+                                ? `<button onclick="initiateReturnForOrder('${o.order_id}')" class="px-2.5 py-1 bg-indigo-600 hover:bg-indigo-500 text-white rounded text-[11px] font-semibold transition inline-flex items-center gap-1 shadow-sm"><i class="fa-solid fa-rotate-left"></i> Request Return</button>`
+                                : `<span class="text-slate-500 text-[11px] italic">Not Eligible</span>`;
+                            const statusBadge = isDelivered
+                                ? `<span class="px-2 py-0.5 rounded bg-emerald-950 text-emerald-400 border border-emerald-800 text-[10px] font-bold">DELIVERED</span>`
+                                : `<span class="px-2 py-0.5 rounded bg-slate-800 text-slate-300 border border-slate-700 text-[10px] font-semibold">${o.order_status}</span>`;
+
+                            return `
+                                <tr class="hover:bg-slate-900/50 transition border-b border-slate-800/40">
+                                    <td class="py-3 px-4 font-bold text-white">${o.order_id}</td>
+                                    <td class="py-3 px-4 text-slate-400">${o.order_date ? o.order_date.split('T')[0] : 'N/A'}</td>
+                                    <td class="py-3 px-4">${statusBadge}</td>
+                                    <td class="py-3 px-4 text-slate-400">${o.delivery_date ? o.delivery_date.split('T')[0] : '—'}</td>
+                                    <td class="py-3 px-4 text-slate-300 max-w-xs truncate" title="${itemsSummary}">${itemsSummary}</td>
+                                    <td class="py-3 px-4 font-semibold text-emerald-400">$${Number(o.total_paid_amount || 0).toFixed(2)}</td>
+                                    <td class="py-3 px-4">${actionBtn}</td>
+                                </tr>
+                            `;
+                        }).join('');
+                    }
+                }
+
+                // 5. Render Customer Returns Table
+                const returnsTbody = document.getElementById('custReturnsTableBody');
+                if (returnsTbody) {
+                    if (returns.length === 0) {
+                        returnsTbody.innerHTML = `<tr><td colspan="8" class="text-center py-6 text-slate-500">No return requests submitted for this customer yet.</td></tr>`;
+                    } else {
+                        returnsTbody.innerHTML = returns.map(r => {
+                            const rmaStatus = r.authorization_status || r.rma_status || r.request_status || 'PENDING';
+                            let statusColor = 'bg-slate-800 text-slate-300 border-slate-700';
+                            if (rmaStatus === 'APPROVED') statusColor = 'bg-emerald-950 text-emerald-400 border-emerald-800';
+                            else if (rmaStatus === 'REJECTED') statusColor = 'bg-rose-950 text-rose-400 border-rose-800';
+                            else if (rmaStatus === 'MANUAL_REVIEW') statusColor = 'bg-amber-950 text-amber-400 border-amber-800';
+
+                            const trackingDisplay = r.tracking_number || (r.rma_id ? 'RTS-2026-' + r.rma_id.split('-').pop() : '—');
+                            const expDate = r.rma_expiration_date || r.expires_at;
+
+                            return `
+                                <tr class="hover:bg-slate-900/50 transition border-b border-slate-800/40">
+                                    <td class="py-3 px-4 font-bold text-indigo-400">${r.request_id}</td>
+                                    <td class="py-3 px-4 text-slate-300">${r.order_id}</td>
+                                    <td class="py-3 px-4 font-mono text-white">${r.rma_id || '—'}</td>
+                                    <td class="py-3 px-4 text-slate-400">${r.request_date ? r.request_date.split('T')[0] : 'N/A'}</td>
+                                    <td class="py-3 px-4"><span class="px-2 py-0.5 rounded text-[10px] font-bold border ${statusColor}">${rmaStatus}</span></td>
+                                    <td class="py-3 px-4 text-white font-semibold">${r.total_approved_quantity !== null && r.total_approved_quantity !== undefined ? r.total_approved_quantity : '—'}</td>
+                                    <td class="py-3 px-4 font-mono text-xs text-indigo-300">${trackingDisplay}</td>
+                                    <td class="py-3 px-4 text-slate-400">${expDate ? expDate.split('T')[0] : '—'}</td>
+                                </tr>
+                            `;
+                        }).join('');
+                    }
+                }
+
+                // 6. Render Customer Refunds Table
+                const refundsTbody = document.getElementById('custRefundsTableBody');
+                if (refundsTbody) {
+                    if (refunds.length === 0) {
+                        refundsTbody.innerHTML = `<tr><td colspan="9" class="text-center py-6 text-slate-500">No refund transactions issued for this customer yet.</td></tr>`;
+                    } else {
+                        refundsTbody.innerHTML = refunds.map(rf => {
+                            const gross = rf.gross_item_amount ?? rf.gross_refund_amount ?? 0;
+                            const discount = rf.prorated_discount ?? rf.prorated_discount_clawback ?? 0;
+                            const tax = rf.tax_refund_amount ?? rf.tax_refunded ?? 0;
+                            const fee = rf.restocking_fee ?? 0;
+                            const net = rf.net_refund_amount ?? 0;
+
+                            return `
+                                <tr class="hover:bg-slate-900/50 transition border-b border-slate-800/40">
+                                    <td class="py-3 px-4 font-bold text-emerald-400">${rf.refund_id}</td>
+                                    <td class="py-3 px-4 font-mono text-white">${rf.rma_id || '—'}</td>
+                                    <td class="py-3 px-4 text-slate-400">${rf.refund_date ? rf.refund_date.split('T')[0] : 'N/A'}</td>
+                                    <td class="py-3 px-4 text-slate-300">$${Number(gross).toFixed(2)}</td>
+                                    <td class="py-3 px-4 text-slate-400">-$${Number(discount).toFixed(2)}</td>
+                                    <td class="py-3 px-4 text-slate-400">+$${Number(tax).toFixed(2)}</td>
+                                    <td class="py-3 px-4 text-rose-400">-$${Number(fee).toFixed(2)}</td>
+                                    <td class="py-3 px-4 font-bold text-emerald-400">$${Number(net).toFixed(2)}</td>
+                                    <td class="py-3 px-4"><span class="px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-950 text-emerald-400 border border-emerald-800">${rf.refund_status || 'COMPLETED'}</span></td>
+                                </tr>
+                            `;
+                        }).join('');
+                    }
+                }
+
+                // 7. Update Return Request Order Dropdown
+                const orderSelect = document.getElementById('custOrderSelect');
+                if (orderSelect) {
+                    if (currentCustomerDeliveredOrders.length === 0) {
+                        orderSelect.innerHTML = '<option value="">No delivered orders found for this customer</option>';
+                        document.getElementById('custLineSelect').innerHTML = '<option value="">-- No order lines available --</option>';
+                    } else {
+                        let orderHtml = '<option value="">-- Select a Delivered Order --</option>';
+                        currentCustomerDeliveredOrders.forEach(o => {
+                            orderHtml += `<option value="${o.order_id}">${o.order_id} — Delivered ${o.delivery_date ? o.delivery_date.split('T')[0] : 'N/A'} ($${Number(o.total_paid_amount || 0).toFixed(2)})</option>`;
+                        });
+                        orderSelect.innerHTML = orderHtml;
+
+                        // Automatically pick first delivered order
+                        orderSelect.selectedIndex = 1;
+                        handleOrderSelection(orderSelect.value);
+                    }
+                }
+
+            } catch (err) {
+                console.error('Error fetching customer details:', err);
+            }
+        }
+
+        function switchCustTab(tab) {
+            const tabs = ['orders', 'returns', 'refunds'];
+            tabs.forEach(t => {
+                const btn = document.getElementById(`custTabBtn${t.charAt(0).toUpperCase() + t.slice(1)}`);
+                const content = document.getElementById(`cust${t.charAt(0).toUpperCase() + t.slice(1)}TabContent`);
+                if (t === tab) {
+                    if (content) content.classList.remove('hidden');
+                    if (btn) {
+                        btn.className = "px-3.5 py-1.5 rounded-lg text-xs font-semibold bg-indigo-600 text-white transition flex items-center gap-1.5 shadow-sm";
+                    }
+                } else {
+                    if (content) content.classList.add('hidden');
+                    if (btn) {
+                        btn.className = "px-3.5 py-1.5 rounded-lg text-xs font-semibold bg-slate-900 hover:bg-slate-800 text-slate-300 transition flex items-center gap-1.5";
+                    }
+                }
+            });
+        }
+
+        function initiateReturnForOrder(orderId) {
+            const orderSelect = document.getElementById('custOrderSelect');
+            if (orderSelect) {
+                orderSelect.value = orderId;
+                handleOrderSelection(orderId);
+            }
+            const returnCard = document.getElementById('returnFormCard');
+            if (returnCard) {
+                returnCard.scrollIntoView({ behavior: 'smooth' });
+                returnCard.classList.add('ring-2', 'ring-indigo-500');
+                setTimeout(() => returnCard.classList.remove('ring-2', 'ring-indigo-500'), 1500);
+            }
+        }
+
+        function handleOrderSelection(orderId) {
+            const lineSelect = document.getElementById('custLineSelect');
+            if (!orderId) {
+                lineSelect.innerHTML = '<option value="">-- Select Order First --</option>';
+                return;
+            }
+
+            const order = currentCustomerDeliveredOrders.find(o => o.order_id === orderId);
+            if (!order || !order.lines || order.lines.length === 0) {
+                lineSelect.innerHTML = '<option value="">-- No items in this order --</option>';
+                return;
+            }
+
+            let linesHtml = '';
+            order.lines.forEach(l => {
+                const finalSaleTag = l.is_final_sale ? ' [FINAL SALE - NON-RETURNABLE]' : '';
+                linesHtml += `<option value="${l.order_line_id}">${l.order_line_id} — ${l.product_name} (${l.category}, Qty: ${l.quantity}, $${l.unit_price.toFixed(2)}${finalSaleTag})</option>`;
+            });
+            lineSelect.innerHTML = linesHtml;
+        }
+
+        async function submitCustomerReturn() {
+            const customerId = document.getElementById('custDropdownSelect').value;
+            const orderId = document.getElementById('custOrderSelect').value;
+            const lineId = document.getElementById('custLineSelect').value;
+            const qty = parseInt(document.getElementById('custReturnQty').value, 10);
+            const reason = document.getElementById('custReasonSelect').value;
+            const condition = document.getElementById('custConditionSelect').value;
+            const notes = document.getElementById('custNotesInput').value;
+            const statusBox = document.getElementById('custStatusBox');
+
+            if (!customerId || !orderId || !lineId) {
+                statusBox.classList.remove('hidden');
+                statusBox.className = "text-xs rounded-lg p-3 bg-rose-950/80 text-rose-300 border border-rose-800";
+                statusBox.innerText = "Please select a valid customer, delivered order, and line item first.";
+                return;
+            }
+
+            try {
+                const payload = {
+                    order_id: orderId,
+                    customer_id: customerId,
+                    request_channel: "WEB_PORTAL",
+                    customer_notes: notes || "Initiated via customer portal",
+                    lines: [
+                        {
+                            order_line_id: lineId,
+                            requested_quantity: qty,
+                            return_reason: reason,
+                            item_condition_reported: condition
+                        }
+                    ]
+                };
+
+                const res = await fetch(`${API_BASE}/api/v1/returns/submit`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json', 'X-Role': 'customer' },
+                    body: JSON.stringify(payload)
+                });
+
+                const data = await res.json();
+                statusBox.classList.remove('hidden');
+
+                if (res.ok) {
+                    const isApproved = data.rma_status === 'APPROVED';
+                    statusBox.className = `text-xs rounded-lg p-4 ${isApproved ? 'bg-emerald-950/70 border-emerald-800 text-emerald-200' : 'bg-amber-950/70 border-amber-800 text-amber-200'} border space-y-1.5`;
+                    statusBox.innerHTML = `
+                        <div class="font-bold flex items-center gap-2 text-sm">
+                            <i class="fa-solid fa-circle-check"></i> Return Request Decision: ${data.rma_status}
+                        </div>
+                        <div class="font-mono text-[11px]">Request ID: <b>${data.request_id}</b> | RMA ID: <b>${data.rma_id || 'N/A'}</b> | Approved Quantity: <b>${data.total_approved_quantity}</b></div>
+                        <div class="text-[11px] text-slate-300">Prepaid shipping label generated. Tracking identifier: <span class="font-mono text-indigo-300">${data.rma_id ? 'RTS-2026-' + data.rma_id.split('-').pop() : 'N/A'}</span></div>
+                    `;
+                    // Immediately re-fetch and refresh this customer's details and tables
+                    await selectCustomerFromDropdown(customerId);
+                    // Automatically switch to his returns tab to see the new entry
+                    switchCustTab('returns');
+                } else {
+                    statusBox.className = "text-xs rounded-lg p-3 bg-rose-950/80 text-rose-300 border border-rose-800";
+                    statusBox.innerText = `Submission Error: ${data.detail || 'Could not process return request'}`;
+                }
+            } catch (err) {
+                statusBox.classList.remove('hidden');
+                statusBox.className = "text-xs rounded-lg p-3 bg-rose-950/80 text-rose-300 border border-rose-800";
+                statusBox.innerText = `Network Error: ${err.message}`;
+            }
+        }
+
+        // =========================================================================
+        // OPERATOR & MANAGER ACTIONS
+        // =========================================================================
+
+        async function submitInspection() {
+            const rmaId = document.getElementById('op_rma_id').value;
+            const sku = document.getElementById('op_sku').value;
+            const grade = document.getElementById('op_item_grade').value;
+            const bin = document.getElementById('op_disp_action').value;
+            const statusDiv = document.getElementById('opStatus');
+
+            statusDiv.classList.remove('hidden');
+            statusDiv.className = "mt-3 text-xs text-emerald-300 bg-emerald-950/70 p-3 rounded-lg border border-emerald-800";
+            statusDiv.innerHTML = `
+                <i class="fa-solid fa-circle-check text-emerald-400 mr-1.5"></i>
+                <b>Receiving Confirmed for ${rmaId}</b>: Graded as <span class="font-mono">${grade}</span>. Assigned to destination bin <span class="font-mono text-amber-300">${bin}</span>.
+            `;
+            loadPanelData('operator');
+        }
+
+        async function applyOverride() {
+            const reqId = document.getElementById('mgr_req_id').value;
+            const reason = document.getElementById('mgr_override_reason').value;
+            const statusDiv = document.getElementById('mgrStatus');
+
+            if (!reqId) {
+                statusDiv.classList.remove('hidden');
+                statusDiv.className = "mt-3 text-xs text-rose-300 bg-rose-950/70 p-3 rounded-lg border border-rose-800";
+                statusDiv.innerText = "Please specify a Return Request ID to override.";
+                return;
+            }
+
+            try {
+                const res = await fetch(`${API_BASE}/api/v1/manager/override`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json', 'X-Role': 'manager' },
+                    body: JSON.stringify({ request_id: reqId, override_reason: reason, manager_id: "OPS_MANAGER_01" })
+                });
+                const data = await res.json();
+                statusDiv.classList.remove('hidden');
+                if (res.ok) {
+                    statusDiv.className = "mt-3 text-xs text-amber-300 bg-amber-950/70 p-3 rounded-lg border border-amber-800";
+                    statusDiv.innerHTML = `
+                        <i class="fa-solid fa-stamp text-amber-400 mr-1.5"></i>
+                        <b>Policy Override Authorized for ${reqId}</b>. RMA Status updated to <span class="font-bold text-white">APPROVED</span> by OPS_MANAGER_01.
+                    `;
+                    loadPanelData('manager');
+                } else {
+                    statusDiv.className = "mt-3 text-xs text-rose-300 bg-rose-950/70 p-3 rounded-lg border border-rose-800";
+                    statusDiv.innerText = data.detail || "Failed to authorize override";
+                }
+            } catch (err) {
+                statusDiv.classList.remove('hidden');
+                statusDiv.className = "mt-3 text-xs text-rose-300 bg-rose-950/70 p-3 rounded-lg border border-rose-800";
+                statusDiv.innerText = "Error applying override: " + err.message;
+            }
+        }
+
+        // =========================================================================
+        // PLATFORM ANALYTICS: DYNAMIC METRICS, VELOCITY & GROUND TRUTH
+        // =========================================================================
+
+        async function loadPlatformAnalytics() {
+            try {
+                const [metricsRes, anomaliesRes] = await Promise.all([
+                    fetch(`${API_BASE}/api/v1/analytics/metrics`, { headers: { 'X-Role': 'analyst' } }),
+                    fetch(`${API_BASE}/api/v1/analytics/anomalies`, { headers: { 'X-Role': 'analyst' } })
+                ]);
+
+                if (metricsRes.ok) {
+                    const data = await metricsRes.json();
+                    const p = data.platform_summary;
+
+                    // 1. Top 4 Live Summary Cards
+                    if (p) {
+                        const deliveredEl = document.getElementById('statDeliveredOrders');
+                        const deliveredSub = document.getElementById('statDeliveredSubtext');
+                        if (deliveredEl) deliveredEl.innerText = Number(p.delivered_orders || 0).toLocaleString();
+                        if (deliveredSub) deliveredSub.innerHTML = `<i class="fa-solid fa-circle-check mr-1 text-[10px]"></i> of ${Number(p.total_orders || 0).toLocaleString()} Total Orders Validated`;
+
+                        const rmaEl = document.getElementById('statProcessedRMAs');
+                        const rmaSub = document.getElementById('statRMAsSubtext');
+                        if (rmaEl) rmaEl.innerText = Number(p.total_rmas || 0).toLocaleString();
+                        if (rmaSub) rmaSub.innerText = `${Number(p.total_return_lines || 0).toLocaleString()} Return Line Items`;
+
+                        const refundEl = document.getElementById('statNetRefunds');
+                        const refundSub = document.getElementById('statRefundsSubtext');
+                        if (refundEl) refundEl.innerText = `$${Number(p.total_net_refunds || 0).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+                        if (refundSub) refundSub.innerText = `$${Number(p.total_restocking_fees || 0).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })} Restocking Recovered`;
+
+                        const recallEl = document.getElementById('statRecallPct');
+                        const recallSub = document.getElementById('statRecallSubtext');
+                        if (recallEl) recallEl.innerText = `${Number(p.anomaly_recall_pct || 0).toFixed(1)}%`;
+                        if (recallSub) recallSub.innerText = `${p.anomalies_detected} / ${p.anomalies_benchmark} Injected Anomalies Found`;
+                    }
+
+                    // 2. Dynamic Category Return Velocity Table
+                    const catTbody = document.getElementById('categoryVelocityTableBody');
+                    if (catTbody && data.category_return_rates) {
+                        catTbody.innerHTML = data.category_return_rates.map(c => {
+                            const rate = Number(c.return_rate_pct || 0);
+                            const rateColor = rate > 18 ? 'text-rose-400' :
+                                              rate > 15 ? 'text-amber-400' : 'text-emerald-400';
+                            const windowStr = c.return_window || '30 Days';
+                            const windowBadge = windowStr.includes('0') 
+                                ? 'bg-rose-950 text-rose-300' 
+                                : (windowStr.includes('14') ? 'bg-blue-950 text-blue-300' : 'bg-purple-950 text-purple-300');
+
+                            return `
+                                <tr class="hover:bg-slate-900/50 transition border-b border-slate-800/40">
+                                    <td class="py-2.5 font-sans font-medium text-white">${c.category}</td>
+                                    <td><span class="px-2 py-0.5 rounded text-[11px] ${windowBadge}">${windowStr}</span></td>
+                                    <td>${Number(c.total_sold_lines || 0).toLocaleString()}</td>
+                                    <td>${Number(c.returned_lines || 0).toLocaleString()}</td>
+                                    <td class="${rateColor} font-bold">${rate.toFixed(2)}%</td>
+                                    <td>${c.restock_fee || '0%'}</td>
+                                </tr>
+                            `;
+                        }).join('');
+                    }
+
+                    // 3. Update Table Selector Dropdown counts across all panels
+                    if (data.table_counts) {
+                        updateDropdownCounts('analystTableSelect', data.table_counts);
+                        updateDropdownCounts('operatorTableSelect', data.table_counts);
+                        updateDropdownCounts('managerTableSelect', data.table_counts);
+                    }
+                }
+
+                // 4. Dynamic Labeled Ground Truth Card
+                if (anomaliesRes.ok) {
+                    const anomData = await anomaliesRes.json();
+                    const gtContainer = document.getElementById('groundTruthList');
+                    if (gtContainer && anomData.anomaly_distribution) {
+                        const badgeStyles = {
+                            'QTY_EXCEEDS_PURCHASED': { color: 'bg-amber-950 text-amber-300', action: 'Detected' },
+                            'REFUND_EXCEEDS_PAID': { color: 'bg-rose-950 text-rose-300', action: 'Blocked' },
+                            'RESTOCK_BEFORE_INSPECTION': { color: 'bg-cyan-950 text-cyan-300', action: 'Flagged' },
+                            'RETURN_PAST_POLICY_WINDOW': { color: 'bg-purple-950 text-purple-300', action: 'Intercepted' },
+                            'DUPLICATE_REFUND_ATTEMPT': { color: 'bg-emerald-950 text-emerald-300', action: 'Prevented' }
+                        };
+
+                        gtContainer.innerHTML = anomData.anomaly_distribution.map(a => {
+                            const info = badgeStyles[a.issue_type] || { color: 'bg-indigo-950 text-indigo-300', action: 'Audited' };
+                            return `
+                                <div class="flex justify-between items-center bg-slate-900 p-2.5 rounded-lg border border-slate-800">
+                                    <span class="text-xs font-mono text-slate-300">${a.issue_type}</span>
+                                    <span class="px-2 py-0.5 text-xs font-bold rounded ${info.color}">${a.occurrence_count} ${info.action}</span>
+                                </div>
+                            `;
+                        }).join('');
+                    }
+                }
+            } catch (err) {
+                console.error('Error loading platform analytics:', err);
+            }
+        }
+
+        function updateDropdownCounts(selectId, tableCounts) {
+            const sel = document.getElementById(selectId);
+            if (!sel) return;
+            Array.from(sel.options).forEach(opt => {
+                const t = opt.value;
+                if (tableCounts[t] !== undefined) {
+                    const countStr = t === 'products' ? `${tableCounts[t]} SKUs` : Number(tableCounts[t]).toLocaleString();
+                    opt.text = `${t} (${countStr})`;
+                }
+            });
+        }
+
+        // Initialize on DOM load
+        document.addEventListener('DOMContentLoaded', () => {
+            loadPlatformAnalytics();
+            loadPanelData('analyst');
+            loadInitialCustomers();
+        });
+    </script>
+</body>
+</html>

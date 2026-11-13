@@ -1,0 +1,27 @@
+# YottaFlex Return Management System (RMS)
+# Core Production & Development Dependencies
+
+# Web & API Framework
+fastapi>=0.115.0
+uvicorn[standard]>=0.34.0
+python-multipart>=0.0.20
+jinja2>=3.1.0
+
+# Data Contracts & Validation
+pydantic>=2.10.0
+
+# CLI Interface
+typer>=0.15.0
+rich>=13.0.0
+
+# Data Analytics & Manipulation (Optional for advanced analysis)
+pandas>=2.2.0
+
+# Note: The following critical components use Python 3.11+ standard library:
+# - sqlite3 (Relational ACID database engine with WAL mode)
+# - decimal (Fixed-point arbitrary precision financial calculations)
+# - unittest (Automated test suites across unit, boundary, negative, and regression)
+# - csv & json (Serialization and export formats)
+# - random & hashlib (Deterministic pseudo-random generation with seed 20261022)
+# - pathlib & dataclasses (Filesystem and structured domain objects)
+

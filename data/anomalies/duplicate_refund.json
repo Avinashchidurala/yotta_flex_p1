@@ -1,0 +1,622 @@
+[
+  {
+    "anomaly_id": "ANO-000011",
+    "entity_name": "refunds",
+    "entity_id": "REF-2026-000008",
+    "parent_entity_id": "RMA-2026-000011",
+    "issue_type": "DUPLICATE_REFUND_ATTEMPT",
+    "expected_decision": "BLOCK_DUPLICATE_REFUND",
+    "actual_injected_behavior": "Duplicate payout attempted for RMA RMA-2026-000011",
+    "created_at": "2026-05-27T22:05:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000014",
+    "entity_name": "refunds",
+    "entity_id": "REF-2026-000012",
+    "parent_entity_id": "RMA-2026-000015",
+    "issue_type": "DUPLICATE_REFUND_ATTEMPT",
+    "expected_decision": "BLOCK_DUPLICATE_REFUND",
+    "actual_injected_behavior": "Duplicate payout attempted for RMA RMA-2026-000015",
+    "created_at": "2026-02-12T09:05:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000015",
+    "entity_name": "refunds",
+    "entity_id": "REF-2026-000014",
+    "parent_entity_id": "RMA-2026-000016",
+    "issue_type": "DUPLICATE_REFUND_ATTEMPT",
+    "expected_decision": "BLOCK_DUPLICATE_REFUND",
+    "actual_injected_behavior": "Duplicate payout attempted for RMA RMA-2026-000016",
+    "created_at": "2026-04-03T19:05:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000021",
+    "entity_name": "refunds",
+    "entity_id": "REF-2026-000021",
+    "parent_entity_id": "RMA-2026-000028",
+    "issue_type": "DUPLICATE_REFUND_ATTEMPT",
+    "expected_decision": "BLOCK_DUPLICATE_REFUND",
+    "actual_injected_behavior": "Duplicate payout attempted for RMA RMA-2026-000028",
+    "created_at": "2026-04-25T17:05:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000044",
+    "entity_name": "refunds",
+    "entity_id": "REF-2026-000045",
+    "parent_entity_id": "RMA-2026-000062",
+    "issue_type": "DUPLICATE_REFUND_ATTEMPT",
+    "expected_decision": "BLOCK_DUPLICATE_REFUND",
+    "actual_injected_behavior": "Duplicate payout attempted for RMA RMA-2026-000062",
+    "created_at": "2026-03-28T08:05:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000056",
+    "entity_name": "refunds",
+    "entity_id": "REF-2026-000055",
+    "parent_entity_id": "RMA-2026-000076",
+    "issue_type": "DUPLICATE_REFUND_ATTEMPT",
+    "expected_decision": "BLOCK_DUPLICATE_REFUND",
+    "actual_injected_behavior": "Duplicate payout attempted for RMA RMA-2026-000076",
+    "created_at": "2026-03-24T05:05:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000069",
+    "entity_name": "refunds",
+    "entity_id": "REF-2026-000064",
+    "parent_entity_id": "RMA-2026-000090",
+    "issue_type": "DUPLICATE_REFUND_ATTEMPT",
+    "expected_decision": "BLOCK_DUPLICATE_REFUND",
+    "actual_injected_behavior": "Duplicate payout attempted for RMA RMA-2026-000090",
+    "created_at": "2026-05-15T08:05:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000074",
+    "entity_name": "refunds",
+    "entity_id": "REF-2026-000070",
+    "parent_entity_id": "RMA-2026-000097",
+    "issue_type": "DUPLICATE_REFUND_ATTEMPT",
+    "expected_decision": "BLOCK_DUPLICATE_REFUND",
+    "actual_injected_behavior": "Duplicate payout attempted for RMA RMA-2026-000097",
+    "created_at": "2026-02-01T03:05:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000076",
+    "entity_name": "refunds",
+    "entity_id": "REF-2026-000073",
+    "parent_entity_id": "RMA-2026-000099",
+    "issue_type": "DUPLICATE_REFUND_ATTEMPT",
+    "expected_decision": "BLOCK_DUPLICATE_REFUND",
+    "actual_injected_behavior": "Duplicate payout attempted for RMA RMA-2026-000099",
+    "created_at": "2026-05-30T18:05:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000081",
+    "entity_name": "refunds",
+    "entity_id": "REF-2026-000076",
+    "parent_entity_id": "RMA-2026-000101",
+    "issue_type": "DUPLICATE_REFUND_ATTEMPT",
+    "expected_decision": "BLOCK_DUPLICATE_REFUND",
+    "actual_injected_behavior": "Duplicate payout attempted for RMA RMA-2026-000101",
+    "created_at": "2026-05-02T02:05:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000082",
+    "entity_name": "refunds",
+    "entity_id": "REF-2026-000078",
+    "parent_entity_id": "RMA-2026-000102",
+    "issue_type": "DUPLICATE_REFUND_ATTEMPT",
+    "expected_decision": "BLOCK_DUPLICATE_REFUND",
+    "actual_injected_behavior": "Duplicate payout attempted for RMA RMA-2026-000102",
+    "created_at": "2026-05-13T15:05:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000089",
+    "entity_name": "refunds",
+    "entity_id": "REF-2026-000082",
+    "parent_entity_id": "RMA-2026-000110",
+    "issue_type": "DUPLICATE_REFUND_ATTEMPT",
+    "expected_decision": "BLOCK_DUPLICATE_REFUND",
+    "actual_injected_behavior": "Duplicate payout attempted for RMA RMA-2026-000110",
+    "created_at": "2026-03-17T07:05:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000095",
+    "entity_name": "refunds",
+    "entity_id": "REF-2026-000086",
+    "parent_entity_id": "RMA-2026-000114",
+    "issue_type": "DUPLICATE_REFUND_ATTEMPT",
+    "expected_decision": "BLOCK_DUPLICATE_REFUND",
+    "actual_injected_behavior": "Duplicate payout attempted for RMA RMA-2026-000114",
+    "created_at": "2026-03-10T06:05:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000096",
+    "entity_name": "refunds",
+    "entity_id": "REF-2026-000089",
+    "parent_entity_id": "RMA-2026-000116",
+    "issue_type": "DUPLICATE_REFUND_ATTEMPT",
+    "expected_decision": "BLOCK_DUPLICATE_REFUND",
+    "actual_injected_behavior": "Duplicate payout attempted for RMA RMA-2026-000116",
+    "created_at": "2026-05-28T00:05:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000103",
+    "entity_name": "refunds",
+    "entity_id": "REF-2026-000097",
+    "parent_entity_id": "RMA-2026-000124",
+    "issue_type": "DUPLICATE_REFUND_ATTEMPT",
+    "expected_decision": "BLOCK_DUPLICATE_REFUND",
+    "actual_injected_behavior": "Duplicate payout attempted for RMA RMA-2026-000124",
+    "created_at": "2026-03-27T09:05:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000110",
+    "entity_name": "refunds",
+    "entity_id": "REF-2026-000103",
+    "parent_entity_id": "RMA-2026-000131",
+    "issue_type": "DUPLICATE_REFUND_ATTEMPT",
+    "expected_decision": "BLOCK_DUPLICATE_REFUND",
+    "actual_injected_behavior": "Duplicate payout attempted for RMA RMA-2026-000131",
+    "created_at": "2026-04-30T01:05:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000111",
+    "entity_name": "refunds",
+    "entity_id": "REF-2026-000105",
+    "parent_entity_id": "RMA-2026-000132",
+    "issue_type": "DUPLICATE_REFUND_ATTEMPT",
+    "expected_decision": "BLOCK_DUPLICATE_REFUND",
+    "actual_injected_behavior": "Duplicate payout attempted for RMA RMA-2026-000132",
+    "created_at": "2026-06-29T20:05:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000113",
+    "entity_name": "refunds",
+    "entity_id": "REF-2026-000107",
+    "parent_entity_id": "RMA-2026-000134",
+    "issue_type": "DUPLICATE_REFUND_ATTEMPT",
+    "expected_decision": "BLOCK_DUPLICATE_REFUND",
+    "actual_injected_behavior": "Duplicate payout attempted for RMA RMA-2026-000134",
+    "created_at": "2026-03-26T15:05:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000124",
+    "entity_name": "refunds",
+    "entity_id": "REF-2026-000117",
+    "parent_entity_id": "RMA-2026-000148",
+    "issue_type": "DUPLICATE_REFUND_ATTEMPT",
+    "expected_decision": "BLOCK_DUPLICATE_REFUND",
+    "actual_injected_behavior": "Duplicate payout attempted for RMA RMA-2026-000148",
+    "created_at": "2026-05-05T05:05:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000128",
+    "entity_name": "refunds",
+    "entity_id": "REF-2026-000121",
+    "parent_entity_id": "RMA-2026-000152",
+    "issue_type": "DUPLICATE_REFUND_ATTEMPT",
+    "expected_decision": "BLOCK_DUPLICATE_REFUND",
+    "actual_injected_behavior": "Duplicate payout attempted for RMA RMA-2026-000152",
+    "created_at": "2026-04-03T13:05:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000130",
+    "entity_name": "refunds",
+    "entity_id": "REF-2026-000123",
+    "parent_entity_id": "RMA-2026-000153",
+    "issue_type": "DUPLICATE_REFUND_ATTEMPT",
+    "expected_decision": "BLOCK_DUPLICATE_REFUND",
+    "actual_injected_behavior": "Duplicate payout attempted for RMA RMA-2026-000153",
+    "created_at": "2026-02-06T22:05:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000142",
+    "entity_name": "refunds",
+    "entity_id": "REF-2026-000134",
+    "parent_entity_id": "RMA-2026-000171",
+    "issue_type": "DUPLICATE_REFUND_ATTEMPT",
+    "expected_decision": "BLOCK_DUPLICATE_REFUND",
+    "actual_injected_behavior": "Duplicate payout attempted for RMA RMA-2026-000171",
+    "created_at": "2026-04-18T10:05:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000149",
+    "entity_name": "refunds",
+    "entity_id": "REF-2026-000138",
+    "parent_entity_id": "RMA-2026-000176",
+    "issue_type": "DUPLICATE_REFUND_ATTEMPT",
+    "expected_decision": "BLOCK_DUPLICATE_REFUND",
+    "actual_injected_behavior": "Duplicate payout attempted for RMA RMA-2026-000176",
+    "created_at": "2026-04-29T19:05:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000156",
+    "entity_name": "refunds",
+    "entity_id": "REF-2026-000141",
+    "parent_entity_id": "RMA-2026-000181",
+    "issue_type": "DUPLICATE_REFUND_ATTEMPT",
+    "expected_decision": "BLOCK_DUPLICATE_REFUND",
+    "actual_injected_behavior": "Duplicate payout attempted for RMA RMA-2026-000181",
+    "created_at": "2026-02-26T12:05:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000159",
+    "entity_name": "refunds",
+    "entity_id": "REF-2026-000146",
+    "parent_entity_id": "RMA-2026-000185",
+    "issue_type": "DUPLICATE_REFUND_ATTEMPT",
+    "expected_decision": "BLOCK_DUPLICATE_REFUND",
+    "actual_injected_behavior": "Duplicate payout attempted for RMA RMA-2026-000185",
+    "created_at": "2026-02-18T14:05:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000167",
+    "entity_name": "refunds",
+    "entity_id": "REF-2026-000153",
+    "parent_entity_id": "RMA-2026-000192",
+    "issue_type": "DUPLICATE_REFUND_ATTEMPT",
+    "expected_decision": "BLOCK_DUPLICATE_REFUND",
+    "actual_injected_behavior": "Duplicate payout attempted for RMA RMA-2026-000192",
+    "created_at": "2026-03-19T03:05:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000189",
+    "entity_name": "refunds",
+    "entity_id": "REF-2026-000171",
+    "parent_entity_id": "RMA-2026-000220",
+    "issue_type": "DUPLICATE_REFUND_ATTEMPT",
+    "expected_decision": "BLOCK_DUPLICATE_REFUND",
+    "actual_injected_behavior": "Duplicate payout attempted for RMA RMA-2026-000220",
+    "created_at": "2026-03-12T06:05:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000204",
+    "entity_name": "refunds",
+    "entity_id": "REF-2026-000182",
+    "parent_entity_id": "RMA-2026-000237",
+    "issue_type": "DUPLICATE_REFUND_ATTEMPT",
+    "expected_decision": "BLOCK_DUPLICATE_REFUND",
+    "actual_injected_behavior": "Duplicate payout attempted for RMA RMA-2026-000237",
+    "created_at": "2026-05-11T06:05:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000207",
+    "entity_name": "refunds",
+    "entity_id": "REF-2026-000189",
+    "parent_entity_id": "RMA-2026-000243",
+    "issue_type": "DUPLICATE_REFUND_ATTEMPT",
+    "expected_decision": "BLOCK_DUPLICATE_REFUND",
+    "actual_injected_behavior": "Duplicate payout attempted for RMA RMA-2026-000243",
+    "created_at": "2026-04-15T18:05:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000208",
+    "entity_name": "refunds",
+    "entity_id": "REF-2026-000192",
+    "parent_entity_id": "RMA-2026-000245",
+    "issue_type": "DUPLICATE_REFUND_ATTEMPT",
+    "expected_decision": "BLOCK_DUPLICATE_REFUND",
+    "actual_injected_behavior": "Duplicate payout attempted for RMA RMA-2026-000245",
+    "created_at": "2026-04-16T22:05:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000212",
+    "entity_name": "refunds",
+    "entity_id": "REF-2026-000195",
+    "parent_entity_id": "RMA-2026-000248",
+    "issue_type": "DUPLICATE_REFUND_ATTEMPT",
+    "expected_decision": "BLOCK_DUPLICATE_REFUND",
+    "actual_injected_behavior": "Duplicate payout attempted for RMA RMA-2026-000248",
+    "created_at": "2026-05-07T19:05:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000215",
+    "entity_name": "refunds",
+    "entity_id": "REF-2026-000198",
+    "parent_entity_id": "RMA-2026-000252",
+    "issue_type": "DUPLICATE_REFUND_ATTEMPT",
+    "expected_decision": "BLOCK_DUPLICATE_REFUND",
+    "actual_injected_behavior": "Duplicate payout attempted for RMA RMA-2026-000252",
+    "created_at": "2026-04-26T03:05:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000227",
+    "entity_name": "refunds",
+    "entity_id": "REF-2026-000208",
+    "parent_entity_id": "RMA-2026-000265",
+    "issue_type": "DUPLICATE_REFUND_ATTEMPT",
+    "expected_decision": "BLOCK_DUPLICATE_REFUND",
+    "actual_injected_behavior": "Duplicate payout attempted for RMA RMA-2026-000265",
+    "created_at": "2026-06-16T12:05:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000235",
+    "entity_name": "refunds",
+    "entity_id": "REF-2026-000219",
+    "parent_entity_id": "RMA-2026-000277",
+    "issue_type": "DUPLICATE_REFUND_ATTEMPT",
+    "expected_decision": "BLOCK_DUPLICATE_REFUND",
+    "actual_injected_behavior": "Duplicate payout attempted for RMA RMA-2026-000277",
+    "created_at": "2026-04-22T02:05:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000246",
+    "entity_name": "refunds",
+    "entity_id": "REF-2026-000231",
+    "parent_entity_id": "RMA-2026-000294",
+    "issue_type": "DUPLICATE_REFUND_ATTEMPT",
+    "expected_decision": "BLOCK_DUPLICATE_REFUND",
+    "actual_injected_behavior": "Duplicate payout attempted for RMA RMA-2026-000294",
+    "created_at": "2026-04-26T04:05:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000247",
+    "entity_name": "refunds",
+    "entity_id": "REF-2026-000234",
+    "parent_entity_id": "RMA-2026-000299",
+    "issue_type": "DUPLICATE_REFUND_ATTEMPT",
+    "expected_decision": "BLOCK_DUPLICATE_REFUND",
+    "actual_injected_behavior": "Duplicate payout attempted for RMA RMA-2026-000299",
+    "created_at": "2026-02-27T07:05:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000250",
+    "entity_name": "refunds",
+    "entity_id": "REF-2026-000238",
+    "parent_entity_id": "RMA-2026-000302",
+    "issue_type": "DUPLICATE_REFUND_ATTEMPT",
+    "expected_decision": "BLOCK_DUPLICATE_REFUND",
+    "actual_injected_behavior": "Duplicate payout attempted for RMA RMA-2026-000302",
+    "created_at": "2026-04-05T08:05:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000251",
+    "entity_name": "refunds",
+    "entity_id": "REF-2026-000240",
+    "parent_entity_id": "RMA-2026-000303",
+    "issue_type": "DUPLICATE_REFUND_ATTEMPT",
+    "expected_decision": "BLOCK_DUPLICATE_REFUND",
+    "actual_injected_behavior": "Duplicate payout attempted for RMA RMA-2026-000303",
+    "created_at": "2026-03-20T22:05:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000252",
+    "entity_name": "refunds",
+    "entity_id": "REF-2026-000242",
+    "parent_entity_id": "RMA-2026-000304",
+    "issue_type": "DUPLICATE_REFUND_ATTEMPT",
+    "expected_decision": "BLOCK_DUPLICATE_REFUND",
+    "actual_injected_behavior": "Duplicate payout attempted for RMA RMA-2026-000304",
+    "created_at": "2026-05-11T16:05:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000254",
+    "entity_name": "refunds",
+    "entity_id": "REF-2026-000244",
+    "parent_entity_id": "RMA-2026-000306",
+    "issue_type": "DUPLICATE_REFUND_ATTEMPT",
+    "expected_decision": "BLOCK_DUPLICATE_REFUND",
+    "actual_injected_behavior": "Duplicate payout attempted for RMA RMA-2026-000306",
+    "created_at": "2026-05-16T07:05:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000255",
+    "entity_name": "refunds",
+    "entity_id": "REF-2026-000246",
+    "parent_entity_id": "RMA-2026-000307",
+    "issue_type": "DUPLICATE_REFUND_ATTEMPT",
+    "expected_decision": "BLOCK_DUPLICATE_REFUND",
+    "actual_injected_behavior": "Duplicate payout attempted for RMA RMA-2026-000307",
+    "created_at": "2026-04-14T16:05:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000257",
+    "entity_name": "refunds",
+    "entity_id": "REF-2026-000248",
+    "parent_entity_id": "RMA-2026-000308",
+    "issue_type": "DUPLICATE_REFUND_ATTEMPT",
+    "expected_decision": "BLOCK_DUPLICATE_REFUND",
+    "actual_injected_behavior": "Duplicate payout attempted for RMA RMA-2026-000308",
+    "created_at": "2026-06-08T21:05:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000261",
+    "entity_name": "refunds",
+    "entity_id": "REF-2026-000251",
+    "parent_entity_id": "RMA-2026-000311",
+    "issue_type": "DUPLICATE_REFUND_ATTEMPT",
+    "expected_decision": "BLOCK_DUPLICATE_REFUND",
+    "actual_injected_behavior": "Duplicate payout attempted for RMA RMA-2026-000311",
+    "created_at": "2026-05-15T21:05:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000262",
+    "entity_name": "refunds",
+    "entity_id": "REF-2026-000255",
+    "parent_entity_id": "RMA-2026-000314",
+    "issue_type": "DUPLICATE_REFUND_ATTEMPT",
+    "expected_decision": "BLOCK_DUPLICATE_REFUND",
+    "actual_injected_behavior": "Duplicate payout attempted for RMA RMA-2026-000314",
+    "created_at": "2026-04-27T09:05:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000265",
+    "entity_name": "refunds",
+    "entity_id": "REF-2026-000257",
+    "parent_entity_id": "RMA-2026-000316",
+    "issue_type": "DUPLICATE_REFUND_ATTEMPT",
+    "expected_decision": "BLOCK_DUPLICATE_REFUND",
+    "actual_injected_behavior": "Duplicate payout attempted for RMA RMA-2026-000316",
+    "created_at": "2026-05-27T23:05:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000266",
+    "entity_name": "refunds",
+    "entity_id": "REF-2026-000259",
+    "parent_entity_id": "RMA-2026-000317",
+    "issue_type": "DUPLICATE_REFUND_ATTEMPT",
+    "expected_decision": "BLOCK_DUPLICATE_REFUND",
+    "actual_injected_behavior": "Duplicate payout attempted for RMA RMA-2026-000317",
+    "created_at": "2026-04-11T06:05:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000269",
+    "entity_name": "refunds",
+    "entity_id": "REF-2026-000266",
+    "parent_entity_id": "RMA-2026-000323",
+    "issue_type": "DUPLICATE_REFUND_ATTEMPT",
+    "expected_decision": "BLOCK_DUPLICATE_REFUND",
+    "actual_injected_behavior": "Duplicate payout attempted for RMA RMA-2026-000323",
+    "created_at": "2026-04-04T13:05:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000270",
+    "entity_name": "refunds",
+    "entity_id": "REF-2026-000268",
+    "parent_entity_id": "RMA-2026-000324",
+    "issue_type": "DUPLICATE_REFUND_ATTEMPT",
+    "expected_decision": "BLOCK_DUPLICATE_REFUND",
+    "actual_injected_behavior": "Duplicate payout attempted for RMA RMA-2026-000324",
+    "created_at": "2026-05-16T18:05:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000274",
+    "entity_name": "refunds",
+    "entity_id": "REF-2026-000275",
+    "parent_entity_id": "RMA-2026-000337",
+    "issue_type": "DUPLICATE_REFUND_ATTEMPT",
+    "expected_decision": "BLOCK_DUPLICATE_REFUND",
+    "actual_injected_behavior": "Duplicate payout attempted for RMA RMA-2026-000337",
+    "created_at": "2026-05-26T23:05:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000275",
+    "entity_name": "refunds",
+    "entity_id": "REF-2026-000277",
+    "parent_entity_id": "RMA-2026-000340",
+    "issue_type": "DUPLICATE_REFUND_ATTEMPT",
+    "expected_decision": "BLOCK_DUPLICATE_REFUND",
+    "actual_injected_behavior": "Duplicate payout attempted for RMA RMA-2026-000340",
+    "created_at": "2026-03-08T23:05:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000277",
+    "entity_name": "refunds",
+    "entity_id": "REF-2026-000281",
+    "parent_entity_id": "RMA-2026-000346",
+    "issue_type": "DUPLICATE_REFUND_ATTEMPT",
+    "expected_decision": "BLOCK_DUPLICATE_REFUND",
+    "actual_injected_behavior": "Duplicate payout attempted for RMA RMA-2026-000346",
+    "created_at": "2026-04-11T05:05:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000278",
+    "entity_name": "refunds",
+    "entity_id": "REF-2026-000284",
+    "parent_entity_id": "RMA-2026-000349",
+    "issue_type": "DUPLICATE_REFUND_ATTEMPT",
+    "expected_decision": "BLOCK_DUPLICATE_REFUND",
+    "actual_injected_behavior": "Duplicate payout attempted for RMA RMA-2026-000349",
+    "created_at": "2026-01-20T16:05:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000279",
+    "entity_name": "refunds",
+    "entity_id": "REF-2026-000286",
+    "parent_entity_id": "RMA-2026-000350",
+    "issue_type": "DUPLICATE_REFUND_ATTEMPT",
+    "expected_decision": "BLOCK_DUPLICATE_REFUND",
+    "actual_injected_behavior": "Duplicate payout attempted for RMA RMA-2026-000350",
+    "created_at": "2026-05-24T06:05:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000287",
+    "entity_name": "refunds",
+    "entity_id": "REF-2026-000292",
+    "parent_entity_id": "RMA-2026-000362",
+    "issue_type": "DUPLICATE_REFUND_ATTEMPT",
+    "expected_decision": "BLOCK_DUPLICATE_REFUND",
+    "actual_injected_behavior": "Duplicate payout attempted for RMA RMA-2026-000362",
+    "created_at": "2026-03-01T04:05:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000290",
+    "entity_name": "refunds",
+    "entity_id": "REF-2026-000297",
+    "parent_entity_id": "RMA-2026-000367",
+    "issue_type": "DUPLICATE_REFUND_ATTEMPT",
+    "expected_decision": "BLOCK_DUPLICATE_REFUND",
+    "actual_injected_behavior": "Duplicate payout attempted for RMA RMA-2026-000367",
+    "created_at": "2026-06-25T19:05:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000291",
+    "entity_name": "refunds",
+    "entity_id": "REF-2026-000301",
+    "parent_entity_id": "RMA-2026-000372",
+    "issue_type": "DUPLICATE_REFUND_ATTEMPT",
+    "expected_decision": "BLOCK_DUPLICATE_REFUND",
+    "actual_injected_behavior": "Duplicate payout attempted for RMA RMA-2026-000372",
+    "created_at": "2026-04-16T11:05:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000293",
+    "entity_name": "refunds",
+    "entity_id": "REF-2026-000308",
+    "parent_entity_id": "RMA-2026-000381",
+    "issue_type": "DUPLICATE_REFUND_ATTEMPT",
+    "expected_decision": "BLOCK_DUPLICATE_REFUND",
+    "actual_injected_behavior": "Duplicate payout attempted for RMA RMA-2026-000381",
+    "created_at": "2026-05-16T22:05:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000299",
+    "entity_name": "refunds",
+    "entity_id": "REF-2026-000320",
+    "parent_entity_id": "RMA-2026-000397",
+    "issue_type": "DUPLICATE_REFUND_ATTEMPT",
+    "expected_decision": "BLOCK_DUPLICATE_REFUND",
+    "actual_injected_behavior": "Duplicate payout attempted for RMA RMA-2026-000397",
+    "created_at": "2026-04-26T00:05:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000303",
+    "entity_name": "refunds",
+    "entity_id": "REF-2026-000328",
+    "parent_entity_id": "RMA-2026-000406",
+    "issue_type": "DUPLICATE_REFUND_ATTEMPT",
+    "expected_decision": "BLOCK_DUPLICATE_REFUND",
+    "actual_injected_behavior": "Duplicate payout attempted for RMA RMA-2026-000406",
+    "created_at": "2026-05-12T02:05:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000305",
+    "entity_name": "refunds",
+    "entity_id": "REF-2026-000336",
+    "parent_entity_id": "RMA-2026-000415",
+    "issue_type": "DUPLICATE_REFUND_ATTEMPT",
+    "expected_decision": "BLOCK_DUPLICATE_REFUND",
+    "actual_injected_behavior": "Duplicate payout attempted for RMA RMA-2026-000415",
+    "created_at": "2026-01-29T23:05:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000308",
+    "entity_name": "refunds",
+    "entity_id": "REF-2026-000344",
+    "parent_entity_id": "RMA-2026-000423",
+    "issue_type": "DUPLICATE_REFUND_ATTEMPT",
+    "expected_decision": "BLOCK_DUPLICATE_REFUND",
+    "actual_injected_behavior": "Duplicate payout attempted for RMA RMA-2026-000423",
+    "created_at": "2026-03-20T23:05:00+00:00"
+  },
+  {
+    "anomaly_id": "ANO-000310",
+    "entity_name": "refunds",
+    "entity_id": "REF-2026-000353",
+    "parent_entity_id": "RMA-2026-000433",
+    "issue_type": "DUPLICATE_REFUND_ATTEMPT",
+    "expected_decision": "BLOCK_DUPLICATE_REFUND",
+    "actual_injected_behavior": "Duplicate payout attempted for RMA RMA-2026-000433",
+    "created_at": "2026-02-15T13:05:00+00:00"
+  }
+]
