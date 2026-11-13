@@ -1106,20 +1106,23 @@
                     }
                 }
 
-                // 7. Update Return Request Order Dropdown
+                // 7. Update Return Request Order Dropdown (only orders with returnable items)
                 const orderSelect = document.getElementById('custOrderSelect');
                 if (orderSelect) {
-                    if (currentCustomerDeliveredOrders.length === 0) {
-                        orderSelect.innerHTML = '<option value="">No delivered orders found for this customer</option>';
-                        document.getElementById('custLineSelect').innerHTML = '<option value="">-- No order lines available --</option>';
+                    const returnableOrders = currentCustomerDeliveredOrders.filter(o =>
+                        o.lines && o.lines.some(l => !l.is_final_sale && l.category !== 'PERISHABLE' && l.category !== 'FINAL_SALE')
+                    );
+                    if (returnableOrders.length === 0) {
+                        orderSelect.innerHTML = '<option value="">No eligible orders for return (all items are final sale/perishable)</option>';
+                        document.getElementById('custLineSelect').innerHTML = '<option value="">-- No returnable items available --</option>';
                     } else {
                         let orderHtml = '<option value="">-- Select a Delivered Order --</option>';
-                        currentCustomerDeliveredOrders.forEach(o => {
+                        returnableOrders.forEach(o => {
                             orderHtml += `<option value="${o.order_id}">${o.order_id} — Delivered ${o.delivery_date ? o.delivery_date.split('T')[0] : 'N/A'} ($${Number(o.total_paid_amount || 0).toFixed(2)})</option>`;
                         });
                         orderSelect.innerHTML = orderHtml;
 
-                        // Automatically pick first delivered order
+                        // Automatically pick first eligible order
                         orderSelect.selectedIndex = 1;
                         handleOrderSelection(orderSelect.value);
                     }
@@ -1176,10 +1179,14 @@
                 return;
             }
 
-            let linesHtml = '';
-            order.lines.forEach(l => {
-                const finalSaleTag = l.is_final_sale ? ' [FINAL SALE - NON-RETURNABLE]' : '';
-                linesHtml += `<option value="${l.order_line_id}">${l.order_line_id} — ${l.product_name} (${l.category}, Qty: ${l.quantity}, $${l.unit_price.toFixed(2)}${finalSaleTag})</option>`;
+            const returnableLines = order.lines.filter(l => !l.is_final_sale && l.category !== 'PERISHABLE' && l.category !== 'FINAL_SALE');
+            if (returnableLines.length === 0) {
+                lineSelect.innerHTML = '<option value="">-- No returnable items in this order (all final sale/perishable) --</option>';
+                return;
+            }
+            let linesHtml = '<option value="">-- Select Item to Return --</option>';
+            returnableLines.forEach(l => {
+                linesHtml += `<option value="${l.order_line_id}">${l.order_line_id} — ${l.product_name} (${l.category}, Qty: ${l.quantity}, $${l.unit_price.toFixed(2)})</option>`;
             });
             lineSelect.innerHTML = linesHtml;
         }
@@ -1228,13 +1235,45 @@
 
                 if (res.ok) {
                     const isApproved = data.rma_status === 'APPROVED';
-                    statusBox.className = `text-xs rounded-lg p-4 ${isApproved ? 'bg-emerald-950/70 border-emerald-800 text-emerald-200' : 'bg-amber-950/70 border-amber-800 text-amber-200'} border space-y-1.5`;
+                    const isPartial = data.rma_status === 'PARTIALLY_APPROVED';
+                    const isRejected = data.rma_status === 'REJECTED';
+
+                    let boxClass, iconClass;
+                    if (isApproved) {
+                        boxClass = 'bg-emerald-950/70 border-emerald-800 text-emerald-200';
+                        iconClass = 'fa-circle-check text-emerald-400';
+                    } else if (isPartial) {
+                        boxClass = 'bg-amber-950/70 border-amber-800 text-amber-200';
+                        iconClass = 'fa-circle-half-stroke text-amber-400';
+                    } else {
+                        boxClass = 'bg-rose-950/70 border-rose-800 text-rose-200';
+                        iconClass = 'fa-circle-xmark text-rose-400';
+                    }
+                    statusBox.className = `text-xs rounded-lg p-4 ${boxClass} border space-y-1.5`;
+
+                    // Build rejection reason summary from line evaluations
+                    let rejectionDetail = '';
+                    if (!isApproved && data.line_evaluations && data.line_evaluations.length > 0) {
+                        const reasons = data.line_evaluations
+                            .filter(le => le.rejection_reason)
+                            .map(le => le.rejection_reason);
+                        if (reasons.length > 0) {
+                            rejectionDetail = `<div class="text-[10px] font-mono opacity-80 mt-1">Reason: ${reasons.join('; ')}</div>`;
+                        }
+                    }
+
+                    // Only show tracking label when approved or partially approved
+                    const trackingHtml = !isRejected
+                        ? `<div class="text-[11px] text-slate-300">Prepaid shipping label generated. Tracking identifier: <span class="font-mono text-indigo-300">${data.rma_id ? 'RTS-2026-' + data.rma_id.split('-').pop() : 'N/A'}</span></div>`
+                        : '';
+
                     statusBox.innerHTML = `
                         <div class="font-bold flex items-center gap-2 text-sm">
-                            <i class="fa-solid fa-circle-check"></i> Return Request Decision: ${data.rma_status}
+                            <i class="fa-solid ${iconClass}"></i> Return Request Decision: ${data.rma_status}
                         </div>
                         <div class="font-mono text-[11px]">Request ID: <b>${data.request_id}</b> | RMA ID: <b>${data.rma_id || 'N/A'}</b> | Approved Quantity: <b>${data.total_approved_quantity}</b></div>
-                        <div class="text-[11px] text-slate-300">Prepaid shipping label generated. Tracking identifier: <span class="font-mono text-indigo-300">${data.rma_id ? 'RTS-2026-' + data.rma_id.split('-').pop() : 'N/A'}</span></div>
+                        ${trackingHtml}
+                        ${rejectionDetail}
                     `;
                     // Immediately re-fetch and refresh this customer's details and tables
                     await selectCustomerFromDropdown(customerId);

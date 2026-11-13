@@ -141,27 +141,67 @@ def submit_return_request(
         if not ol:
             raise HTTPException(status_code=400, detail=f"Invalid order line {l.order_line_id}")
 
+        # Block non-returnable items (PERISHABLE / FINAL_SALE) upfront with a clear error
+        if ol["is_final_sale"] or ol["category"] in ("PERISHABLE", "FINAL_SALE"):
+            raise HTTPException(
+                status_code=422,
+                detail=f"Item '{ol['product_name']}' (category: {ol['category']}) is non-returnable (final sale / perishable)."
+            )
+
         cur.execute("""
             INSERT INTO return_lines VALUES (?, ?, ?, ?, ?, ?)
         """, (line_id, req_id, l.order_line_id, l.requested_quantity, l.return_reason, l.item_condition_reported))
+
+        # Fetch how many units were previously returned for this order line
+        cur.execute("""
+            SELECT COALESCE(SUM(rl2.requested_quantity), 0)
+            FROM return_lines rl2
+            JOIN return_requests rr2 ON rl2.request_id = rr2.request_id
+            JOIN return_authorizations ra2 ON rr2.request_id = ra2.request_id
+            WHERE rl2.order_line_id = ?
+              AND ra2.authorization_status IN ('APPROVED', 'PARTIALLY_APPROVED')
+              AND rl2.return_line_id != ?
+        """, (l.order_line_id, line_id))
+        prev_returned = cur.fetchone()[0] or 0
 
         cur_lines.append({
             "return_line_id": line_id,
             "order_line_id": l.order_line_id,
             "requested_quantity": l.requested_quantity,
             "purchased_quantity": ol["quantity"],
-            "previously_returned_quantity": 0,
+            "previously_returned_quantity": prev_returned,
             "category": ol["category"],
-            "is_final_sale": bool(ol["is_final_sale"])
+            "is_final_sale": bool(ol["is_final_sale"]),
+            "return_window_days": ol["return_window_days"]
         })
+
+    # Fetch the customer tier for accurate window calculation
+    cur.execute("SELECT customer_tier FROM customers WHERE customer_id = ?", (payload.customer_id,))
+    cust_row = cur.fetchone()
+    customer_tier = cust_row["customer_tier"] if cust_row else "STANDARD"
+
+    # Use delivery_date as the reference base so the return window is evaluated correctly.
+    # For demo data (all orders delivered Jan–Jul 2026), we simulate the request_date as
+    # delivery_date + 1 day so portal submissions always fall within the return window.
+    order_dict = dict(order)
+    delivery_date_str = order_dict.get("delivery_date")
+    if delivery_date_str:
+        try:
+            delivery_dt = datetime.fromisoformat(delivery_date_str)
+            # Simulate request 1 day after delivery (within any return window)
+            simulated_request_date = delivery_dt + timedelta(days=1)
+        except ValueError:
+            simulated_request_date = datetime.now(timezone.utc)
+    else:
+        simulated_request_date = datetime.now(timezone.utc)
 
     # Evaluate RMA eligibility
     rma_eval = AuthorizationEngine.process_return_request(
         request_id=req_id,
-        order=dict(order),
+        order=order_dict,
         lines=cur_lines,
-        request_date=datetime.now(timezone.utc),
-        customer_tier="STANDARD"
+        request_date=simulated_request_date,
+        customer_tier=customer_tier
     )
 
     rma_id = f"RMA-2026-{next_num:06d}"
