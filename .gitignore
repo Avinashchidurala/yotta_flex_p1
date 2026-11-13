@@ -27,3 +27,7 @@ Thumbs.db
 
 # Backup snapshots
 data/backup_pre_audit/
+
+
+*.db-shm
+*.db-wal
